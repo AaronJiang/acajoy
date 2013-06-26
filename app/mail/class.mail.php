@@ -15,7 +15,7 @@ class mail extends tsApp{
 	
 		$options = fileRead('data/mail_options.php');
 		date_default_timezone_set('Asia/Shanghai');
-		require_once THINKSAAS.'/PHPMailer/class.phpmailer.php';
+		require_once JOYCORE.'/PHPMailer/class.phpmailer.php';
 		$mail = new PHPMailer();
 
 		//邮件配置

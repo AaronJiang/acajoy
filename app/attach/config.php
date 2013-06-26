@@ -5,4 +5,4 @@ defined('IN_TS') or die('Access Denied.');
 	 */
 	$skin = 'default';
 	$TS_APP['options']['appname']	= '资料';
-	require_once THINKDATA."/config.inc.php";
+	require_once JOYDATA."/config.inc.php";

@@ -36,7 +36,7 @@ if($email == '' || $password=='' || $username=='') qiMsg("用户信息不能为�
 
 if(valid_email($email)==false) qiMsg("Email输入有误！");
 
-include 'thinksaas/sql/mysql.php';
+include 'system/sql/mysql.php';
 
 $db = new MySql($arrdb);
 
@@ -78,9 +78,9 @@ if($db){
 	fileWrite('system_options.php','data',$arrOption);
 	
 	//生成配置文件
-	$fp =  fopen(THINKDATA.'/config.inc.php','w');
+	$fp =  fopen(JOYDATA.'/config.inc.php','w');
 	
-	if(!is_writable(THINKDATA.'/config.inc.php')) qiMsg("配置文件(data/config.inc.php)不可写。如果您使用的是Unix/Linux主机，请修改该文件的权限为777。如果您使用的是Windows主机，请联系管理员，将此文件设为everyone可写");
+	if(!is_writable(JOYDATA.'/config.inc.php')) qiMsg("配置文件(data/config.inc.php)不可写。如果您使用的是Unix/Linux主机，请修改该文件的权限为777。如果您使用的是Windows主机，请联系管理员，将此文件设为everyone可写");
 	$config = "<?php\n"
 					."	/*\n"
 					."	 *数据库配置\n"

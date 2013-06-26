@@ -32,7 +32,7 @@ switch($ts){
 			'userid'=>$userid,
 		));
 		
-		require_once 'thinksaas/tsImage.php';
+		require_once 'system/tsImage.php';
 		$resizeimage = new tsImage("uploadfile/user/".$strUser['face'], 190, 190, 2,"uploadfile/user/".$strUser['face']);
 		
 		tsDimg($strUser['face'],'user','120','120',$strUser['path']);

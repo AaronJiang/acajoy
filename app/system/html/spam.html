@@ -3,7 +3,7 @@
 <div class="midder">
 
 <h2>反垃圾设置</h2>
-<p>针对日益猖獗的垃圾广告和垃圾内容，ThinkSAAS成立反垃圾广告和内容联盟，自启用之日起就将和垃圾广告和内容战斗到底。</p>
+<p>针对日益猖獗的垃圾广告和垃圾内容，AcaJoy成立反垃圾广告和内容联盟，自启用之日起就将和垃圾广告和内容战斗到底。</p>
 
 <table>
 <tr><td width="100"><strong>禁止用户：</strong></td>
@@ -50,7 +50,7 @@
 </table>
 
 <h2>远程提交垃圾词语</h2>
-<p>如果你发现有垃圾词语，请通过下面输入远程提交给ThinkSAAS，我们将建立强大的垃圾词云存储库。</p>
+<p>如果你发现有垃圾词语，请通过下面输入远程提交给AcaJoy，我们将建立强大的垃圾词云存储库。</p>
 <table>
 <tr>
 <td width="100">垃圾词：</td><td>
@@ -71,7 +71,7 @@ function postword(){
 	if(word==''){
 		alert('垃圾词不能为空！');return false;
 	}else{
-		$.post("http://www.thinksaas.cn/index.php?app=service&ac=spam", { 'word': word},
+		$.post("http://www.acajoy.cn/index.php?app=service&ac=spam", { 'word': word},
 		function(rs){			
 			alert('添加成功！感谢您的提供！');
 			$("#spamword").val('');

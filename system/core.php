@@ -1,12 +1,12 @@
 <?php
 defined('IN_TS') or die('Access Denied.');
 /**
- * @copyright (c) ThinkSAAS All Rights Reserved
+ * @copyright (c) AcaJoy All Rights Reserved
  * @code by QiuJun
- * @Email:thinksaas@qq.com
- * @site:www.thinksaas.cn
+ * @Email:acajoy@qq.com
+ * @site:www.acajoy.cn
  */
-if (substr(PHP_VERSION, 0, 1) != '5')exit("ThinkSAAS运行环境要求PHP5！");
+if (substr(PHP_VERSION, 0, 1) != '5')exit("AcaJoy运行环境要求PHP5！");
 
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
@@ -16,10 +16,10 @@ ini_set('display_errors', 'on');   //正式环境关闭错误输出
 
 ini_set('session.cookie_path', '/');
 
-//ini_set('session.save_path', THINKROOT.'/cache/sessions');
+//ini_set('session.save_path', JOYROOT.'/cache/sessions');
 
 //核心配置文件 $TS_CF 系统配置变量
-$TS_CF = include 'thinksaas/config.php';
+$TS_CF = include 'system/config.php';
 
 //加载基础函数
 include 'tsFunction.php';
@@ -108,7 +108,7 @@ if($TS_CF['subdomain'] && $app=='home'){
 $ac = isset($_GET['ac']) ? $_GET['ac'] : 'index';
 //安装
 $install = isset($_GET['install']) ? $_GET['install'] : 'index';
-//ThinkSAAS专用
+//AcaJoy专用
 $ts	= isset($_GET['ts']) ? $_GET['ts'] : '';
 //Admin管理专用
 $mg	= isset($_GET['mg']) ? $_GET['mg'] : 'index';

@@ -17,8 +17,8 @@ return array(
 	//是否开启系统日志记录功能，日志存放在根目录下logs目录下
 	'logs'=>false,  
 	
-	//是否支持app二级域名访问，比如小组group支持group.thinksaas.cn域名访问
-	//不开启请留空数组，开启写域名，比如thinksaas.cn
+	//是否支持app二级域名访问，比如小组group支持group.acajoy.cn域名访问
+	//不开启请留空数组，开启写域名，比如acajoy.cn
 	'subdomain'=>array(
 		//'domain'=>'thinkpaas.com', //域名
 		//'app'=>array('group','user'), //开启子域的APP
@@ -36,19 +36,19 @@ return array(
 		'port'=>'3306',
 		'user'=>'root',
 		'pwd'=>'',
-		'name'=>'thinksaas',
+		'name'=>'acajoy',
 		'pre'=>'ts_',
 	),
 	
 	/* 软件信息
-	 * 请尊重ThinkSAAS版权信息，如需去除请购买ThinkSAAS商业授权
+	 * 请尊重AcaJoy版权信息，如需去除请购买AcaJoy商业授权
 	 * 联系QQ:1078700473
 	 */
 	'info'=>array(
-		'name'	=>	'ThinkSAAS',
+		'name'	=>	'AcaJoy',
 		'version'	=>	'1.96',
-		'url'		=>	'http://www.thinksaas.cn/',
-		'email'	=>	'thinksaas@qq.com',
+		'url'		=>	'http://www.acajoy.cn/',
+		'email'	=>	'acajoy@qq.com',
 		'copyright' =>	'奇鸟软件（北京）有限公司',
 		'copyurl'=>'http://www.qiniao.com/',
 		'year'		=>	'2011 - 2013',

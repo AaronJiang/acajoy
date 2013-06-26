@@ -72,7 +72,7 @@ switch($ts){
 			
 			$msg_userid = '0';
 			$msg_touserid = $userid;
-			$msg_content = '亲爱的 '.$username.' ：<br />恭喜你成功绑定QQ登录信息。<br />现在你除了可以用Email登录，同时还可以使用QQ登录！<br />感谢你对ThinkSAAS的支持！';
+			$msg_content = '亲爱的 '.$username.' ：<br />恭喜你成功绑定QQ登录信息。<br />现在你除了可以用Email登录，同时还可以使用QQ登录！<br />感谢你对AcaJoy的支持！';
 			aac('message',$db)->sendmsg($msg_userid,$msg_touserid,$msg_content);
 			
 			$_SESSION['tsuser']	= $userData;

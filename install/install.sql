@@ -3979,7 +3979,7 @@ CREATE TABLE IF NOT EXISTS `ts_group_options` (
 
 INSERT INTO `ts_group_options` (`optionname`, `optionvalue`) VALUES
 ('appname', '小组'),
-('appdesc', 'ThinkSAAS小组'),
+('appdesc', 'AcaJoy小组'),
 ('iscreate', '1'),
 ('isaudit', '0'),
 ('joinnum', '20');
@@ -4185,7 +4185,7 @@ CREATE TABLE IF NOT EXISTS `ts_home_info` (
 INSERT INTO `ts_home_info` (`infoid`, `infokey`, `title`, `content`) VALUES
 (1, 'about', '关于我们', '关于我们'),
 (2, 'contact', '联系我们', '联系我们'),
-(3, 'agreement', '用户条款', '<p>ThinkSAAS官方指：ThinkSAAS社区系统的开发拥有者和www.thinksaas.cn的拥有者</p>\r\n<p>ThinkSAAS禁止用户在使用中触犯中国法律范围内的任何法律条文。</p>\r\n<p>ThinkSAAS支持个人，公益组织和非营利性机构免费使用</p>\r\n<p>凡使用ThinkSAAS的公司机构和营利性组织，必须购买ThinkSAAS授权使用协议，否则将依照中国法律依法追究其责任。</p>\r\n\r\n<p>1、ThinkSAAS免费开源</p>\r\n<p>2、你可以免费使用ThinkSAAS</p>\r\n<p>3、你可以在ThinkSAAS基础上进行二次开发和修改</p>\r\n<p>4、你可以拿ThinkSAAS建设你的商业运营网站</p>\r\n<p>5、所有未购买ThinkSAAS授权使用协议的用户（个人和团体组织），需保留Powered by ThinkSAAS标识</p>\r\n<p>6、ThinkSAAS及其创始人邱君拥有对ThinkSAAS的所有权，任何个人，公司和组织不得以任何形式和目的侵犯ThinkSAAS的版权和著作权</p>\r\n<p><strong>7、在未经ThinkSAAS官方书面允许的情况下，任何个人、公司和组织不能单方面发布和出售以ThinkSAAS为基础开发的任何互联网软件或者产品，否则将视为侵权行为</strong></p>\r\n<p>8、ThinkSAAS拥有对此协议的修改和不断完善。</p>'),
+(3, 'agreement', '用户条款', '<p>AcaJoy官方指：AcaJoy社区系统的开发拥有者和www.acajoy.cn的拥有者</p>\r\n<p>AcaJoy禁止用户在使用中触犯中国法律范围内的任何法律条文。</p>\r\n<p>AcaJoy支持个人，公益组织和非营利性机构免费使用</p>\r\n<p>凡使用AcaJoy的公司机构和营利性组织，必须购买AcaJoy授权使用协议，否则将依照中国法律依法追究其责任。</p>\r\n\r\n<p>1、AcaJoy免费开源</p>\r\n<p>2、你可以免费使用AcaJoy</p>\r\n<p>3、你可以在AcaJoy基础上进行二次开发和修改</p>\r\n<p>4、你可以拿AcaJoy建设你的商业运营网站</p>\r\n<p>5、所有未购买AcaJoy授权使用协议的用户（个人和团体组织），需保留Powered by AcaJoy标识</p>\r\n<p>6、AcaJoy及其创始人邱君拥有对AcaJoy的所有权，任何个人，公司和组织不得以任何形式和目的侵犯AcaJoy的版权和著作权</p>\r\n<p><strong>7、在未经AcaJoy官方书面允许的情况下，任何个人、公司和组织不能单方面发布和出售以AcaJoy为基础开发的任何互联网软件或者产品，否则将视为侵权行为</strong></p>\r\n<p>8、AcaJoy拥有对此协议的修改和不断完善。</p>'),
 (4, 'privacy', '隐私申明', '隐私申明'),
 (5, 'job', '加入我们', '加入我们');
 
@@ -4209,7 +4209,7 @@ CREATE TABLE IF NOT EXISTS `ts_mail_options` (
 
 INSERT INTO `ts_mail_options` (`optionid`, `optionname`, `optionvalue`) VALUES
 (1, 'appname', '邮件'),
-(2, 'appdesc', 'ThinkSAAS邮件'),
+(2, 'appdesc', 'AcaJoy邮件'),
 (3, 'isenable', '0'),
 (4, 'mailhost', 'smtp.exmail.qq.com'),
 (5, 'mailport', '25'),
@@ -4379,10 +4379,10 @@ CREATE TABLE IF NOT EXISTS `ts_system_options` (
 --
 
 INSERT INTO `ts_system_options` (`optionname`, `optionvalue`) VALUES
-('site_title', 'ThinkSAAS'),
-('site_subtitle', '又一个ThinkSAAS社区'),
-('site_key', 'thinksaas'),
-('site_desc', '又一个ThinkSAAS社区小组'),
+('site_title', 'AcaJoy'),
+('site_subtitle', '又一个AcaJoy社区'),
+('site_key', 'acajoy'),
+('site_desc', '又一个AcaJoy社区小组'),
 ('site_url', 'http://121.52.229.59:91/thinksvn/'),
 ('site_email', 'admin@admin.com'),
 ('site_icp', '京ICP备09050100号'),

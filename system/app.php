@@ -1,9 +1,9 @@
 <?php
 /*
- * ThinkSAAS APP入口
- * @copyright (c) 2010-3000 ThinkSAAS All Rights Reserved
+ * AcaJoy APP入口
+ * @copyright (c) 2010-3000 AcaJoy All Rights Reserved
  * @code by QiuJun
- * @Email:thinksaas@qq.com
+ * @Email:acajoy@qq.com
  */
 defined('IN_TS') or die('Access Denied.');
 

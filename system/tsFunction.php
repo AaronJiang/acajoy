@@ -1,17 +1,17 @@
 <?php
 defined('IN_TS') or die('Access Denied.');
 /*
- * ThinkSAAS core function
- * @copyright (c) ThinkSAAS All Rights Reserved
+ * AcaJoy core function
+ * @copyright (c) AcaJoy All Rights Reserved
  * @code by QiuJun
- * @Email:thinksaas@qq.com
+ * @Email:acajoy@qq.com
  * @TIME:2010-12-18
  */
 
 //AutoAppClass
 function aac($app){
 	global $db;
-	$path = THINKAPP.'/'.$app.'/';
+	$path = JOYAPP.'/'.$app.'/';
 	if(!class_exists($app)){
 		require_once $path.'class.'.$app.'.php';
 	}
@@ -45,7 +45,7 @@ function array_sort($arr,$keys,$type='asc'){
 } 
 
 
-//ThinkSAAS Notice
+//AcaJoy Notice
 function tsNotice($notice,$button='点击返回',$url='javascript:history.back(-1);',$isAutoGo=false){
 	global $app;
 	global $TS_SITE;
@@ -78,7 +78,7 @@ EOT;
 	echo 
 <<<EOT
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ThinkSAAS 提示</title>
+<title>AcaJoy 提示</title>
 <style type="text/css">
 <!--
 body {
@@ -409,7 +409,7 @@ function object2array($array){
 function isWriteFile($file, $content, $mod = 'w', $exit = TRUE) {
 if(!@$fp = @fopen($file, $mod)) {
 	if($exit) {
-		exit('ThinkSAAS File :<br>'.$file.'<br>Have no access to write!');
+		exit('AcaJoy File :<br>'.$file.'<br>Have no access to write!');
 	} else {
 		return false;
 	}
@@ -452,7 +452,7 @@ function template($file,$plugin='',$self='') {
 	
 	if(@filemtime($tplfile) > @filemtime($objfile)) {
 		//note 加载模板类文件
-		require_once 'thinksaas/tsTemplate.php';
+		require_once 'system/tsTemplate.php';
 		$T = new tsTemplate();
 		
 		$T->complie($tplfile, $objfile);
@@ -471,7 +471,7 @@ $objfile = 'cache/template/public.'.$file.'.tpl.php';
 if(@filemtime($tplfile) > @filemtime($objfile)) {
 	//note 加载模板类文件
 	
-	require_once 'thinksaas/tsTemplate.php';
+	require_once 'system/tsTemplate.php';
 	$T = new tsTemplate();
 	
 	$T->complie($tplfile, $objfile);
@@ -556,7 +556,7 @@ function md10($str=''){
 }
 
 /*
- * ThinkSAAS专用图片截图函数
+ * AcaJoy专用图片截图函数
  * $file：数据库里的图片url
  * $app：app名称
  * $w：缩略图片宽度
@@ -585,7 +585,7 @@ function tsXimg($file, $app , $w, $h,$path='',$c='0'){
 		if($arrImg[0] <= $w){
 			copy($dest,$cpath);
 		}else{
-			require_once 'thinksaas/tsImage.php';
+			require_once 'system/tsImage.php';
 			$resizeimage = new tsImage("$dest", $w, $h, $c,"$cpath");
 		}
 	}
@@ -990,7 +990,7 @@ function reurlsubdomain(){
 		if($rurl){
 			
 			if($options['site_urltype']==3){
-			//http://group.thinksaas.cn/topic-id-1.html
+			//http://group.acajoy.cn/topic-id-1.html
 				$params = explode('.', $params);
 				
 				$params = explode('-', $params[0]);
@@ -1020,7 +1020,7 @@ function reurlsubdomain(){
 				}
 				
 			}elseif($options['site_urltype']==4){
-			//http://group.thinksaas.cn/topic/id-1
+			//http://group.acajoy.cn/topic/id-1
 				$params = explode('/', $params);
 				
 				foreach( $params as $p => $v ){
@@ -1039,7 +1039,7 @@ function reurlsubdomain(){
 				}
 			
 			}elseif($options['site_urltype']==5){
-			//http://group.thinksaas.cn/topic/1
+			//http://group.acajoy.cn/topic/1
 				$params = explode('/', $params);
 				
 				foreach( $params as $p => $v ){
@@ -1059,7 +1059,7 @@ function reurlsubdomain(){
 				}
 			
 			}elseif($options['site_urltype']==6){
-			//http://group.thinksaas.cn/topic/id/1
+			//http://group.acajoy.cn/topic/id/1
 				$params = explode('/', $params);
 				
 				foreach( $params as $p => $v ){
@@ -1071,7 +1071,7 @@ function reurlsubdomain(){
 					}
 				}
 			}elseif($options['site_urltype']==7){
-			//http://group.thinksaas.cn/topic/1/
+			//http://group.acajoy.cn/topic/1/
 				$params = explode('/', $params);
 				
 				foreach( $params as $p => $v ){
@@ -1145,7 +1145,7 @@ function delDirFile($dir){
 }
 
 /*
- * ThinkSAAS专用上传函数 
+ * AcaJoy专用上传函数 
  * $file 要上传的文件 如$_FILES['photo']
  * $projectid 上传针对的项目id  如$userid
  * $dir 上传到目录  如 user

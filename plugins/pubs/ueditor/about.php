@@ -1,1 +1,1 @@
-<?php defined('IN_TS') or die('Access Denied.');//插件信息return array('name' => 'ueditor编辑器','version' => '1.0','desc' => 'ueditor编辑器','url' => 'http://www.thinksaas.cn','email' => 'thinksaas@qq.com','author' => '邱君','author_url' => 'http://www.thinksaas.cn','isedit'	=> '0',);
+<?php defined('IN_TS') or die('Access Denied.');//插件信息return array('name' => 'ueditor编辑器','version' => '1.0','desc' => 'ueditor编辑器','url' => 'http://www.acajoy.cn','email' => 'acajoy@qq.com','author' => '邱君','author_url' => 'http://www.acajoy.cn','isedit'	=> '0',);

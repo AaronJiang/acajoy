@@ -86,7 +86,7 @@ get_openid();
 
 ////////////////////////////////////////////////////////////////////////
 
-/*ThinkSAAS开始*/
+/*AcaJoy开始*/
 $isopenid = $new['pubs']->findCount('user_open',array(
 	'sitename'=>'qq',
 	'openid'=>$_SESSION['openid'],

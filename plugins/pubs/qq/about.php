@@ -4,10 +4,10 @@ defined('IN_TS') or die('Access Denied.');
 return array(
 'name' => 'QQ登录outh2.0',
 'version' => '2.0',
-'desc' => '用户QQ帐号登录由ThinkSAAS搭建的社区',
-'url' => 'http://www.thinksaas.cn',
-'email' => 'thinksaas@qq.com',
+'desc' => '用户QQ帐号登录由AcaJoy搭建的社区',
+'url' => 'http://www.acajoy.cn',
+'email' => 'acajoy@qq.com',
 'author' => '邱君',
-'author_url' => 'http://www.thinksaas.cn',
+'author_url' => 'http://www.acajoy.cn',
 'isedit'	=> '1',
 );

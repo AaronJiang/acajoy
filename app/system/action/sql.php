@@ -21,7 +21,7 @@ switch($ts){
 	//备份导出
 	case "export":
 	
-		require_once 'thinksaas/DbManage.php';
+		require_once 'system/DbManage.php';
 		$bakdb = new DBManage ( $TS_DB['host'].':'.$TS_DB['port'], $TS_DB['user'], $TS_DB['pwd'], $TS_DB['name'], 'utf8' );
 		$bakdb->backup ('','data/baksql/');
 		
@@ -32,7 +32,7 @@ switch($ts){
 	//恢复导入
 	case "import":
 		$sql = trim($_GET['sql']);
-		require_once 'thinksaas/DbManage.php';
+		require_once 'system/DbManage.php';
 		$bakdb = new DBManage ( $TS_DB['host'].':'.$TS_DB['port'], $TS_DB['user'], $TS_DB['pwd'], $TS_DB['name'], 'utf8' );
 		$bakdb->restore ('data/baksql/'.$sql);
 		

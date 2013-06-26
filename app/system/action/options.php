@@ -60,9 +60,9 @@ switch($ts){
 			$scriptName = explode('index.php',$_SERVER['SCRIPT_NAME']);
 			
 			//生成.htaccess文件
-			$fp =  fopen(THINKROOT.'/.htaccess','w');
+			$fp =  fopen(JOYROOT.'/.htaccess','w');
 			
-			if(!is_writable(THINKROOT.'/.htaccess')) qiMsg("文件(.htaccess)不可写。如果您使用的是Unix/Linux主机，请修改该文件的权限为777。如果您使用的是Windows主机，请联系管理员，将此文件设为everyone可写");
+			if(!is_writable(JOYROOT.'/.htaccess')) qiMsg("文件(.htaccess)不可写。如果您使用的是Unix/Linux主机，请修改该文件的权限为777。如果您使用的是Windows主机，请联系管理员，将此文件设为everyone可写");
 			$htaccess = "RewriteEngine On\n"
 					."RewriteBase ".$scriptName[0]."\n"
 					."RewriteRule ^index\.php$ - [L]\n"

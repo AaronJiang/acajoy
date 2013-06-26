@@ -9,6 +9,6 @@
 	$TS_DB['port']='3306';
 	$TS_DB['user']='root';
 	$TS_DB['pwd']='';
-	$TS_DB['name']='thinksaas';
+	$TS_DB['name']='acajoy';
 	$TS_DB['pre']='ts_';
 	define('dbprefix','ts_');

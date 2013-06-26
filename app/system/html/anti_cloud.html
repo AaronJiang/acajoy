@@ -8,7 +8,7 @@
 <div>
 
 <h2>远程提交垃圾词语</h2>
-<p>如果你发现有垃圾词语，请通过下面输入远程提交给ThinkSAAS，我们将建立强大的垃圾词云存储库。</p>
+<p>如果你发现有垃圾词语，请通过下面输入远程提交给AcaJoy，我们将建立强大的垃圾词云存储库。</p>
 <table>
 <tr>
 <td width="100">垃圾词：</td><td>
@@ -35,7 +35,7 @@ function postword(){
 	if(word==''){
 		alert('垃圾词不能为空！');return false;
 	}else{
-		$.post("http://www.thinksaas.cn/index.php?app=service&ac=spam", { 'word': word},
+		$.post("http://www.acajoy.cn/index.php?app=service&ac=spam", { 'word': word},
 		function(rs){			
 			alert('添加成功！感谢您的提供！');
 			$("#spamword").val('');

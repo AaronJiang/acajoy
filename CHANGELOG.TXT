@@ -1,6 +1,6 @@
-﻿ThinkSAAS Change List
+﻿AcaJoy Change List
 
-ThinkSAAS开源社区功能和特点：
+AcaJoy开源社区功能和特点：
 
 1、基于PHP语言开发
 2、支持MySQL数据库连接

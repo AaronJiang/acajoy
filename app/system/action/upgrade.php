@@ -8,7 +8,7 @@ $upversion = trim($_POST['upversion']);
 unlink('upgrade/'.$upapp.'.zip');
 
 //拼接出要下载的远程文件
-$upfile = 'http://up.thinksaas.cn/'.$upapp.'/'.$upversion.'/'.$upapp.'.zip';
+$upfile = 'http://up.acajoy.cn/'.$upapp.'/'.$upversion.'/'.$upapp.'.zip';
 
 /*第一步：多线程下载zip压缩文件*/
 $urls=array(
@@ -44,7 +44,7 @@ curl_multi_close($mh);
 chmod('upgrade/'.$upapp.'.zip',0777);
 
 /*第二步：下载完之后开始解压覆盖原有文件*/
-if($upapp=='thinksaas'){
+if($upapp=='acajoy'){
 	$extract = $upapp;
 }else{
 	$extract = 'app/'.$upapp;
@@ -55,7 +55,7 @@ if(iswriteable($extract)==0){
 	echo 2;exit;
 }
 
-include 'thinksaas/pclzip.lib.php';
+include 'system/pclzip.lib.php';
 $archive = new PclZip('upgrade/'.$upapp.'.zip');
 if ($archive->extract(PCLZIP_OPT_PATH, $extract,PCLZIP_OPT_REPLACE_NEWER) == 0) {
 	//die("Error : ".$archive->errorInfo(true));
@@ -67,7 +67,7 @@ if ($archive->extract(PCLZIP_OPT_PATH, $extract,PCLZIP_OPT_REPLACE_NEWER) == 0) 
 }
 
 /*第三步：升级数据库*/
-if($upapp!='thinksaas'){
+if($upapp!='acajoy'){
 	if(is_file('app/'.$upapp.'/upgrade.sql')){
 		$sqlFile = file_get_contents('app/'.$upapp.'/upgrade.sql');
 		$sqlFile = str_replace('ts_',dbprefix,$sqlFile);

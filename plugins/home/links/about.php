@@ -5,9 +5,9 @@ return array(
 'name' => '友情连接插件',
 'version' => '1.0',
 'desc' => '开启友情连接插件后，将在首页显示友情链接',
-'url' => 'http://www.thinksaas.cn',
-'email' => 'thinksaas@qq.com',
+'url' => 'http://www.acajoy.cn',
+'email' => 'acajoy@qq.com',
 'author' => '邱君',
-'author_url' => 'http://www.thinksaas.cn',
+'author_url' => 'http://www.acajoy.cn',
 'isedit'	=> '1',
 );

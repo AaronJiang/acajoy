@@ -7,5 +7,5 @@ Disallow:/install/
 Disallow:/plugins/
 Disallow:/public/
 Disallow:/theme/
-Disallow:/thinksaas/
+Disallow:/system/
 Disallow:/uploadfile/
