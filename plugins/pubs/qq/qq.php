@@ -2,7 +2,6 @@
 defined('IN_TS') or die('Access Denied.');
 /*
  *QQ登录插件
- *By QiuJun 2011-07-28
  */
 
 //登录

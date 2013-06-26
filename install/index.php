@@ -3,7 +3,6 @@ defined('IN_TS') or die('Access Denied.');
 /*
  *AcaJoy 安装程序
  * @copyright (c) 2010-3000 AcaJoy All Rights Reserved
- * @code by QiuJun
  * @Email:acajoy@qq.com
  */
 

@@ -92,7 +92,7 @@ class tsImage{
 			}
 		}
 	}
-	//初始化图象 By QIUJUN 20110926
+	//初始化图象 
 	function initi_img()
 	{
 		$targetInfo = @getimagesize($this->srcimg);

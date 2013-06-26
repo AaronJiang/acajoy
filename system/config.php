@@ -38,21 +38,7 @@ return array(
 		'pwd'=>'',
 		'name'=>'acajoy',
 		'pre'=>'ts_',
-	),
+	)
 	
-	/* 软件信息
-	 * 请尊重AcaJoy版权信息，如需去除请购买AcaJoy商业授权
-	 * 联系QQ:1078700473
-	 */
-	'info'=>array(
-		'name'	=>	'AcaJoy',
-		'version'	=>	'1.96',
-		'url'		=>	'http://www.acajoy.cn/',
-		'email'	=>	'acajoy@qq.com',
-		'copyright' =>	'奇鸟软件（北京）有限公司',
-		'copyurl'=>'http://www.qiniao.com/',
-		'year'		=>	'2011 - 2013',
-		'author'	=>	'QiuJun',
-	),
 	
 );

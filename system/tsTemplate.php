@@ -7,10 +7,10 @@ class tsTemplate {
 	var $const_regexp = "\{([\w]+)\}";
 
 	/**
-	 *  ¶ÁÄ£°åÒ³½øÐÐÌæ»»ºóÐ´Èëµ½cacheÒ³Àï
+	 *  ï¿½ï¿½Ä£ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½æ»»ï¿½ï¿½Ð´ï¿½ëµ½cacheÒ³ï¿½ï¿½
 	 *
-	 * @param string $tplfile £ºÄ£°åÔ´ÎÄ¼þµØÖ·
-	 * @param string $objfile £ºÄ£°åcacheÎÄ¼þµØÖ·
+	 * @param string $tplfile ï¿½ï¿½Ä£ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½Ö·
+	 * @param string $objfile ï¿½ï¿½Ä£ï¿½ï¿½cacheï¿½Ä¼ï¿½ï¿½ï¿½Ö·
 	 * @return string
 	 */
 	function complie($tplfile, $objfile) {
@@ -23,41 +23,40 @@ class tsTemplate {
 	}
 
 	/**
-	 *  ½âÎöÄ£°å±êÇ©
+	 *  ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ç©
 	 *
-	 * @param string $template £ºÄ£°åÔ´ÎÄ¼þÄÚÈÝ
+	 * @param string $template ï¿½ï¿½Ä£ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return string
 	 */
 	function parse($template) {
 	
-		//Çå³ýÄ£°åÖÐ»»ÐÐ
+		//ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½
 		//$template = preg_replace('/[\n\r\t]/', '', $template);
 	
-		//BY QIUJUN 2011-10-22 Ôö¼ÓtsurlÂ·ÓÉÄ£°å±êÇ©
 		$template = preg_replace("/\{tsUrl(.*?)\}/s", "{php echo tsurl\\1}", $template);
 	
-		$template = preg_replace("/\<\!\-\-\{(.+?)\}\-\-\>/s", "{\\1}", $template);//È¥³ýhtml×¢ÊÍ·ûºÅ<!---->
-		$template = preg_replace("/\{($this->var_regexp)\}/", "<?php echo \\1;?>", $template);//Ìæ»»´ø{}µÄ±äÁ¿
-		$template = preg_replace("/\{($this->const_regexp)\}/", "<?php echo \\1;?>", $template);//Ìæ»»´ø{}µÄ³£Á¿
-		$template = preg_replace("/(?<!\<\?php echo |\\\\)$this->var_regexp/", "<?php echo \\0;?>", $template);//Ìæ»»ÖØ¸´µÄ<?php echo
-		$template = preg_replace("/\{php (.*?)\}/ies", "\$this->stripvTag('<?php \\1?>')", $template);//Ìæ»»php±êÇ©
-		$template = preg_replace("/\{for (.*?)\}/ies", "\$this->stripvTag('<?php for(\\1) {?>')", $template);//Ìæ»»for±êÇ©
+		$template = preg_replace("/\<\!\-\-\{(.+?)\}\-\-\>/s", "{\\1}", $template);//È¥ï¿½ï¿½html×¢ï¿½Í·ï¿½ï¿½<!---->
+		$template = preg_replace("/\{($this->var_regexp)\}/", "<?php echo \\1;?>", $template);//ï¿½æ»»ï¿½ï¿½{}ï¿½Ä±ï¿½ï¿½ï¿½
+		$template = preg_replace("/\{($this->const_regexp)\}/", "<?php echo \\1;?>", $template);//ï¿½æ»»ï¿½ï¿½{}ï¿½Ä³ï¿½ï¿½ï¿½
+		$template = preg_replace("/(?<!\<\?php echo |\\\\)$this->var_regexp/", "<?php echo \\0;?>", $template);//ï¿½æ»»ï¿½Ø¸ï¿½ï¿½ï¿½<?php echo
+		$template = preg_replace("/\{php (.*?)\}/ies", "\$this->stripvTag('<?php \\1?>')", $template);//ï¿½æ»»phpï¿½ï¿½Ç©
+		$template = preg_replace("/\{for (.*?)\}/ies", "\$this->stripvTag('<?php for(\\1) {?>')", $template);//ï¿½æ»»forï¿½ï¿½Ç©
 		
-		$template = preg_replace("/\{elseif\s+(.+?)\}/ies", "\$this->stripvTag('<?php } elseif (\\1) { ?>')", $template);//Ìæ»»elseif±êÇ©
+		$template = preg_replace("/\{elseif\s+(.+?)\}/ies", "\$this->stripvTag('<?php } elseif (\\1) { ?>')", $template);//ï¿½æ»»elseifï¿½ï¿½Ç©
 		for($i=0; $i<3; $i++) {
 			$template = preg_replace("/\{loop\s+$this->vtag_regexp\s+$this->vtag_regexp\s+$this->vtag_regexp\}(.+?)\{\/loop\}/ies", "\$this->loopSection('\\1', '\\2', '\\3', '\\4')", $template);
 			$template = preg_replace("/\{loop\s+$this->vtag_regexp\s+$this->vtag_regexp\}(.+?)\{\/loop\}/ies", "\$this->loopSection('\\1', '', '\\2', '\\3')", $template);
 		}
-		$template = preg_replace("/\{if\s+(.+?)\}/ies", "\$this->stripvTag('<?php if(\\1) { ?>')", $template);//Ìæ»»if±êÇ©
-		$template = preg_replace("/\{include\s+(.*?)\}/is", "<?php include \\1; ?>", $template);//Ìæ»»include±êÇ©
+		$template = preg_replace("/\{if\s+(.+?)\}/ies", "\$this->stripvTag('<?php if(\\1) { ?>')", $template);//ï¿½æ»»ifï¿½ï¿½Ç©
+		$template = preg_replace("/\{include\s+(.*?)\}/is", "<?php include \\1; ?>", $template);//ï¿½æ»»includeï¿½ï¿½Ç©
 		
-		$template = preg_replace("/\{template\s+(\w+?)\}/is", "<?php include template('\\1'); ?>", $template);//Ìæ»»template±êÇ©
-		$template = preg_replace("/\{block (.*?)\}/ies", "\$this->stripBlock('\\1')", $template);//Ìæ»»block±êÇ©
-		$template = preg_replace("/\{else\}/is", "<?php } else { ?>", $template);//Ìæ»»else±êÇ©
-		$template = preg_replace("/\{\/if\}/is", "<?php } ?>", $template);//Ìæ»»/if±êÇ©
-		$template = preg_replace("/\{\/for\}/is", "<?php } ?>", $template);//Ìæ»»/for±êÇ©
-		$template = preg_replace("/$this->const_regexp/", "<?php echo \\1;?>", $template);//note {else} Ò²·ûºÏ³£Á¿¸ñÊ½£¬´Ë´¦Òª×¢ÒâÏÈºóË³??
-		$template = preg_replace("/(\\\$[a-zA-Z_]\w+\[)([a-zA-Z_]\w+)\]/i", "\\1'\\2']", $template);//½«¶þÎ¬Êý×éÌæ»»³É´øµ¥ÒýºÅµÄ±ê×¼Ä£Ê½
+		$template = preg_replace("/\{template\s+(\w+?)\}/is", "<?php include template('\\1'); ?>", $template);//ï¿½æ»»templateï¿½ï¿½Ç©
+		$template = preg_replace("/\{block (.*?)\}/ies", "\$this->stripBlock('\\1')", $template);//ï¿½æ»»blockï¿½ï¿½Ç©
+		$template = preg_replace("/\{else\}/is", "<?php } else { ?>", $template);//ï¿½æ»»elseï¿½ï¿½Ç©
+		$template = preg_replace("/\{\/if\}/is", "<?php } ?>", $template);//ï¿½æ»»/ifï¿½ï¿½Ç©
+		$template = preg_replace("/\{\/for\}/is", "<?php } ?>", $template);//ï¿½æ»»/forï¿½ï¿½Ç©
+		$template = preg_replace("/$this->const_regexp/", "<?php echo \\1;?>", $template);//note {else} Ò²ï¿½ï¿½Ï³ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ë´ï¿½Òª×¢ï¿½ï¿½ï¿½Èºï¿½Ë³??
+		$template = preg_replace("/(\\\$[a-zA-Z_]\w+\[)([a-zA-Z_]\w+)\]/i", "\\1'\\2']", $template);//ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½æ»»ï¿½É´ï¿½ï¿½ï¿½ÅµÄ±ï¿½×¼Ä£Ê½
 		/* $template = "<?php if(!defined('IN_TS')) exit('Access Denied');?>\r\n$template"; */
 		$template = "$template";
 
@@ -65,9 +64,9 @@ class tsTemplate {
 	}
 
 	/**
-	 * ÕýÔò±í´ïÊ½Æ¥ÅäÌæ»»
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Æ¥ï¿½ï¿½ï¿½æ»»
 	 *
-	 * @param string $s £º
+	 * @param string $s ï¿½ï¿½
 	 * @return string
 	 */
 	function stripvTag($s) {
@@ -89,10 +88,10 @@ class tsTemplate {
 	}
 	
 	/**
-	 * ½«Ä£°åÖÐµÄ¿éÌæ»»³ÉBLOCKº¯Êý
+	 * ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ÐµÄ¿ï¿½ï¿½æ»»ï¿½ï¿½BLOCKï¿½ï¿½ï¿½ï¿½
 	 *
-	 * @param string $blockname £º
-	 * @param string $parameter £º
+	 * @param string $blockname ï¿½ï¿½
+	 * @param string $parameter ï¿½ï¿½
 	 * @return string
 	 */
 	function stripBlock($parameter) {
@@ -100,12 +99,12 @@ class tsTemplate {
 	}
 
 	/**
-	 * Ìæ»»Ä£°åÖÐµÄLOOPÑ­»·
+	 * ï¿½æ»»Ä£ï¿½ï¿½ï¿½Ðµï¿½LOOPÑ­ï¿½ï¿½
 	 *
-	 * @param string $arr £º
-	 * @param string $k £º
-	 * @param string $v £º
-	 * @param string $statement £º
+	 * @param string $arr ï¿½ï¿½
+	 * @param string $k ï¿½ï¿½
+	 * @param string $v ï¿½ï¿½
+	 * @param string $statement ï¿½ï¿½
 	 * @return string
 	 */
 	function loopSection($arr, $k, $v, $statement) {

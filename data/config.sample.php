@@ -2,7 +2,7 @@
 	
 	/*
 	 *数据库配置
-	 *$Id: config.sample.php 465 2011-11-14 07:51:18Z qiujun $
+	 *$Id: config.sample.php 465 2011-11-14 07:51:18Z 
 	 */
 	$TS_DB['sql']='mysql';
 	$TS_DB['host']='localhost';

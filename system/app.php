@@ -2,7 +2,6 @@
 /*
  * AcaJoy APP入口
  * @copyright (c) 2010-3000 AcaJoy All Rights Reserved
- * @code by QiuJun
  * @Email:acajoy@qq.com
  */
 defined('IN_TS') or die('Access Denied.');
@@ -166,11 +165,17 @@ if(is_file('app/'.$app.'/action/'.$ac.'.php')){
 	
 	//全站通用数据加载
 	if(is_file('common.php'))
-		include 'common.php';
+	{
+	    include 'common.php';
+	}    
+		
 	
 	//开始执行APP action
 	if(is_file('app/'.$app.'/action/common.php'))
-		include 'app/'.$app.'/action/common.php';
+	{
+	    include 'app/'.$app.'/action/common.php';
+	}
+		
 	
 	include 'app/'.$app.'/action/'.$ac.'.php';
 	

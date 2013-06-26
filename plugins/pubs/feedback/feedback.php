@@ -1,17 +1,19 @@
-<?php 
-//feedback反馈插件 
-function feedback_html(){
-	$code = fileRead('plugins/pubs/feedback/data.php');
-	$code = stripcslashes($code);
-	echo '<div class="feedback-box">
-'.$code.'
+<?php
+// feedback反馈插件
+function feedback_html ()
+{
+    $code = fileRead('plugins/pubs/feedback/data.php');
+    $code = stripcslashes($code);
+    echo '<div class="feedback-box">
+' . $code . '
 </div>';
 }
 
-addAction('pub_footer','feedback_html');
+addAction('pub_footer', 'feedback_html');
 
-function feedback_css(){
-	echo '<style>.feedback-box {
+function feedback_css ()
+{
+    echo '<style>.feedback-box {
     background-color: #83ACC6;
     border-right: 1px solid #D3E3F0;
     bottom: 60%;
@@ -30,7 +32,8 @@ function feedback_css(){
     border-left-color: #558BC6;
 }
 .feedback-box a {
-    background: url("'.SITE_URL.'plugins/pubs/feedback/feed-back.png") no-repeat 3px 70px;
+    background: url("' .
+             SITE_URL . 'plugins/pubs/feedback/feed-back.png") no-repeat 3px 70px;
     border-left: 1px solid #83ACC6;
     color: #FFFFFF !important;
     display: block;
@@ -40,4 +43,4 @@ function feedback_css(){
 }</style>';
 }
 
-addAction('pub_header_top','feedback_css');
+addAction('pub_header_top', 'feedback_css');

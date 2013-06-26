@@ -6,7 +6,7 @@ return array (
   'search' => '搜索',
   'user' => '用户',
   'photo' => '相册',
-  'article' => '文章',
+  'article' => '游记',
   'feed' => '动态',
   'weibo' => '微博',
   'attach' => '资料',

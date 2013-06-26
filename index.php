@@ -2,7 +2,6 @@
 /**
  * AcaJoy单入口
  * @copyright (c) 2010-3000 AcaJoy All Rights Reserved
- * @author QiuJun
  * @Email:acajoy@qq.com
  */
 
