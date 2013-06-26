@@ -1,0 +1,35 @@
+{template header}
+<!--加载编辑器-->
+{php doAction('tseditor')}
+<!--main-->
+<div class="midder">
+<div class="mc bbox pd020">
+<h1>补贴：《{$strTopic['title']}》</h1>
+
+<form method="POST" action="{tsUrl('group','after',array('ts'=>'ado'))}"  enctype="multipart/form-data">
+<table width="100%">
+<tbody>
+<tr>
+<td valign="top">
+内容*
+</td><td><textarea style="width:600px;" id="tseditor" name="content"></textarea></td></tr>
+
+<tr><td width="50">标题：</td>
+<td><input style="padding:3px 0;width:300px;" type="text" name="title" /> (可选)</td></tr>	
+
+<tr><td></td><td>
+<input type="hidden" name="topicid" value="{$strTopic['topicid']}" />
+
+<input type="hidden" name="token" value="{$_SESSION['token']}" />
+
+<button class="btn btn-success" type="submit">补贴</button>
+
+<a href="{tsUrl('group','topic',array('id'=>$strTopic['topicid']))}">返回</a>
+</td></tr></tbody>
+</table>
+</form>
+
+</div>
+
+</div>
+{template footer}

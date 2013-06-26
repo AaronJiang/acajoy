@@ -1,0 +1,64 @@
+/*基本*/ 
+body{ font-size:12px;font-family:Arial;margin:0 auto;color:#434343;background:#FFFFFF;}
+table {border-collapse:collapse;}
+th,caption {font-weight:normal;font-style:normal;text-align:left;}
+caption {font-weight:bold;}
+ol,ul,li{list-style:none;margin:0;padding:0;}
+a img {border:none}
+
+input,textarea{font-size:12px;}
+
+.inputTitle{padding:5px 1px;width:99%;font-size:14px;}
+.input200{width:200px;font-size:14px;padding:2px;}
+.text200{width:200px;padding:2px;font-size:14px;height:50px;}
+.inputSub{padding:2px 5px;}
+
+.clear {
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+}
+
+/*链接/文字*/
+a {color:#3A81C0;text-decoration:none;}
+
+/*导航*/
+.tabnav {
+height:35px;
+padding:0px;
+}
+.tabnav ul {
+border-bottom:1px solid #3A81C0;
+margin:0;
+overflow:hidden;
+padding:0;
+}
+.tabnav ul li {
+float:left;
+margin-right:5px;
+padding:5px 10px;
+}
+.tabnav .select {
+background:none repeat scroll 0 0 #3A81C0;
+}
+.tabnav .select a {
+color:#FFFFFF;
+font-weight:bold;
+}
+
+/*分页*/
+.page {margin:0;text-align: left;padding:5px;}
+.page a {border:#DDDDDD 1px solid; padding:2px 5px;margin: 2px; color: #336699;text-decoration: none}
+.page a:hover {border: #3266A0 1px solid;}
+.page a:active {border: #3266A0 1px solid; }
+.page .current {color:#FFFFFF;background:#3A81C0;border-bottom: 1px solid #3266A0; padding:2px 5px;font-weight: bold; margin: 2px;}
+.page .disabled {border: #eee 1px solid; padding:2px 5px; margin: 2px;color: #ddd;}
+
+/*列表*/
+.photolist{overflow:hidden;}
+.photolist ul{margin:0;padding:0;overflow:hidden;}
+.photolist ul li{float:left;list-style:none;text-align:center;overflow:hidden;}
+.photolist li .simg{width:100px;height:100px;border:solid #DDDDDD 1px;margin:5px;}
+
+/*padding*/
+.pd010{padding:0 10px;}

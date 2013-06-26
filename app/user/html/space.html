@@ -1,0 +1,109 @@
+{template header}
+
+<div class="midder">
+
+<div class="mc">
+
+<div class="cleft">
+
+<div class="bbox pd10 mh500">
+
+{template menu}
+
+<div class="btitle">动态</div>
+<div class="feedlist">
+<ul>
+{loop $arrFeed $key $item}
+<li>
+<div class="photo">
+<a href="{tsUrl('user','space',array('id'=>$item['user']['userid']))}"><img src="{$item['user']['face']}" width="32" height="32" title="{$item['user']['username']}" alt="{$item['user']['username']}" /></a>
+</div>
+<div class="info">
+<p class="action"><a href="{tsUrl('user','space',array('id'=>$item['user']['userid']))}">{$item['user']['username']}</a> {$item['action']}{$item['actionname']} 
+
+{if $item['app']['title']}
+<a href="{tsUrl($item['appname'],$item['appaction'],array('id'=>$item['appid']))}">{$item['app']['title']}</a>
+{else}
+<a href="{tsUrl($item['appname'],$item['appaction'],array('id'=>$item['appid']))}">
+$item['app']['content']
+</a>
+{/if}
+
+</p>
+
+{if $item['comment']}
+<p class="content">{$item['comment']['content']}</p>
+{else}
+<p class="content">{$item['app']['content']}</p>
+{/if}
+
+<p>
+<span class="time">{php echo getTime($item['addtime'],time())}</span>
+
+</p>
+
+<div class="clear"></div>
+<p id="commentshow{$item['feedid']}"></p>
+
+</div>
+</li>
+{/loop}
+</ul>
+</div>
+
+<div class="btitle">留言板</div>
+{if intval($TS_USER['user']['userid']) >0 && intval($TS_USER['user']['userid']) != $strUser['userid']}
+<div class="guest">
+<img src="{SITE_URL}public/images/user_normal.jpg" />
+<form method="post" action="{SITE_URL}index.php?app=user&ac=guestbook&ts=do">
+<textarea style="width:100%;height: 50px;margin-bottom: 5px;" name="content"></textarea>
+<div class="clear"></div>
+<input type="hidden" name="touserid" value="{$strUser['userid']}" />
+<button class="btn btn-success" type="submit">添加留言</button>
+</form>
+</div>
+{/if}
+<div class="clear"></div>
+
+<div id="reguest" style="display:none;">
+<form method="post" action="{SITE_URL}index.php?app=user&ac=guestbook&ts=redo">
+<textarea name="content"></textarea>
+<input id="touserid" type="hidden" name="touserid" value="0" />
+<input id="reid" type="hidden" name="reid" value="0" />
+<input type="hidden" name="token" value="{$_SESSION['token']}" />
+<input type="submit" value="回复" />
+</form>
+</div>
+
+<div class="glist">
+<ul>
+
+{loop $arrGuest $key $item}
+<li>
+<a href="{tsUrl('user','space',array('id'=>$item['userid']))}" rel="face" uid="{$item['user']['userid']}">
+<img src="{$item['user']['face']}" alt="{$item['user']['username']}" width="48" height="48" /></a>
+<div style="width:520px;">
+<p><a href="{tsUrl('user','space',array('id'=>$item['userid']))}"  rel="face" uid="{$item['user']['userid']}">{$item['user']['username']}</a> {$item['addtime']}</p>
+{php echo nl2br(htmlspecialchars($item['content']))}
+<p style="text-align:right">
+{if intval($TS_USER['user']['userid'] == $strUser['userid'])}
+<a href="#reguest" onclick="reguest('{$item['userid']}','{$item['id']}')">回复</a> <a href="{tsUrl('user','guestbook',array('ts'=>'delete','gbid'=>$item['id']))}" onclick="return confirm('确定删除?')">删除</a>
+{/if}
+</p>
+
+</div>
+</li>
+{/loop}
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="cright">
+{template userinfo}
+</div>
+
+</div>
+</div>
+{template footer}

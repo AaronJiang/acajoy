@@ -1,0 +1,38 @@
+{template header}
+<!--加载编辑器-->
+{php doAction('tseditor')}
+<!--main-->
+<div class="midder">
+<div class="mc">
+
+<div class="bbox pd10">
+<h1>补贴修改：</h1>
+
+<form method="POST" action="{tsUrl('group','after',array('ts'=>'edo'))}"  enctype="multipart/form-data">
+<table width="100%">
+<tbody>
+<tr>
+<td valign="top">
+内容*
+</td><td><textarea id="tseditor" style="width:600px;font-size:14px;" name="content">{$strAfter['content']}</textarea></td></tr>
+
+<tr><td width="50">标题：</td>
+<td><input style="padding:3px 0;width:300px;" type="text" name="title" value="{$strAfter['title']}" /> (可选)</td></tr>	
+
+<tr><td></td><td>
+<input type="hidden" name="afterid" value="{$strAfter['id']}" />
+
+<input type="hidden" name="token" value="{$_SESSION['token']}" />
+
+<button class="btn btn-success" type="submit">修改</button>
+
+<a href="{tsUrl('group','topic',array('id'=>$strAfter['topicid']))}">返回</a>
+</td></tr></tbody>
+</table>
+</form>
+
+</div>
+</div>
+
+</div>
+{template footer}

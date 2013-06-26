@@ -1,0 +1,63 @@
+{template header}
+<div class="midder">
+<div class="mc">
+<div class="bbox pd10 mh400">
+
+<h1>社区动态</h1>
+
+<div class="feedlist">
+<ul>
+{loop $arrFeed $key $item}
+<li>
+<div class="photo">
+<a href="{tsUrl('user','space',array('id'=>$item['user']['userid']))}"><img src="{$item['user']['face']}" width="32" height="32" title="{$item['user']['username']}" alt="{$item['user']['username']}" /></a>
+</div>
+<div class="info">
+<p class="action"><a href="{tsUrl('user','space',array('id'=>$item['user']['userid']))}">{$item['user']['username']}</a> {$item['action']}{$item['actionname']} 
+
+{if $item['app']['title']}
+<a href="{tsUrl($item['appname'],$item['appaction'],array('id'=>$item['appid']))}">{$item['app']['title']}</a>
+{else}
+<a href="{tsUrl($item['appname'],$item['appaction'],array('id'=>$item['appid']))}">
+$item['app']['content']
+</a>
+{/if}
+
+</p>
+
+{if $item['comment']}
+<p class="content">{$item['comment']['content']}</p>
+{else}
+<p class="content">{$item['app']['content']}</p>
+{/if}
+
+<p>
+<span class="time">{php echo getTime($item['addtime'],time())}</span>
+<span class="tocomment"><a href="javascript:void('0');" onclick="showcomment('{$item['feedid']}')">评论({$item['app']['count_comment']})</a>  
+
+{if $TS_USER['user']['isadmin']==1}
+<a href="{tsUrl('feed','delete',array('feedid'=>$item['feedid']))}">删除</a>
+{/if}
+
+</span>
+</p>
+
+<div class="clear"></div>
+<p id="commentshow{$item['feedid']}"></p>
+
+</div>
+</li>
+{/loop}
+</ul>
+</div>
+
+<div class="clear"></div>
+<div class="page">{$pageUrl}</div>
+</div>
+
+
+
+</div>
+</div>
+
+{template footer}

@@ -1,0 +1,96 @@
+{template header}
+<div class="midder">
+<div class="mc">
+
+<div class="cleft">
+
+<div class="bbox pd10 mh500">
+<div class="btitle">全部小组</div>
+
+<div>
+<div id="group_content">
+
+{loop $arrRecommendGroup $key $item}
+<div class="sub-item">
+<div class="pic">
+<a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">
+<img src="{$item[icon_48]}" alt="{$item[groupname]}" />
+</a>
+<div style="background:#F0F0F0;text-align:center;padding:3px 0;">
+
+{if in_array($item['groupid'],$myGroup)}
+已加入
+{else}
+<a href="{tsUrl('group','do',array('ts'=>'join','groupid'=>$item['groupid']))}">+加入</a>
+{/if}
+
+</div>
+</div>
+<div class="info">
+<a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">{$item[groupname]}</a>  <font color="#999999">{$item[count_user]}人加入</font>             
+<p>{$item[groupdesc]}</p>
+</div>
+</div>
+{/loop}
+
+
+
+<div class="clear"></div>
+<div class="page">{$pageUrl}</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cright">
+
+
+{if $TS_APP[options][iscreate]==0 || $TS_USER[user][isadmin]==1}
+<div class="bbox pd10">
+<a class="btn btn-success" href="{tsUrl('group','create')}">创建小组</a>
+</div>
+{/if}
+
+
+<div class="bbox pd10">
+
+<div class="btitle">热门帖子</div>
+<ul class="titles">
+{loop $arrTopic $key $item}
+<li>
+<h3><a href="{tsUrl('group','topic',array('id'=>$item['topicid']))}" target="_blank">{$item['title']}</a></h3>
+<span class="titles-r-grey">{$item['count_comment']}</span>
+<p class="titles-b">
+<span class="titles-b-l">来自：<a title="{$item['group']['groupname']}" target="_blank" href="{tsUrl('group','show',array('id'=>$item['groupid']))}">{$item['group']['groupname']}</a>&nbsp;小组
+</span>
+</p>
+</li>
+{/loop}
+</ul>
+
+</div>
+
+
+<div class="clear"></div>
+
+<div class="bbox pd10">
+
+<div class="btitle">最新创建小组</div>
+
+<div class="line23">
+{if $arrNewGroup}
+{loop $arrNewGroup $key $item}
+<a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">{$item[groupname]}</a> ({$item[count_user]})<br>
+{/loop}
+{/if}
+</div>
+</div>
+
+<div class="clear"></div>
+<!--广告位-->
+{php doAction('gobad','300')}
+
+</div>
+</div>
+</div>
+{template footer}

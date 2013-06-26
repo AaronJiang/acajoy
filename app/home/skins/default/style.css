@@ -1,0 +1,12 @@
+.infoleft{float:left;width:150px;}
+.infoleft ul{}
+.infoleft ul li{font-size:14px;height:30px;line-height:30px;padding-left:30px;}
+.infoleft .select{background:#F0F0F0;}
+.inforight{margin-left:180px;}
+.infocontent{font-size:14px;line-height:30px;}
+
+.tstheme{}
+.tstheme ul{}
+.tstheme ul li{float:left;padding:5px;height:130px;margin:1px;text-align:center;}
+.tstheme ul li a{}
+.tstheme ul li:hover{border:solid 1px #336699}

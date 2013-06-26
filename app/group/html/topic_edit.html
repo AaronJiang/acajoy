@@ -1,0 +1,56 @@
+{template header}
+{php doAction('tseditor')}
+<div class="midder">
+
+<div class="mc">
+
+<div class="bbox pd20">
+<h1>编辑帖子</h1>
+<form method="POST" action="{SITE_URL}index.php?app=group&ac=topicedit&ts=do" enctype="multipart/form-data">
+<table width="100%">
+<tbody>
+<tr><td width="50">标题：</td>
+    <td><input style="padding:3px 0;width:600px;" type="text" value="{$strTopic[title]}" maxlength="100" size="50" name="title" gtbfieldid="2"></td></tr>
+
+{if $arrGroupType}
+<tr><td>帖子分类：</td><td>
+<select name="typeid">
+<option {if $strTopic[typeid]=='0'}selected="select"{/if} value="0">请选择</option>
+{loop $arrGroupType $key $item}
+<option {if $item[typeid]==$strTopic[typeid]}selected="select"{/if} value="{$item[typeid]}">{$item[typename]}</option>
+{/loop}
+</select></td></tr>
+{/if}
+
+    <tr>
+	<td valign="top">
+内容：
+    </td><td>
+<script type="text/plain" id="tseditor" name="content">
+{$strTopic['content']}
+</script>
+</td>
+</tr>
+
+<tr><td>标签:</td><td><input style="width:250px;" type="text" name="tag" value="{$strTopic['tag']}" /> (多个标签请用,号分割)</td></tr>
+	
+	<tr><td height="50">评论：</td><td><input type="radio" {if $strTopic[iscomment]=='0'}checked="select"{/if}   name="iscomment" value="0" />允许 <input type="radio" {if $strTopic[iscomment]=='1'}checked="select"{/if}  name="iscomment" value="1" />不允许</td></tr>
+	
+    <tr><td></td><td>
+	
+	<input type="hidden" name="topicid" value="{$strTopic[topicid]}" />
+	
+	<input type="hidden" name="token" value="{$_SESSION['token']}" />
+	
+	<button class="btn btn-success" type="submit">修改</button>
+	
+	<a href="{tsUrl('group','topic',array('id'=>$strTopic[topicid]))}">返回</a>
+	</td></tr>
+	
+	</tbody></table>
+</form>
+</div>
+
+</div>
+</div>
+{template footer}

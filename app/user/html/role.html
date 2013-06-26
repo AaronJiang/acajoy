@@ -1,0 +1,31 @@
+{template header}
+<!--main-->
+<div class="midder">
+<div class="mc">
+
+<div class="cleft">
+
+<div class="bbox pd10">
+<h2>用户角色</h2>
+
+<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#999999">
+<tr bgcolor="#DDDDDD"><td>角色名称</td><td>开始积分</td><td>结束积分</td></tr>
+{loop $arrRole $key $item}
+<tr><td>{$item['rolename']}</td><td>{$item['score_start']}</td><td>{$item['score_end']}</td></tr>
+{/loop}
+</table>
+</div>
+
+</div>
+
+<div class="cright">
+
+<div class="bbox pd10"></div>
+
+</div>
+
+</div>
+
+</div>
+
+{template footer}
