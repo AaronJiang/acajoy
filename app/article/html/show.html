@@ -17,13 +17,19 @@
 <div class="clear"></div>
 {/if}
 
-<div class="tar c9"><a href="{tsUrl('user','space',array('id'=>$strArticle[user][userid]))}">{$strArticle[user][username]}</a> 发表于 {$strArticle[addtime]}</div>
+<div class="tar c9">
+<div style="float:left">{php doAction('aritcle_rating_get')}</div>
+<a href="{tsUrl('user','space',array('id'=>$strArticle[user][userid]))}">{$strArticle[user][username]}</a> 发表于 {$strArticle[addtime]}
+</div>
 
 <div class="fs14 lh30">
 {$strArticle[content]}
 </div>
 
 <div class="tar">
+<div style="float:left">
+{php doAction('aritcle_rating_set')}
+</div>
 <a class="btn" href="javascript:void('0');" onclick="recommend('{$strArticle['articleid']}');">{$strArticle['count_recommend']}推荐</a>
 <a class="btn" href="">{$strArticle['count_comment']}评论</a>
 </div>

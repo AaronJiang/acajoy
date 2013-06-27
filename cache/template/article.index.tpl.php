@@ -21,7 +21,10 @@
 
 <p><?php echo $item['content'];?> (<a href="<?php echo tsurl('article','show',array('id'=>$item['articleid']))?>">查看全文</a>)</p>
 
-<div class="cate tar">来自：<a href="<?php echo tsurl('article','cate',array('id'=>$item['cate']['cateid']))?>"><?php echo $item['cate']['catename'];?></a>  (<?php echo $item['count_recommend'];?>)推荐  (<?php echo $item['count_comment'];?>)评论</div>
+<div class="cate tar">
+<?php doAction('aritcle_rating_get')?> &nbsp;&nbsp;&nbsp;
+来自：<a href="<?php echo tsurl('article','cate',array('id'=>$item['cate']['cateid']))?>"><?php echo $item['cate']['catename'];?></a>  (<?php echo $item['count_recommend'];?>)推荐  (<?php echo $item['count_comment'];?>)评论
+</div>
 <div class="clear"></div>
 </li>
 <?php }?>
