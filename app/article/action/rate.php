@@ -5,17 +5,30 @@ $score = trim($_POST['value']);
 
 switch ($ts) {
     case "get":
+        $return = array(
+        		'error' => 0,
+        		'score' => $score
+        );
+        
         $rate = $new['article']->find(
                 'article_rate', 
                 array('articleid' => $articleid), 
-                'AVG(score) AS average'
+                'ROUND(AVG(score),1) AS average, count(articleid) AS count'
         );
-        echo round($rate['average'], 1);
+        if ($rate) {
+            $return['score']['average'] = $rate['average'];
+            $return['score']['count'] = $rate['count'];
+            
+        } else {
+            $return['error'] = 1;
+        }
+        
+        echo json_encode($return);
         break;
     
     case "set":
         $return = array(
-                'error' => 0,
+                'error' => 5,
                 'score' => $score
         );
         

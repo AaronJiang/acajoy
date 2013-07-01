@@ -6,7 +6,15 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $url = tsUrl('article','index',array('page'=>''));
 $lstart = $page*10-10;
 
-$arrArticles = $db->fetch_all_assoc("select * from ".dbprefix."article where `isaudit`='0' order by addtime desc limit $lstart, 10");
+$arrArticles = $db->fetch_all_assoc("
+        select a.*, ROUND(AVG(r.score), 1) as rate_average, count(r.score) as rate_count 
+        from ".dbprefix."article as a, ".dbprefix."article_rate as r
+        where a.isaudit='0'
+        and a.articleid = r.articleid 
+        group by articleid
+        order by addtime desc 
+        limit $lstart, 10"
+);
 
 $articleNum = $db->once_fetch_assoc("select count(*) from ".dbprefix."article where `isaudit`='0'");
 

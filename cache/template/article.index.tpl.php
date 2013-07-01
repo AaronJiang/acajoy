@@ -1,5 +1,5 @@
 <?php defined('IN_TS') or die('Access Denied.'); ?><?php include template('header'); ?>
-
+<link type="text/css" rel="stylesheet" href="/plugins/article/rating/assets/rateit.css"/>
 <div class="midder">
 <div class="mc">
 
@@ -22,7 +22,8 @@
 <p><?php echo $item['content'];?> (<a href="<?php echo tsurl('article','show',array('id'=>$item['articleid']))?>">查看全文</a>)</p>
 
 <div class="cate tar">
-<?php doAction('aritcle_rating_get')?> &nbsp;&nbsp;&nbsp;
+<div class="rateit average_socre" data-rateit-value="<?php echo $item['rate_average'];?>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+<span id="rateit_score"><?php echo $item['rate_average'];?></span> (<span id="rateit_count"><?php echo $item['rate_count'];?></span>人评分) &nbsp;&nbsp;
 来自：<a href="<?php echo tsurl('article','cate',array('id'=>$item['cate']['cateid']))?>"><?php echo $item['cate']['catename'];?></a>  (<?php echo $item['count_recommend'];?>)推荐  (<?php echo $item['count_comment'];?>)评论
 </div>
 <div class="clear"></div>
@@ -102,5 +103,5 @@
 </div>
 </div>
 </div>
-
+<script type="text/javascript" src="/plugins/article/rating/assets/jquery.rateit.min.js"></script>
 <?php include template('footer'); ?>

@@ -6,9 +6,6 @@ defined('IN_TS') or die('Access Denied.');
  *            @Email:acajoy@qq.com
  *            @site:www.acajoy.cn
  */
-if (substr(PHP_VERSION, 0, 1) != '5')
-    exit("AcaJoy运行环境要求PHP5！");
-
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_WARNING);
 
 @set_magic_quotes_runtime(0);

@@ -19,7 +19,7 @@
           success: function (data) {
         	  data = JSON.parse(data);
         	  if (data.error == 0) {
-        		  $('#rate_response').html(data);
+        		  $('#rate_response').html(data.score);
         	  }
         	  alert(data.msg);              
           }

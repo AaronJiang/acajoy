@@ -11,7 +11,7 @@ define('IN_TS',true);
 define('JOYROOT', dirname(__FILE__));
 define('JOYAPP', JOYROOT.'/app');
 define('JOYDATA',JOYROOT.'/data');
-define('JOYCORE', JOYROOT.'/acajoy');
+define('JOYCORE', JOYROOT.'/system');
 define('JOYINSTALL',JOYROOT.'/install');
 define('JOYPLUGIN',JOYROOT.'/plugins');
 
