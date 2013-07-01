@@ -7,9 +7,9 @@
 	  $.ajax({
           url: siteUrl+'index.php?app=article&ac=rate&ts=get',
           data: { id: <?php echo $_GET['id'];?> }, //our data
+          dataType: 'json', 
           type: 'POST',
           success: function (data) {
-        	  data = JSON.parse(data);
         	  if (data.error == 0) {
         		  $('.average_socre').rateit('value', data.score.average); 
             	  $('#rateit_score').html(' ' + data.score.average + ' ');

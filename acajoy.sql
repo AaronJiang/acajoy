@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 27, 2013 at 05:30 PM
+-- Generation Time: Jul 01, 2013 at 05:04 PM
 -- Server version: 5.1.62
 -- PHP Version: 5.3.10-1ubuntu2ppa6~lucid
 
@@ -3700,15 +3700,16 @@ CREATE TABLE IF NOT EXISTS `ac_article` (
   KEY `title` (`title`),
   KEY `count_view` (`count_view`),
   KEY `count_view_2` (`count_view`,`addtime`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `ac_article`
 --
 
 INSERT INTO `ac_article` (`articleid`, `userid`, `cateid`, `title`, `content`, `path`, `photo`, `isaudit`, `isrecommend`, `count_comment`, `count_recommend`, `count_view`, `addtime`) VALUES
-(1, 1, 0, '大美青海 （青海湖+甘肃张掖随记）', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13722977719737.jpeg" title="wKgB21AUpa-VsKzbAANCX0VgOa082.groupinfo.w600.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p><br /></p><p>是个很遥远的地方，这次终于有机会成行，先简单说下行程：飞机 </p><p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10099.html" target="_blank" class="link">上海</a>--<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10800.html" target="_blank" class="link">西宁</a>往返。中间五天行程比较宽松，西宁-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10799.html" target="_blank" class="link">青海湖</a>南线-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/15993.html" target="_blank" class="link">茶卡盐湖</a>-祁连-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11340.html" target="_blank" class="link">张掖</a>-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13153.html" target="_blank" class="link">门源</a>，最后回西宁。</p><p>大致费用：机票往返2600/人，住宿大概1000，门票四五百，包车六百/天，五天3000。再加上吃饭</p><p>等费用，总计大概五千/人。</p><p><br /></p><br />', '0/0', '0/0/1.jpeg', 0, 0, 0, 0, 81, '2013-06-27 09:50:22'),
-(2, 1, 0, '一切的艰辛都值得----云南滇东南自驾游', '<p><img style="width:200px;height:133px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13723089454855.jpeg" title="wKgB3FDoc0WANMOfAAmw1Q_oHa006.groupinfo.w600.jpeg" border="0" height="133" hspace="0" vspace="0" width="200" /></p><p>从京郊到沙漠，从<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16215.html" target="_blank" class="link">东北</a>到西南。。。我和眼镜蛇自驾走过了很多地方，总计上万公里，而这次滇东南的1516公里自驾---是我们最坎坷的一次。道路的艰苦，突来的疾病，能见度不足5米的大雾夜行，太多太多艰辛和曲折，每一张照片都得来不易，每一片风景因为我们的坚持变得更加美丽，爱旅游是一种生活方式，坚持做自己喜欢的事则是一种人生的态度。只有去做过了才不会觉得遗憾，我们一直相信上天会厚爱热爱生活的人。 </p><p><br /></p><p>感谢一路走来一直关注我们的朋友，难忘一路走来我与眼镜蛇互相给予的鼓励和欢乐。</p><p><br /></p><p>下面开始欣赏大图喽！！</p><p><br /></p>', '0/0', '0/0/2.jpeg', 0, 0, 0, 0, 66, '2013-06-27 12:56:01');
+(1, 1, 0, '大美青海 （青海湖+甘肃张掖随记）', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13722977719737.jpeg" title="wKgB21AUpa-VsKzbAANCX0VgOa082.groupinfo.w600.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p><br /></p><p>是个很遥远的地方，这次终于有机会成行，先简单说下行程：飞机 </p><p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10099.html" target="_blank" class="link">上海</a>--<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10800.html" target="_blank" class="link">西宁</a>往返。中间五天行程比较宽松，西宁-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10799.html" target="_blank" class="link">青海湖</a>南线-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/15993.html" target="_blank" class="link">茶卡盐湖</a>-祁连-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11340.html" target="_blank" class="link">张掖</a>-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13153.html" target="_blank" class="link">门源</a>，最后回西宁。</p><p>大致费用：机票往返2600/人，住宿大概1000，门票四五百，包车六百/天，五天3000。再加上吃饭</p><p>等费用，总计大概五千/人。</p><p><br /></p><br />', '0/0', '0/0/1.jpeg', 0, 0, 0, 0, 89, '2013-06-27 09:50:22'),
+(2, 1, 0, '一切的艰辛都值得----云南滇东南自驾游', '<p><img style="width:200px;height:133px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13723089454855.jpeg" title="wKgB3FDoc0WANMOfAAmw1Q_oHa006.groupinfo.w600.jpeg" border="0" height="133" hspace="0" vspace="0" width="200" /></p><p>从京郊到沙漠，从<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16215.html" target="_blank" class="link">东北</a>到西南。。。我和眼镜蛇自驾走过了很多地方，总计上万公里，而这次滇东南的1516公里自驾---是我们最坎坷的一次。道路的艰苦，突来的疾病，能见度不足5米的大雾夜行，太多太多艰辛和曲折，每一张照片都得来不易，每一片风景因为我们的坚持变得更加美丽，爱旅游是一种生活方式，坚持做自己喜欢的事则是一种人生的态度。只有去做过了才不会觉得遗憾，我们一直相信上天会厚爱热爱生活的人。 </p><p><br /></p><p>感谢一路走来一直关注我们的朋友，难忘一路走来我与眼镜蛇互相给予的鼓励和欢乐。</p><p><br /></p><p>下面开始欣赏大图喽！！</p><p><br /></p>', '0/0', '0/0/2.jpeg', 0, 0, 0, 0, 83, '2013-06-27 12:56:01'),
+(3, 1, 0, '这里是涠洲岛', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130701/13726428731078.jpeg" title="222.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p>『汽车』（大巴） 琅东站最早是7:00的车，每隔15分钟一班，三个小时左右到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10796.html" target="_blank">北海</a>，中途休息一次。可以在网上购票，票务网<a href="http://www.966800.com/" target="_blank">http://www.966800.com/</a>，到站用身份证取票，每张票2元手续费。我们选择的是大巴，因为我们要赶中午的船去<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10453.html" target="_blank">涠洲岛</a>，选的是最早的班车7:00出发，10:00到北海，时间还算比较充足。</p><p>『轮船』北海和涠洲岛之间往返的渡船，我们在淘宝上订的，120元一张B舱船票，淡季不收代购费，旺季收5元-10元代购费，非常方便 http://qbeihai.taobao.com/，到码头电话取票就可以了~墙裂推荐！！<br /></p><br /><p><br /></p>', '0/0', '0/0/3.jpeg', 0, 0, 0, 0, 22, '2013-07-01 09:41:43');
 
 -- --------------------------------------------------------
 
@@ -3780,17 +3781,22 @@ CREATE TABLE IF NOT EXISTS `ac_article_rate` (
   `ip` char(32) CHARACTER SET utf8 NOT NULL,
   `addtime` date NOT NULL,
   PRIMARY KEY (`rateid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `ac_article_rate`
 --
 
 INSERT INTO `ac_article_rate` (`rateid`, `articleid`, `score`, `ip`, `addtime`) VALUES
-(8, 123, '3.5', '', '0000-00-00'),
-(9, 123, '3.5', '::1', '2013-06-27'),
-(10, 0, '3.0', '::1', '2013-06-27'),
-(11, 2, '3.0', '::1', '2013-06-27');
+(18, 2, '3.5', '', '0000-00-00'),
+(24, 2, '4.5', '::1', '2013-07-01'),
+(15, 1, '5.0', '', '0000-00-00'),
+(23, 3, '3.5', '::1', '2013-07-01'),
+(16, 3, '0.0', '', '0000-00-00'),
+(19, 1, '2.0', '', '0000-00-00'),
+(21, 0, '0.0', '', '0000-00-00'),
+(22, 1, '5.0', '', '0000-00-00'),
+(25, 1, '4.5', '::1', '2013-07-01');
 
 -- --------------------------------------------------------
 
@@ -4085,7 +4091,7 @@ CREATE TABLE IF NOT EXISTS `ac_group_topics` (
 --
 
 INSERT INTO `ac_group_topics` (`topicid`, `typeid`, `groupid`, `userid`, `appkey`, `appname`, `appaction`, `appid`, `title`, `content`, `path`, `photo`, `photoshow`, `attach`, `attachname`, `attachshow`, `attachscore`, `music`, `video`, `count_comment`, `count_view`, `count_love`, `istop`, `isshow`, `isclose`, `color`, `iscomment`, `isposts`, `isaudit`, `addtime`, `uptime`) VALUES
-(1, 0, 1, 1, 'group', '小组', 'topic', 0, 'The Good, the Bad and the Ugly', '<p>Blondie (The Good) is a professional gunslinger who is out trying to earn a few dollars. Angel Eyes (The Bad) is a hit man who always commits to a task and sees it through, as long as he is paid to do so. And Tuco (The Ugly) is a wanted outlaw trying to take care of his own hide. Tuco and Blondie share a partnership together making money off Tuco&#39;s bounty, but when Blondie unties the partnership, Tuco tries to hunt down Blondie. When Blondie and Tuco comes across a horse carriage loaded with dead bodies, they soon learn from the only survivor (Bill Carson) that he and a few other men have buried a stash of gold in a cemetery. Unfortunately Carson dies and Tuco only finds out the name of the cemetery, while Blondie finds out the name on the grave. Now the two must keep each other alive in order to find the gold. Angel Eyes (who had been looking for Bill Carson) discovers that Tuco and Blondie meet with Carson and knows they know the location of the gold. All he needs is for the two to ... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em class="nobr">Written by<a href="http://www.imdb.com/search/title?plot_author=Jeremy%20Thomson&amp;view=simple&amp;sort=alpha&amp;ref_=tt_stry_pl">Jeremy Thomson</a></em></p>', '', '', 0, '', '', 0, 0, '', '', 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 1372226207, 1372226207);
+(1, 0, 1, 1, 'group', '小组', 'topic', 0, 'The Good, the Bad and the Ugly', '<p>Blondie (The Good) is a professional gunslinger who is out trying to earn a few dollars. Angel Eyes (The Bad) is a hit man who always commits to a task and sees it through, as long as he is paid to do so. And Tuco (The Ugly) is a wanted outlaw trying to take care of his own hide. Tuco and Blondie share a partnership together making money off Tuco&#39;s bounty, but when Blondie unties the partnership, Tuco tries to hunt down Blondie. When Blondie and Tuco comes across a horse carriage loaded with dead bodies, they soon learn from the only survivor (Bill Carson) that he and a few other men have buried a stash of gold in a cemetery. Unfortunately Carson dies and Tuco only finds out the name of the cemetery, while Blondie finds out the name on the grave. Now the two must keep each other alive in order to find the gold. Angel Eyes (who had been looking for Bill Carson) discovers that Tuco and Blondie meet with Carson and knows they know the location of the gold. All he needs is for the two to ... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em class="nobr">Written by<a href="http://www.imdb.com/search/title?plot_author=Jeremy%20Thomson&amp;view=simple&amp;sort=alpha&amp;ref_=tt_stry_pl">Jeremy Thomson</a></em></p>', '', '', 0, '', '', 0, 0, '', '', 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1372226207, 1372226207);
 
 -- --------------------------------------------------------
 
@@ -4713,7 +4719,7 @@ CREATE TABLE IF NOT EXISTS `ac_user_info` (
 --
 
 INSERT INTO `ac_user_info` (`userid`, `ucid`, `fuserid`, `username`, `email`, `sex`, `phone`, `roleid`, `province`, `city`, `area`, `areaid`, `path`, `face`, `signed`, `blog`, `about`, `ip`, `address`, `comefrom`, `qq_openid`, `qq_access_token`, `count_score`, `count_follow`, `count_followed`, `count_group`, `count_topic`, `isadmin`, `isenable`, `isverify`, `isrecommend`, `verifycode`, `thems_other`, `addtime`, `uptime`) VALUES
-(1, 0, 0, 'admin', 'admin@admin.com', 0, '', 1, 0, 0, 0, 0, '0/0', '0/0/1.jpeg', '', '', '', 'unknown', '', 0, '', '', 9, 0, 0, 1, 1, 1, 0, 0, 0, '', 0, 1372226042, 1372308859);
+(1, 0, 0, 'admin', 'admin@admin.com', 0, '', 1, 0, 0, 0, 0, '0/0', '0/0/1.jpeg', '', '', '', 'unknown', '', 0, '', '', 10, 0, 0, 1, 1, 1, 0, 0, 0, '', 0, 1372226042, 1372642792);
 
 -- --------------------------------------------------------
 
@@ -4853,7 +4859,7 @@ CREATE TABLE IF NOT EXISTS `ac_user_score_log` (
   `addtime` int(11) NOT NULL DEFAULT '0' COMMENT '积分时间',
   PRIMARY KEY (`logid`),
   KEY `userid` (`userid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户积分记录' AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户积分记录' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `ac_user_score_log`
@@ -4864,7 +4870,8 @@ INSERT INTO `ac_user_score_log` (`logid`, `userid`, `scorename`, `score`, `statu
 (2, 1, '发帖', 5, 0, 1372226207),
 (3, 1, '登陆', 1, 0, 1372231877),
 (4, 1, '登陆', 1, 0, 1372297673),
-(5, 1, '登陆', 1, 0, 1372308859);
+(5, 1, '登陆', 1, 0, 1372308859),
+(6, 1, '登陆', 1, 0, 1372642792);
 
 -- --------------------------------------------------------
 

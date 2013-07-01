@@ -15,13 +15,13 @@
       $.ajax({
           url: siteUrl+'index.php?app=article&ac=rate&ts=set',
           data: { id: articleid, value: value }, //our data
+          dataType: 'json',
           type: 'POST',
           success: function (data) {
-        	  data = JSON.parse(data);
         	  if (data.error == 0) {
         		  $('#rate_response').html(data.score);
         	  }
-        	  alert(data.msg);              
+        	  alert(data.msg);  
           }
       });
   });
