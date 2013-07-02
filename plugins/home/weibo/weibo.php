@@ -2,7 +2,7 @@
 defined('IN_TS') or die('Access Denied.'); 
 //首页登录框
 function weibo(){
-	$arrWeibo = aac('weibo')->findAll('weibo',null,'addtime desc',null,10);
+	$arrWeibo = aac('weibo')->findAll('weibo',null,'addtime desc',null,3);
 	foreach($arrWeibo as $key=>$item){
 		$arrWeibo[$key]['user'] = aac('user')->getOneUser($item['userid']);
 	}

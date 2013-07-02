@@ -136,7 +136,7 @@
 </div>
 
 <div class="info">
-<h3><a href=""><?php echo $strArticle['user'][username];?></a></h3>
+<h3><a href="<?php echo tsurl('user','space',array('id'=>$strArticle['user'][userid]))?>"><?php echo $strArticle['user'][username];?></a></h3>
 <div><a class="btn btn-mini" href="javascript:void('0')" onclick="follow('<?php echo $strArticle['user']['userid'];?>');">关注</a></div>
 </div>
 </div>

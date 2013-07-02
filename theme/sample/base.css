@@ -219,7 +219,7 @@ button, input, select, textarea {
 
 
 /*midder中部*/
-.midder{width:960px;margin:0 auto;padding:0;overflow:hidden;height:auto !important;min-height:400px;margin-top:10px;}
+.midder{width:980px;margin:0 auto;padding:0;overflow:hidden;height:auto !important;min-height:400px;margin-top:10px;}
 .midder .mc{overflow:hidden;display: block;}
 .midder .mc .cleft{float: left;width: 640px;}
 .midder .mc .cright{float: right;width: 310px;}
