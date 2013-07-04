@@ -21,6 +21,14 @@ class article extends tsApp{
 		return $strCate;
 	}
 	
+	//获取文章评分
+	function getAverageRate($articleId) {
+        $arrRate = $this->find('article_rate', array(
+                'articleid' => $articleId
+        ), 'ROUND(AVG(score),1) AS average, count(articleid) AS count');
+	    return $arrRate;
+	}
+	
 	//热门文章,1天，7天，30天
 	public function getHotArticle($day,$cateid=0){
 		$startTime = time()-($day*3600*60);

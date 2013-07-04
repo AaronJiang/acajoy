@@ -219,9 +219,9 @@ button, input, select, textarea {
 
 
 /*midder中部*/
-.midder{width:980px;margin:0 auto;padding:0;overflow:hidden;height:auto !important;min-height:400px;margin-top:10px;}
+.midder{width:1024px;margin:0 auto;padding:0;overflow:hidden;height:auto !important;min-height:400px;margin-top:10px;}
 .midder .mc{overflow:hidden;display: block;}
-.midder .mc .cleft{float: left;width: 640px;}
+.midder .mc .cleft{float: left;width: 680px;}
 .midder .mc .cright{float: right;width: 310px;}
 
 /*footer底部*/
@@ -377,6 +377,13 @@ button, input, select, textarea {
 .facelist{}
 .facelist ul{}
 .facelist ul li{float:left;height:90px;width:70px;text-align:center;overflow:hidden;}
+
+/*home列表*/
+.homelist{}
+.homelist ul{}
+.homelist ul li{display: inline; list-style-type: none; padding: 7px; margin:8px; height: 230px; width: 182px; border:1px solid #E9E9E9;}
+.homelist_bottom {float: left; margin: 5px; line-height: 1.7}
+.homelist_bottom_title {font-size: 13px;}
 
 /*overflow*/
 .of{overflow:hidden;}

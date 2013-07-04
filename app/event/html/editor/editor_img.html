@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="<%$TS_APP.tpl.css%>/style.css" id="skin" />
+</head>
+<body>
+
+<div style="padding:0 10px;">
+
+<div class="tabMenu">
+<ul>
+<li><a href="index.php?app=photo&ac=ajax&ts=photo_add">上传图片</a></li>
+<li><a href="index.php?app=photo&ac=ajax&ts=photo_my">我的照片</a></li>
+<li class="select"><a href="index.php?app=group&ac=editor&ts=img">网络图片</a></li>
+</ul>
+</div>
+
+<div>图片地址：<br />
+<input  id="networkImg" type="text" value="http://" size="50" /> <br />
+<a href="javascript:void('0');" onclick="self.parent.insertImgs(document.getElementById('networkImg').value);">插入图片</a>
+<br /><br />
+例如：http://www.thinksaas.cn/logo.jpg
+</div>
+
+</div>
+
+</body>
+</html>

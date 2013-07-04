@@ -1,0 +1,73 @@
+{template header}
+<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/index.css" />
+<div class="midder">
+
+<h1 style="margin-top:20px;">活动- {$title}</h1>
+
+<div class="qi_c_c">
+
+<div class="nav">
+<div class="block_menu">
+<em class="ft"></em><b class="ft"></b>
+<ul>
+<li class="clearfix" id="event_home"><a href=""><span>活动首页</span></a></li>
+<div class="line"></div>
+<li class="clearfix"><a href="" id="ta_today">
+<span>今日</span></a></li>
+<li class="clearfix"><a href="" id="ta_weekend">
+<span>周末</span></a></li>
+<li class="clearfix"><a href="" id="ta_week">
+<span>最近一周</span></a></li>
+<li class="clearfix"><a href="" id="ta_future">
+<span>全部时间</span></a></li>
+<li class="clearfix"><a href="javascript:void(0)" id="ta_day" class="link calendarSelectDate">
+<span>选择日期</span></a></li>
+
+<div class="line"></div>
+
+<li class="clearfix"><a href=""><span>所有类型({$arrEventType[count][allevent]})</span></a></li>
+<!--{loop $arrEventType[list] $key $item}-->
+<li class="clearfix {if $typeid==$item[typeid]}on{/if}"><a href="index.php?app=event&ac=type&typeid={$item[typeid]}"><span>{$item[typename]}({$item[count_event]})</span></a></li>
+<!--{/loop}-->
+</ul>
+<em class="fb"></em><b class="fb"></b>
+</div><div id="calendarDiv"></div>
+
+<form method="get" action="">
+<div class="block_search">
+<input type="text" value="活动名称、地点、介绍" title="活动名称、地点、介绍" name="search_text" class="text j a_search_text greyinput">
+<input type="submit" value="搜索" class="submit">
+<input type="hidden" value="beijing" name="loc"><br>
+</div>
+</form>
+</div>
+
+
+<div class="article">
+<!--{loop $arrEvent $key $item}-->
+<div class="nof clearfix"><div class="evtlstimg">
+<a href="" class="phs_link">
+<img src="{$item[poster_75]}"></a>
+</div><h2><a href="index.php?app=event&ac=show&eventid={$item[eventid]}">{$item[title]}</a> <span class="pl2">[{$item[type][typename]}]</span></h2>
+<div class="pl intro">
+时间：{$item[time_start]} - {$item[time_end]}<br>
+地点：{$item[city][cityname]} {$item[area][areaname]} {$item[address]}<br>
+发起人：<a href="index.php?app=user&ac=space&userid={$item[user][userid]}">{$item[user][username]}</a> 
+<br>
+30人参加 &nbsp; 21人感兴趣<br><br>
+</div></div>
+<!--{/loop}-->
+</div>
+
+<div class="aside">
+<h2>主办支持小组 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
+</h2>
+<dl class="obu"><dt><a class="nbg" href=""><img alt="传统文化" class="m_sub_img" src="http://img3.douban.com/bpic/e459350.jpg"></a></dt>
+<dd><a href="">传统文化</a></dd></dl>
+<br clear="all">
+<br>
+</div>
+
+</div>
+</div>
+{template footer}

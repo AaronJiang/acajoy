@@ -1,0 +1,186 @@
+{template header}
+<script src="data/js/media.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/editor.css" />
+
+<div class="midder">
+
+<h1 style="margin-top:40px;">{$strEvent[title]}</h1>
+
+<div class="qi_c_c">
+
+<div class="qi_c_cleft">
+
+<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/topic_event.css" id="skin" />
+<script src="{$TS_APP[tpl][js]}event.js" type="text/javascript"></script>
+
+<!--活动-->
+<div class="subjectwrap">
+<div id="actchoice">
+
+<!--{if $TS_USER[user][userid] == '' || $isEventUser==''}-->
+<a href="javascript:void('0');" onclick="userDoWish('{$strEvent[eventid]}','1');" class="redbutt  "><span>我感兴趣</span></a><br class="clear"><a href="javascript:void('0');" onclick="userDoWish('{$strEvent[eventid]}','0');" class="redbutt  "><span>我要参加</span></a><br class="clear"><br><br>
+<!--{else}-->
+
+<!--{if $strEventUser[status]=='1'}-->
+<div class="m">我对这个活动感兴趣</div>
+<span class="gact">&gt; <a href="javascript:void('0');" onclick="doEvent('{$strEvent[eventid]}','{$TS_USER[user][userid]}');">我要参加</a></span>
+<!--{elseif $strEventUser[status]=='0'}-->
+<div class="m">我会参加这个活动</div>
+<!--{/if}-->
+<span class="gact">&gt;
+<a class="j a_confirm_link" href="javascript:void('0');" onclick="cancelEvent('{$strEvent[eventid]}','{$TS_USER[user][userid]}');">
+我不去了</a></span>
+
+<!--{/if}-->
+
+</div>
+
+<div class="fil">
+<a href="">
+<img title="点击看大图" src="{$strEvent[poster]}">
+</a>
+<br></div><div style="width:239px;" id="info"><span class="pl">开始时间: </span>{$strEvent[time_start]}<br><span class="pl">结束时间: </span>{$strEvent[time_end]}<br><div class="obmo"><span class="pl">地点: </span>{$strEvent[city][cityname]} {$strEvent[area][areaname]} {$strEvent[address]}
+<br>
+<span class="pl">发起人: </span> <a href="#">{$strEvent[user][username]}</a> 
+<br>
+<!--{if $arrOrganizer}-->
+<span class="pl">组织者: </span>
+<!--{loop $arrOrganizer $key $item}-->
+<a href="#">{$item[username]}</a> &nbsp;
+<!--{/loop}-->
+<br>
+<!--{/if}-->
+<span class="pl">类型: </span>{$strEvent[type][typename]}<br>
+<span>{$strEvent[count_userwish]}人感兴趣 &nbsp;  {$strEvent[count_userdo]}人参加</span><br>
+</div><br clear="all"></div></div>
+
+<div class="rec-sec">
+<span class="rec">
+<a class="lnk-douban-sharing"  href="javascript:void(0);">推荐</a>
+</span>
+</div>
+
+<div class="topic-content clearfix">
+<h2>活动介绍</h2>
+<div class="topic-doc">
+<p>{$strEvent[content]}</p>
+
+<!--签名-->
+<!--{if $strEvent[user][signed] != ''}-->
+<div class="signed">{$strEvent[user][signed]}</div>
+<!--{/if}-->
+
+<!--{if $TS_USER[user][userid] == $strEvent[userid]}-->
+<div style="text-align:right;">
+&gt;&nbsp; <a href="index.php?app=event&ac=edit&ts=base&eventid={$strEvent[eventid]}">修改</a> 
+</div>
+<!--{/if}-->
+</div>
+</div>
+
+<h2>参加这个活动的成员 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
+<span class="pl">( <a href="">全部{$strEvent[count_userdo]}人</a> )</span></h2>
+		
+<div class="obss name">
+
+<!--{loop $arrDoUser $key $item}-->
+<dl class="obu"><dt><a class="nbg" href="index.php?app=user&ac=space&userid={$item[userid]}"><img alt="Angbill" class="m_sub_img" src="{$item[face]}"></a></dt>
+<dd><a href="">{$item[username]}</a></dd></dl>
+<!--{/loop}-->
+
+<br clear="all">
+</div>
+<div class="clear"></div>
+
+<ul class="topic-reply">
+
+<!--{loop $arrEventComment $key $item}-->
+<li class="clearfix">
+    <div class="user-face">
+        <a href="index.php?app=user&ac=space&userid={$item[user][userid]}"><img title="{$item[user][username]}" alt="{$item[user][username]}" src="{$item[user][face]}" class="pil"></a>
+    </div>
+    <div class="reply-doc">
+        <div class="bg-img-green">
+            <h4>{php echo date('Y-m-d H:i:s',$item[addtime])}
+                <a href="index.php?app=user&ac=space&userid={$item[userid]}">{$item[username]}</a> ({$item[user][city][cityname]})
+            </h4>
+        </div>
+        <p>{$item[content]}</p>
+		
+		<!--签名-->
+		<!--{if $item[user][signed] != ''}-->
+		<div class="signed">{$item[user][signed]}</div>
+		<!--{/if}-->
+	
+	   <!--{if $TS_USER[user][userid] == $strEvent[userid]}-->
+        <div class="group_banned">
+		<span><a href="">回复</a></span>
+            <span><a class="j a_confirm_link" href="javascript:void('0');" onclick="comment_del('{$item[topicid]}','{$item[commentid]}');" rel="nofollow">删除</a>
+            </span>
+        </div>
+	<!--{/if}-->
+	<!--回复评论-->
+	<div></div>
+	
+    </div>
+</li>
+<!--{/loop}-->
+</ul>
+
+<div class="manu">{$pageUrl}</div>
+
+<h2>你的回应&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·</h2>
+
+<!--{if $TS_USER[user][userid] == ''}-->
+<div style="font-size:14px;padding:40px 0;text-align:center;">请登录后回应本活动^_^</div>
+<!--{else}-->
+<div class="txd">
+<tr><td></td><td>
+
+<!--ThinkSAAS迷你编辑器-->
+{php include template("editor/editor_mini");}
+
+</td></tr>
+<form method="POST" action="index.php?app=event&ac=do&ts=comment">
+<textarea id="editor_content" cols="54" rows="8" name="content"></textarea><br>
+<input type="hidden" name="eventid" value="{$strEvent[eventid]}" />
+<input type="submit" value="加上去">
+</form>
+</div>
+{/if}
+
+</div>
+
+<div class="qi_c_cright">
+
+<div class="more_event"><a href="#">更多音乐/演出的活动</a></div>
+
+<p class="pl">&gt; <a href="#">去北京同城
+            </a></p>
+
+<h2>对这个活动感兴趣的成员 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
+        <span class="pl">( <a href="">全部{$strEvent[count_userwish]}人</a> )</span></h2>
+<div class="obss name">
+<!--{loop $arrWishUser $key $item}-->
+<dl class="obu"><dt><a class="nbg" href="index.php?app=user&ac=space&userid={$item[userid]}"><img alt="{$item[username]}" class="m_sub_img" src="{$item[face]}"></a></dt>
+<dd><a href="">{$item[username]}</a></dd></dl>
+<!--{/loop}-->
+<br clear="all">
+</div>
+<div class="clear"></div>
+
+<h2>活动支持小组</h2>
+
+<!--{loop $arrGroup $key $item}-->
+<dl class="obu"><dt><a class="nbg" href="index.php?app=group&ac=group&groupid={$item[groupid]}"><img alt="{$item[groupname]}" class="m_sub_img" src="{$item[groupicon]}"></a></dt>
+<dd><a href="index.php?app=group&ac=group&groupid={$item[groupid]}">{$item[groupname]}</a></dd></dl>
+<!--{/loop}-->
+
+<div class="clear"></div>
+
+</div>
+
+
+</div>
+</div>
+{template footer}

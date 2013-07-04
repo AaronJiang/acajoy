@@ -98,7 +98,7 @@ var siteUrl = '<?php echo SITE_URL;?>'; //网站网址
 <li <?php if($app==$key) { ?>class="select"<?php } ?>><a href="<?php echo tsurl($key)?>"><?php echo $item;?></a>
 </li>
 <?php }?>
-<li><a href="<?php echo tsurl('home','apps')?>">更多</a></li>
+<!-- <li><a href="<?php echo tsurl('home','apps')?>">更多</a></li> -->
 </ul>
 </div>
 <?php } ?>
