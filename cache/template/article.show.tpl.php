@@ -118,7 +118,7 @@
 <div class="cright">
 
 <div class="bbox pd10">
-<div class="btitle">文章分类</div>
+<div class="btitle">生活篇</div>
 
 <div class="catelist">
 <ul>

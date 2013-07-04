@@ -2,14 +2,30 @@
 defined('IN_TS') or die('Access Denied.'); 
 //生活篇
 function livearea_html(){
-    $arrArticles = aac('article')->findAll('article',array('isaudit'=>0),'addtime desc',null,3);  
-    foreach($arrArticles as $key=>$item){
+    //纷呈校园
+    $arrArticles_school = aac('article')->getRecommendArticle(1);  
+    $article_school = get_article_userrate($arrArticles_school);
+     
+    //远方的家
+    $arrArticles_hometown = aac('article')->getRecommendArticle(2);
+    $article_hometown = get_article_userrate($arrArticles_hometown);
+    
+    //旅游季
+    $arrArticles_travel = aac('article')->getRecommendArticle(3);
+    $article_travel = get_article_userrate($arrArticles_travel);
+    
+    include template('livearea','livearea');
+	
+}
+
+function get_article_userrate($articles)
+{
+    foreach($articles as $key=>$item){
     	$arrArticle[] = $item;
     	$arrArticle[$key]['user'] = aac('user')->getOneUser($item['userid']);
     	$arrArticle[$key]['rate'] = aac('article')->getAverageRate($item['articleid']);
-    }  
-    include template('livearea','livearea');
-	
+    }
+    return $arrArticle;
 }
 
 function livearea_javascript()

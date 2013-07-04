@@ -10,7 +10,7 @@
 		<div class="tab-pane active" id="livetab_school">
 			<div class="homelist">
 				<ul>
-				{loop $arrArticle $key $item}
+				{loop $article_school $key $item}
 				<li style="float:left">
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
 				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
@@ -33,8 +33,9 @@
 		</div>
 		<div class="tab-pane" id="livetab_hometown">
 			<div class="homelist">
+				<div class="homelist">
 				<ul>
-				{loop $arrArticle $key $item}
+				{loop $article_hometown $key $item}
 				<li style="float:left">
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
 				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
@@ -54,11 +55,13 @@
 				{/loop}
 				</ul>
 			</div>
+			</div>
 		</div>
 		<div class="tab-pane" id="livetab_travel">
 			<div class="homelist">
+				<div class="homelist">
 				<ul>
-				{loop $arrArticle $key $item}
+				{loop $article_travel $key $item}
 				<li style="float:left">
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
 				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
@@ -77,6 +80,7 @@
 				</li>
 				{/loop}
 				</ul>
+			</div>
 			</div>
 		</div>
 	</div>
