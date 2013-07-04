@@ -1,26 +1,84 @@
 <div class="bbox pd10">
 <div class="btitle">生活篇</div>
-<div class="homelist">
-<ul>
-{loop $arrArticle $key $item}
-<li style="float:left">
-<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
-<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
-</a>
-<div class="homelist_bottom">
-	<div class="homelist_bottom_title"> 
-	<a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{php echo htmlspecialchars($item['title'])}</a>
+   <ul class="nav nav-tabs">
+   <li class="active"><a href="#livetab_school" data-toggle="tab">纷呈校园</a></li>
+   <li><a href="#livetab_hometown" data-toggle="tab">远方的家</a></li>
+   <li><a href="#livetab_travel" data-toggle="tab">旅游季</a></li>
+   </ul>
+   
+	<div class="tab-content">
+		<div class="tab-pane active" id="livetab_school">
+			<div class="homelist">
+				<ul>
+				{loop $arrArticle $key $item}
+				<li style="float:left">
+				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
+				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+				</a>
+				<div class="homelist_bottom">
+					<div class="homelist_bottom_title"> 
+					<a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{php echo htmlspecialchars($item['title'])}</a>
+					</div>
+					来自: <a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a>
+					<br>
+					<div class="homelist_bottom_rate">
+						<div class="rateit" data-rateit-value="{$item[rate][average]}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+						<span id="rateit_score">{$item[rate_average]}</span> (<span id="rateit_count">{$item[rate][count]}</span>人评分)
+					</div>	 
+				</div>
+				</li>
+				{/loop}
+				</ul>
+			</div>
+		</div>
+		<div class="tab-pane" id="livetab_hometown">
+			<div class="homelist">
+				<ul>
+				{loop $arrArticle $key $item}
+				<li style="float:left">
+				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
+				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+				</a>
+				<div class="homelist_bottom">
+					<div class="homelist_bottom_title"> 
+					<a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{php echo htmlspecialchars($item['title'])}</a>
+					</div>
+					来自: <a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a>
+					<br>
+					<div class="homelist_bottom_rate">
+						<div class="rateit" data-rateit-value="{$item[rate][average]}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+						<span id="rateit_score">{$item[rate_average]}</span> (<span id="rateit_count">{$item[rate][count]}</span>人评分)
+					</div>	 
+				</div>
+				</li>
+				{/loop}
+				</ul>
+			</div>
+		</div>
+		<div class="tab-pane" id="livetab_travel">
+			<div class="homelist">
+				<ul>
+				{loop $arrArticle $key $item}
+				<li style="float:left">
+				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
+				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+				</a>
+				<div class="homelist_bottom">
+					<div class="homelist_bottom_title"> 
+					<a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{php echo htmlspecialchars($item['title'])}</a>
+					</div>
+					来自: <a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a>
+					<br>
+					<div class="homelist_bottom_rate">
+						<div class="rateit" data-rateit-value="{$item[rate][average]}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+						<span id="rateit_score">{$item[rate_average]}</span> (<span id="rateit_count">{$item[rate][count]}</span>人评分)
+					</div>	 
+				</div>
+				</li>
+				{/loop}
+				</ul>
+			</div>
+		</div>
 	</div>
-	来自: <a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a>
-	<br>
-	<div class="homelist_bottom_rate">
-		<div class="rateit" data-rateit-value="{$item[rate][average]}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
-		<span id="rateit_score">{$item[rate_average]}</span> (<span id="rateit_count">{$item[rate][count]}</span>人评分)
-	</div>	 
-</div>
-</li>
-{/loop}
-</ul>
 
-</div>
 </div>

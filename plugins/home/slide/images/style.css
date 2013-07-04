@@ -6,7 +6,7 @@
 }
 .ind_focus .slides_container {
     height: 210px;
-    width: 640px;
+    width: 680px;
 }
 .ind_focus .pagination {
     bottom: 15px;
@@ -54,7 +54,7 @@
     left: 0;
     position: absolute;
     text-shadow: none;
-    width: 640px;
+    width: 680px;
     z-index: 500;
 }
 .caption p{margin:0px;padding:10px;}

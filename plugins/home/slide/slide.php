@@ -8,7 +8,7 @@ echo '<div id="ind_focus" class="ind_focus bbox">
 
 foreach($arrData as $key=>$item){
 echo '<div class="slide">
-<a href="'.$item['url'].'"><img width="640" height="210" src="'.$item['img'].'" alt="'.$item['title'].'" /></a>
+<a href="'.$item['url'].'"><img width="680" height="210" src="'.$item['img'].'" alt="'.$item['title'].'" /></a>
 <div class="caption" style="bottom:0">
 <p>'.$item['title'].'</p>
 </div>

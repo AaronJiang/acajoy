@@ -16,6 +16,7 @@ evdata(siteUid);
 <script src="<?php echo SITE_URL;?>public/js/artDialog/artDialog.min.js"></script>
 <script src="<?php echo SITE_URL;?>public/js/artDialog/artDialog.plugins.min.js"></script>
 <script src="<?php echo SITE_URL;?>public/js/common.js" type="text/javascript"></script>
+<script src="<?php echo SITE_URL;?>public/js/bootstrap.min.js" type="text/javascript"></script>
 <?php doAction('pub_footer')?>
 </body>
 </html>
