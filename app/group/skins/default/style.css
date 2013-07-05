@@ -397,11 +397,11 @@ a.mini-share:hover {
 /*帖子列表*/
 .topiclist{}
 .topiclist ul{}
-.topiclist ul li{display: inline; list-style-type: none; padding: 7px; margin:8px; height: 220px; width: 182px; border:1px solid #E9E9E9;}
+.topiclist ul li{display: inline; list-style-type: none; padding: 7px; margin:8px; height: 255px; width: 182px; border:1px solid #E9E9E9;}
 .topiclist_bottom {float: left; margin: 5px; line-height: 1.5}
 .topiclist_bottom_title {font-size: 13px; height: 38px}
 .topiclist img{border-radius:2px;}
-.topiclist .userimg{margin-top: 12px}
+.topiclist .userimg{margin-top: 5px}
 
 .topic_list{overflow:hidden;}
 .topic_list ul{}

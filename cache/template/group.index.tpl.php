@@ -73,20 +73,7 @@
 
 <div class="clear"></div>
 
-<div class="bbox pd10">
 
-<div class="btitle">最新创建小组</div>
-
-<div class="line23">
-<?php if($arrNewGroup) { ?>
-<?php foreach((array)$arrNewGroup as $key=>$item) {?>
-<a href="<?php echo tsurl('group','show',array('id'=>$item['groupid']))?>"><?php echo $item['groupname'];?></a> (<?php echo $item['count_user'];?>)<br>
-<?php }?>
-<?php } ?>
-</div>
-</div>
-
-<div class="clear"></div>
 <!--广告位-->
 <?php doAction('gobad','300')?>
 

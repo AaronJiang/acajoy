@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2013 at 05:04 PM
+-- Generation Time: Jul 05, 2013 at 03:28 PM
 -- Server version: 5.1.62
 -- PHP Version: 5.3.10-1ubuntu2ppa6~lucid
 
@@ -3700,16 +3700,16 @@ CREATE TABLE IF NOT EXISTS `ac_article` (
   KEY `title` (`title`),
   KEY `count_view` (`count_view`),
   KEY `count_view_2` (`count_view`,`addtime`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `ac_article`
 --
 
 INSERT INTO `ac_article` (`articleid`, `userid`, `cateid`, `title`, `content`, `path`, `photo`, `isaudit`, `isrecommend`, `count_comment`, `count_recommend`, `count_view`, `addtime`) VALUES
-(1, 1, 0, '大美青海 （青海湖+甘肃张掖随记）', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13722977719737.jpeg" title="wKgB21AUpa-VsKzbAANCX0VgOa082.groupinfo.w600.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p><br /></p><p>是个很遥远的地方，这次终于有机会成行，先简单说下行程：飞机 </p><p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10099.html" target="_blank" class="link">上海</a>--<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10800.html" target="_blank" class="link">西宁</a>往返。中间五天行程比较宽松，西宁-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10799.html" target="_blank" class="link">青海湖</a>南线-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/15993.html" target="_blank" class="link">茶卡盐湖</a>-祁连-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11340.html" target="_blank" class="link">张掖</a>-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13153.html" target="_blank" class="link">门源</a>，最后回西宁。</p><p>大致费用：机票往返2600/人，住宿大概1000，门票四五百，包车六百/天，五天3000。再加上吃饭</p><p>等费用，总计大概五千/人。</p><p><br /></p><br />', '0/0', '0/0/1.jpeg', 0, 0, 0, 0, 89, '2013-06-27 09:50:22'),
-(2, 1, 0, '一切的艰辛都值得----云南滇东南自驾游', '<p><img style="width:200px;height:133px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13723089454855.jpeg" title="wKgB3FDoc0WANMOfAAmw1Q_oHa006.groupinfo.w600.jpeg" border="0" height="133" hspace="0" vspace="0" width="200" /></p><p>从京郊到沙漠，从<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16215.html" target="_blank" class="link">东北</a>到西南。。。我和眼镜蛇自驾走过了很多地方，总计上万公里，而这次滇东南的1516公里自驾---是我们最坎坷的一次。道路的艰苦，突来的疾病，能见度不足5米的大雾夜行，太多太多艰辛和曲折，每一张照片都得来不易，每一片风景因为我们的坚持变得更加美丽，爱旅游是一种生活方式，坚持做自己喜欢的事则是一种人生的态度。只有去做过了才不会觉得遗憾，我们一直相信上天会厚爱热爱生活的人。 </p><p><br /></p><p>感谢一路走来一直关注我们的朋友，难忘一路走来我与眼镜蛇互相给予的鼓励和欢乐。</p><p><br /></p><p>下面开始欣赏大图喽！！</p><p><br /></p>', '0/0', '0/0/2.jpeg', 0, 0, 0, 0, 83, '2013-06-27 12:56:01'),
-(3, 1, 0, '这里是涠洲岛', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130701/13726428731078.jpeg" title="222.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p>『汽车』（大巴） 琅东站最早是7:00的车，每隔15分钟一班，三个小时左右到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10796.html" target="_blank">北海</a>，中途休息一次。可以在网上购票，票务网<a href="http://www.966800.com/" target="_blank">http://www.966800.com/</a>，到站用身份证取票，每张票2元手续费。我们选择的是大巴，因为我们要赶中午的船去<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10453.html" target="_blank">涠洲岛</a>，选的是最早的班车7:00出发，10:00到北海，时间还算比较充足。</p><p>『轮船』北海和涠洲岛之间往返的渡船，我们在淘宝上订的，120元一张B舱船票，淡季不收代购费，旺季收5元-10元代购费，非常方便 http://qbeihai.taobao.com/，到码头电话取票就可以了~墙裂推荐！！<br /></p><br /><p><br /></p>', '0/0', '0/0/3.jpeg', 0, 0, 0, 0, 22, '2013-07-01 09:41:43');
+(1, 1, 1, '大美青海 （青海湖+甘肃张掖随记）', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13722977719737.jpeg" title="wKgB21AUpa-VsKzbAANCX0VgOa082.groupinfo.w600.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p><br /></p><p>是个很遥远的地方，这次终于有机会成行，先简单说下行程：飞机 </p><p><a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10099.html" target="_blank" class="link">上海</a>--<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10800.html" target="_blank" class="link">西宁</a>往返。中间五天行程比较宽松，西宁-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10799.html" target="_blank" class="link">青海湖</a>南线-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/15993.html" target="_blank" class="link">茶卡盐湖</a>-祁连-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/11340.html" target="_blank" class="link">张掖</a>-<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/13153.html" target="_blank" class="link">门源</a>，最后回西宁。</p><p>大致费用：机票往返2600/人，住宿大概1000，门票四五百，包车六百/天，五天3000。再加上吃饭</p><p>等费用，总计大概五千/人。</p><p><br /></p><p><br /></p>', '0/0', '0/0/1.jpeg', 0, 1, 0, 0, 95, '2013-06-27 09:50:22'),
+(2, 1, 2, '一切的艰辛都值得----云南滇东南自驾游', '<p><img style="width:200px;height:133px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130627/13723089454855.jpeg" title="wKgB3FDoc0WANMOfAAmw1Q_oHa006.groupinfo.w600.jpeg" border="0" height="133" hspace="0" vspace="0" width="200" /></p><p>从京郊到沙漠，从<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/16215.html" target="_blank" class="link">东北</a>到西南。。。我和眼镜蛇自驾走过了很多地方，总计上万公里，而这次滇东南的1516公里自驾---是我们最坎坷的一次。道路的艰苦，突来的疾病，能见度不足5米的大雾夜行，太多太多艰辛和曲折，每一张照片都得来不易，每一片风景因为我们的坚持变得更加美丽，爱旅游是一种生活方式，坚持做自己喜欢的事则是一种人生的态度。只有去做过了才不会觉得遗憾，我们一直相信上天会厚爱热爱生活的人。 </p><p><br /></p><p>感谢一路走来一直关注我们的朋友，难忘一路走来我与眼镜蛇互相给予的鼓励和欢乐。</p><p><br /></p><p>下面开始欣赏大图喽！！</p><p><br /></p>', '0/0', '0/0/2.jpeg', 0, 1, 0, 0, 99, '2013-06-27 12:56:01'),
+(3, 1, 3, '这里是涠洲岛', '<p><img style="width:300px;height:200px;" src="http://localhost:8001/plugins/pubs/ueditor/php/upload/20130701/13726428731078.jpeg" title="222.jpeg" border="0" height="200" hspace="0" vspace="0" width="300" /></p><p>『汽车』（大巴） 琅东站最早是7:00的车，每隔15分钟一班，三个小时左右到<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10796.html" target="_blank">北海</a>，中途休息一次。可以在网上购票，票务网<a href="http://www.966800.com/" target="_blank">http://www.966800.com/</a>，到站用身份证取票，每张票2元手续费。我们选择的是大巴，因为我们要赶中午的船去<a href="http://www.mafengwo.cn/travel-scenic-spot/mafengwo/10453.html" target="_blank">涠洲岛</a>，选的是最早的班车7:00出发，10:00到北海，时间还算比较充足。</p><p>『轮船』北海和涠洲岛之间往返的渡船，我们在淘宝上订的，120元一张B舱船票，淡季不收代购费，旺季收5元-10元代购费，非常方便 http://qbeihai.taobao.com/，到码头电话取票就可以了~墙裂推荐！！<br /></p><p><br /></p><p><br /></p>', '0/0', '0/0/3.jpeg', 0, 1, 0, 0, 36, '2013-07-01 09:41:43');
 
 -- --------------------------------------------------------
 
@@ -3722,12 +3722,16 @@ CREATE TABLE IF NOT EXISTS `ac_article_cate` (
   `catename` char(16) NOT NULL DEFAULT '' COMMENT '分类名称',
   `orderid` int(11) NOT NULL DEFAULT '0' COMMENT '排序ID',
   PRIMARY KEY (`cateid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `ac_article_cate`
 --
 
+INSERT INTO `ac_article_cate` (`cateid`, `catename`, `orderid`) VALUES
+(1, '纷呈校园', 0),
+(2, '远方的家', 0),
+(3, '旅游季', 0);
 
 -- --------------------------------------------------------
 
@@ -3781,7 +3785,7 @@ CREATE TABLE IF NOT EXISTS `ac_article_rate` (
   `ip` char(32) CHARACTER SET utf8 NOT NULL,
   `addtime` date NOT NULL,
   PRIMARY KEY (`rateid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `ac_article_rate`
@@ -3796,7 +3800,11 @@ INSERT INTO `ac_article_rate` (`rateid`, `articleid`, `score`, `ip`, `addtime`) 
 (19, 1, '2.0', '', '0000-00-00'),
 (21, 0, '0.0', '', '0000-00-00'),
 (22, 1, '5.0', '', '0000-00-00'),
-(25, 1, '4.5', '::1', '2013-07-01');
+(25, 1, '4.5', '::1', '2013-07-01'),
+(26, 4, '0.0', '', '0000-00-00'),
+(27, 3, '4.5', '::1', '2013-07-05'),
+(28, 2, '3.0', '::1', '2013-07-05'),
+(29, 1, '4.0', '::1', '2013-07-05');
 
 -- --------------------------------------------------------
 
@@ -3887,14 +3895,41 @@ CREATE TABLE IF NOT EXISTS `ac_feed` (
   `commentid` int(11) NOT NULL DEFAULT '0' COMMENT '评论ID',
   `addtime` int(11) NOT NULL DEFAULT '0' COMMENT '时间',
   PRIMARY KEY (`feedid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='全站动态' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='全站动态' AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `ac_feed`
 --
 
 INSERT INTO `ac_feed` (`feedid`, `userid`, `appname`, `appaction`, `appid`, `apptable`, `appkey`, `action`, `actionname`, `commenttable`, `commentkey`, `commentid`, `addtime`) VALUES
-(1, 1, 'group', 'topic', 1, 'group_topics', 'topicid', '发布了', '帖子', 'group_topics_comments', 'commentid', 0, 1372226207);
+(1, 1, 'group', 'topic', 1, 'group_topics', 'topicid', '发布了', '帖子', 'group_topics_comments', 'commentid', 0, 1372226207),
+(2, 1, 'weibo', 'show', 1, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740977),
+(3, 1, 'weibo', 'show', 2, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740980),
+(4, 1, 'weibo', 'show', 3, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740981),
+(5, 1, 'weibo', 'show', 4, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740983),
+(6, 1, 'weibo', 'show', 5, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740985),
+(7, 1, 'weibo', 'show', 6, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740986),
+(8, 1, 'weibo', 'show', 7, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740989),
+(9, 1, 'weibo', 'show', 8, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740991),
+(10, 1, 'weibo', 'show', 9, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740993),
+(11, 1, 'weibo', 'show', 10, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740994),
+(12, 1, 'weibo', 'show', 11, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740996),
+(13, 1, 'weibo', 'show', 12, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372740999),
+(14, 1, 'weibo', 'show', 13, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741001),
+(15, 1, 'weibo', 'show', 14, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741003),
+(16, 1, 'weibo', 'show', 15, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741005),
+(17, 1, 'weibo', 'show', 16, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741007),
+(18, 1, 'weibo', 'show', 17, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741010),
+(19, 1, 'weibo', 'show', 18, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741013),
+(20, 1, 'weibo', 'show', 19, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741015),
+(21, 1, 'weibo', 'show', 20, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741017),
+(22, 1, 'weibo', 'show', 21, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741019),
+(23, 1, 'weibo', 'show', 22, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741021),
+(24, 1, 'weibo', 'show', 23, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741023),
+(25, 1, 'weibo', 'show', 24, 'weibo', 'weiboid', '发布', '微博', 'weibo_comment', 'commentid', 0, 1372741026),
+(26, 1, 'group', 'topic', 2, 'group_topics', 'topicid', '发布了', '帖子', 'group_topics_comments', 'commentid', 0, 1373001717),
+(27, 1, 'group', 'topic', 3, 'group_topics', 'topicid', '发布了', '帖子', 'group_topics_comments', 'commentid', 0, 1373005881),
+(28, 1, 'group', 'topic', 4, 'group_topics', 'topicid', '发布了', '帖子', 'group_topics_comments', 'commentid', 0, 1373005929);
 
 -- --------------------------------------------------------
 
@@ -3937,14 +3972,15 @@ CREATE TABLE IF NOT EXISTS `ac_group` (
   KEY `isaudit` (`isaudit`),
   KEY `addtime` (`addtime`),
   KEY `isrecommend` (`isrecommend`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='微群组' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='微群组' AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `ac_group`
 --
 
 INSERT INTO `ac_group` (`groupid`, `userid`, `cateid`, `cateid2`, `cateid3`, `groupname`, `groupname_en`, `groupdesc`, `path`, `groupicon`, `count_topic`, `count_topic_today`, `count_user`, `count_topic_audit`, `joinway`, `role_leader`, `role_admin`, `role_user`, `addtime`, `isrecommend`, `isopen`, `isaudit`, `ispost`, `isshow`, `ispostaudit`, `uptime`) VALUES
-(1, 1, 0, 0, 0, 'Movie', '', '<p>movie</p>', '0/0', '0/0/1.jpg', 1, 0, 1, 0, 0, '组长', '管理员', '成员', 1372226137, 0, 0, 0, 0, 0, 0, 1372226207);
+(1, 1, 7, 0, 0, '书评', '', 'books', '0/0', '0/0/1.jpg', 4, 0, 1, 2, 0, '组长', '管理员', '成员', 1372226137, 1, 0, 0, 0, 0, 0, 1373005929),
+(4, 1, 7, 0, 0, '知识分享', '', '<p>知识分享</p>', '0/0', '0/0/4.jpg', 0, 0, 1, 0, 0, '组长', '管理员', '成员', 1373000387, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -4005,12 +4041,19 @@ CREATE TABLE IF NOT EXISTS `ac_group_cates` (
   `uptime` int(11) NOT NULL DEFAULT '0' COMMENT '最后更新时间',
   PRIMARY KEY (`cateid`),
   KEY `referid` (`referid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `ac_group_cates`
 --
 
+INSERT INTO `ac_group_cates` (`cateid`, `catename`, `referid`, `count_group`, `uptime`) VALUES
+(4, '经济管理', 3, 0, 0),
+(7, '学习篇', 0, 2, 0),
+(5, '计算机', 3, 0, 0),
+(6, '自然科学', 3, 0, 0),
+(8, ' 书评', 7, 1, 0),
+(9, '知识分享', 7, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -4084,14 +4127,17 @@ CREATE TABLE IF NOT EXISTS `ac_group_topics` (
   KEY `count_view` (`count_view`),
   KEY `count_love` (`count_love`),
   KEY `count_view_2` (`count_view`,`addtime`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='小组话题' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='小组话题' AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `ac_group_topics`
 --
 
 INSERT INTO `ac_group_topics` (`topicid`, `typeid`, `groupid`, `userid`, `appkey`, `appname`, `appaction`, `appid`, `title`, `content`, `path`, `photo`, `photoshow`, `attach`, `attachname`, `attachshow`, `attachscore`, `music`, `video`, `count_comment`, `count_view`, `count_love`, `istop`, `isshow`, `isclose`, `color`, `iscomment`, `isposts`, `isaudit`, `addtime`, `uptime`) VALUES
-(1, 0, 1, 1, 'group', '小组', 'topic', 0, 'The Good, the Bad and the Ugly', '<p>Blondie (The Good) is a professional gunslinger who is out trying to earn a few dollars. Angel Eyes (The Bad) is a hit man who always commits to a task and sees it through, as long as he is paid to do so. And Tuco (The Ugly) is a wanted outlaw trying to take care of his own hide. Tuco and Blondie share a partnership together making money off Tuco&#39;s bounty, but when Blondie unties the partnership, Tuco tries to hunt down Blondie. When Blondie and Tuco comes across a horse carriage loaded with dead bodies, they soon learn from the only survivor (Bill Carson) that he and a few other men have buried a stash of gold in a cemetery. Unfortunately Carson dies and Tuco only finds out the name of the cemetery, while Blondie finds out the name on the grave. Now the two must keep each other alive in order to find the gold. Angel Eyes (who had been looking for Bill Carson) discovers that Tuco and Blondie meet with Carson and knows they know the location of the gold. All he needs is for the two to ... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em class="nobr">Written by<a href="http://www.imdb.com/search/title?plot_author=Jeremy%20Thomson&amp;view=simple&amp;sort=alpha&amp;ref_=tt_stry_pl">Jeremy Thomson</a></em></p>', '', '', 0, '', '', 0, 0, '', '', 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1372226207, 1372226207);
+(1, 0, 1, 1, 'group', '小组', 'topic', 0, 'The Good, the Bad and the Ugly', '<p>Blondie (The Good) is a professional gunslinger who is out trying to earn a few dollars. Angel Eyes (The Bad) is a hit man who always commits to a task and sees it through, as long as he is paid to do so. And Tuco (The Ugly) is a wanted outlaw trying to take care of his own hide. Tuco and Blondie share a partnership together making money off Tuco&#39;s bounty, but when Blondie unties the partnership, Tuco tries to hunt down Blondie. When Blondie and Tuco comes across a horse carriage loaded with dead bodies, they soon learn from the only survivor (Bill Carson) that he and a few other men have buried a stash of gold in a cemetery. Unfortunately Carson dies and Tuco only finds out the name of the cemetery, while Blondie finds out the name on the grave. Now the two must keep each other alive in order to find the gold. Angel Eyes (who had been looking for Bill Carson) discovers that Tuco and Blondie meet with Carson and knows they know the location of the gold. All he needs is for the two to ... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em class="nobr">Written by<a href="http://www.imdb.com/search/title?plot_author=Jeremy%20Thomson&amp;view=simple&amp;sort=alpha&amp;ref_=tt_stry_pl">Jeremy Thomson</a></em></p>', '0/0', '0/0/1.jpg', 0, '', '', 0, 0, '', '', 0, 20, 0, 1, 0, 0, 0, 0, 0, 0, 1372226207, 1372226207),
+(2, 6, 1, 1, 'group', '小组', 'topic', 0, 'test', '<p>test</p>', '0/0', '0/0/2.jpg', 0, '', '', 0, 0, '', '', 0, 6, 0, 1, 0, 0, 0, 0, 1, 0, 1373001717, 1373001717),
+(3, 0, 1, 1, 'group', '小组', 'topic', 0, 'Funny', 'funny<p><br /></p>', '0/0', '0/0/3.jpg', 0, '', '', 0, 0, '', '', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1373005881, 1373005881),
+(4, 0, 1, 1, 'group', '小组', 'topic', 0, 'not funny', 'not funny<p><br /></p>', '0/0', '0/0/4.jpeg', 0, '', '', 0, 0, '', '', 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 1373005929, 1373005929);
 
 -- --------------------------------------------------------
 
@@ -4185,12 +4231,21 @@ CREATE TABLE IF NOT EXISTS `ac_group_topics_type` (
   `count_topic` int(11) NOT NULL DEFAULT '0' COMMENT '统计帖子',
   PRIMARY KEY (`typeid`),
   KEY `groupid` (`groupid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='帖子分类' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='帖子分类' AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `ac_group_topics_type`
 --
 
+INSERT INTO `ac_group_topics_type` (`typeid`, `groupid`, `typename`, `count_topic`) VALUES
+(6, 1, '经济管理', 1),
+(2, 4, '经济管理', 0),
+(3, 4, '计算机', 0),
+(4, 4, '自然科学', 0),
+(5, 4, '人文社科', 0),
+(7, 1, '计算机', 0),
+(8, 1, '自然科学', 0),
+(9, 1, '人文社科', 0);
 
 -- --------------------------------------------------------
 
@@ -4216,7 +4271,8 @@ CREATE TABLE IF NOT EXISTS `ac_group_users` (
 --
 
 INSERT INTO `ac_group_users` (`userid`, `groupid`, `isadmin`, `isfounder`, `addtime`) VALUES
-(1, 1, 0, 0, 1372226137);
+(1, 1, 0, 0, 1372226137),
+(1, 4, 0, 0, 1373000387);
 
 -- --------------------------------------------------------
 
@@ -4287,12 +4343,15 @@ CREATE TABLE IF NOT EXISTS `ac_message` (
   PRIMARY KEY (`messageid`),
   KEY `touserid` (`touserid`,`isread`),
   KEY `userid` (`userid`,`touserid`,`isread`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='短消息表' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='短消息表' AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `ac_message`
 --
 
+INSERT INTO `ac_message` (`messageid`, `userid`, `touserid`, `content`, `isread`, `addtime`) VALUES
+(1, 0, 1, '恭喜你，你的小组《Books》被推荐啦！快去看看吧<br />http://localhost:8001/group/show/id-1', 1, 1373000476),
+(2, 0, 1, '恭喜，你的帖子：《test》被评为精华帖啦^_^ <br />http://localhost:8001/group/topic/id-2', 1, 1373005312);
 
 -- --------------------------------------------------------
 
@@ -4472,12 +4531,14 @@ CREATE TABLE IF NOT EXISTS `ac_tag` (
   `uptime` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`tagid`),
   UNIQUE KEY `tagname` (`tagname`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `ac_tag`
 --
 
+INSERT INTO `ac_tag` (`tagid`, `tagname`, `count_user`, `count_group`, `count_topic`, `count_bang`, `count_article`, `count_photo`, `isenable`, `uptime`) VALUES
+(1, 'a', 0, 0, 0, 0, 1, 0, 0, 1372915184);
 
 -- --------------------------------------------------------
 
@@ -4497,6 +4558,8 @@ CREATE TABLE IF NOT EXISTS `ac_tag_article_index` (
 -- Dumping data for table `ac_tag_article_index`
 --
 
+INSERT INTO `ac_tag_article_index` (`articleid`, `tagid`) VALUES
+(4, 1);
 
 -- --------------------------------------------------------
 
@@ -4719,7 +4782,7 @@ CREATE TABLE IF NOT EXISTS `ac_user_info` (
 --
 
 INSERT INTO `ac_user_info` (`userid`, `ucid`, `fuserid`, `username`, `email`, `sex`, `phone`, `roleid`, `province`, `city`, `area`, `areaid`, `path`, `face`, `signed`, `blog`, `about`, `ip`, `address`, `comefrom`, `qq_openid`, `qq_access_token`, `count_score`, `count_follow`, `count_followed`, `count_group`, `count_topic`, `isadmin`, `isenable`, `isverify`, `isrecommend`, `verifycode`, `thems_other`, `addtime`, `uptime`) VALUES
-(1, 0, 0, 'admin', 'admin@admin.com', 0, '', 1, 0, 0, 0, 0, '0/0', '0/0/1.jpeg', '', '', '', 'unknown', '', 0, '', '', 10, 0, 0, 1, 1, 1, 0, 0, 0, '', 0, 1372226042, 1372642792);
+(1, 0, 0, 'admin', 'admin@admin.com', 0, '', 1, 0, 0, 0, 0, '0/0', '0/0/1.jpeg', '', '', '', 'unknown', '', 0, '', '', 25, 0, 0, 2, 4, 1, 0, 0, 0, '', 0, 1372226042, 1372642792);
 
 -- --------------------------------------------------------
 
@@ -4859,7 +4922,7 @@ CREATE TABLE IF NOT EXISTS `ac_user_score_log` (
   `addtime` int(11) NOT NULL DEFAULT '0' COMMENT '积分时间',
   PRIMARY KEY (`logid`),
   KEY `userid` (`userid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户积分记录' AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户积分记录' AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `ac_user_score_log`
@@ -4871,7 +4934,10 @@ INSERT INTO `ac_user_score_log` (`logid`, `userid`, `scorename`, `score`, `statu
 (3, 1, '登陆', 1, 0, 1372231877),
 (4, 1, '登陆', 1, 0, 1372297673),
 (5, 1, '登陆', 1, 0, 1372308859),
-(6, 1, '登陆', 1, 0, 1372642792);
+(6, 1, '登陆', 1, 0, 1372642792),
+(7, 1, '发帖', 5, 0, 1373001717),
+(8, 1, '发帖', 5, 0, 1373005881),
+(9, 1, '发帖', 5, 0, 1373005929);
 
 -- --------------------------------------------------------
 
@@ -4891,12 +4957,37 @@ CREATE TABLE IF NOT EXISTS `ac_weibo` (
   `uptime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
   PRIMARY KEY (`weiboid`),
   KEY `userid` (`userid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `ac_weibo`
 --
 
+INSERT INTO `ac_weibo` (`weiboid`, `userid`, `content`, `count_comment`, `photo`, `path`, `isaudit`, `addtime`, `uptime`) VALUES
+(1, 1, 'ssssssssssssssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:17', '2013-07-02 12:56:17'),
+(2, 1, 'zzzzzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:20', '2013-07-02 12:56:20'),
+(3, 1, 'xxxxxxxxxxxxxxxxx', 0, '', '', 0, '2013-07-02 12:56:21', '2013-07-02 12:56:21'),
+(4, 1, 'zzzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:23', '2013-07-02 12:56:23'),
+(5, 1, 'ccccccccccccccccccc', 0, '', '', 0, '2013-07-02 12:56:25', '2013-07-02 12:56:25'),
+(6, 1, 'ssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:26', '2013-07-02 12:56:26'),
+(7, 1, 'zzzzzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:29', '2013-07-02 12:56:29'),
+(8, 1, 'ccccccccccccccccccc', 0, '', '', 0, '2013-07-02 12:56:31', '2013-07-02 12:56:31'),
+(9, 1, 'zzzzzzzzzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:33', '2013-07-02 12:56:33'),
+(10, 1, 'ssssssssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:34', '2013-07-02 12:56:34'),
+(11, 1, 'zzzzzzzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:36', '2013-07-02 12:56:36'),
+(12, 1, 'ssssssssssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:39', '2013-07-02 12:56:39'),
+(13, 1, 'sssssssssssssssssssssssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:41', '2013-07-02 12:56:41'),
+(14, 1, 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:43', '2013-07-02 12:56:43'),
+(15, 1, 'cccccccccccccccccccccccccccccccc', 0, '', '', 0, '2013-07-02 12:56:45', '2013-07-02 12:56:45'),
+(16, 1, 'sssssssssssssssssssssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:47', '2013-07-02 12:56:47'),
+(17, 1, 'ssssssssssssssssssssszzzzzzzzzzzzzzzz', 0, '', '', 0, '2013-07-02 12:56:50', '2013-07-02 12:56:50'),
+(18, 1, 'sssssssssssssssssss', 0, '', '', 0, '2013-07-02 12:56:53', '2013-07-02 12:56:53'),
+(19, 1, '11111111111111111111', 0, '', '', 0, '2013-07-02 12:56:55', '2013-07-02 12:56:55'),
+(20, 1, '22222222222222222222222222', 0, '', '', 0, '2013-07-02 12:56:57', '2013-07-02 12:56:57'),
+(21, 1, '3333333333333333333333333333', 0, '', '', 0, '2013-07-02 12:56:59', '2013-07-02 12:56:59'),
+(22, 1, '4444444444444444444444444444444444', 0, '', '', 0, '2013-07-02 12:57:01', '2013-07-02 12:57:01'),
+(23, 1, '555555555555555555555555', 0, '', '', 0, '2013-07-02 12:57:03', '2013-07-02 12:57:03'),
+(24, 1, '666666666666666666666666666', 0, '', '', 0, '2013-07-02 12:57:06', '2013-07-02 12:57:06');
 
 -- --------------------------------------------------------
 

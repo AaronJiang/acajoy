@@ -73,20 +73,7 @@
 
 <div class="clear"></div>
 
-<div class="bbox pd10">
 
-<div class="btitle">最新创建小组</div>
-
-<div class="line23">
-{if $arrNewGroup}
-{loop $arrNewGroup $key $item}
-<a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">{$item[groupname]}</a> ({$item[count_user]})<br>
-{/loop}
-{/if}
-</div>
-</div>
-
-<div class="clear"></div>
 <!--广告位-->
 {php doAction('gobad','300')}
 
