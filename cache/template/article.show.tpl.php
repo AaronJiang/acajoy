@@ -60,7 +60,7 @@
 <div class="commlist">
 
 <ul>
-<?php foreach((array)$arrArticle as $key=>$item) {?>
+<?php foreach((array)$arrRecommend as $key=>$item) {?>
 <li><a href="<?php echo tsurl('article','show',array('id'=>$item['articleid']))?>"><?php echo htmlspecialchars($item['title'])?></a> <?php echo $item['addtime'];?></li>
 <?php }?>
 </ul>

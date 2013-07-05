@@ -1,5 +1,4 @@
-<?php defined('IN_TS') or die('Access Denied.'); ?> <link type="text/css" rel="stylesheet" href="/plugins/article/rating/assets/rateit.css"/>
- <b>你的评分</b> : <div class="rateit" data-rateit-value="0" data-rateit-resetable="false" data-articleid="<?php echo $_GET['id'];?>"> </div> 
+<?php defined('IN_TS') or die('Access Denied.'); ?> <b>你的评分</b> : <div class="rateit" data-rateit-value="0" data-rateit-resetable="false" data-articleid="<?php echo $_GET['id'];?>"> </div> 
  <span id="rate_response"></span>
  <script>
   // set tooltip value       

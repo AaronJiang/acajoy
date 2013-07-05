@@ -18,6 +18,11 @@
 <span><a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a> 发表于 {$item[addtime]}</span>
 <p>{$item[content]} (<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">查看全文</a>)</p>
 
+<div class="cate tar">
+<div class="rateit average_socre" data-rateit-value="{$item[rate][average]}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+<span id="rateit_score">{$item[rate_average]}</span> (<span id="rateit_count">{$item[rate][count]}</span>人评分) &nbsp;&nbsp;
+来自：<a href="{tsUrl('article','cate',array('id'=>$item['cate']['cateid']))}">{$item['cate']['catename']}</a>  ({$item['count_recommend']})推荐  ({$item['count_comment']})评论
+</div>
 <div class="clear"></div>
 </li>
 <!--{/loop}-->
@@ -36,7 +41,7 @@
 </div>
 
 <div class="bbox pd10">
-<div class="btitle">文章分类</div>
+<div class="btitle">生活篇</div>
 
 <div class="catelist">
 <ul>

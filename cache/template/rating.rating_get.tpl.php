@@ -1,5 +1,4 @@
-<?php defined('IN_TS') or die('Access Denied.'); ?><link type="text/css" rel="stylesheet" href="/plugins/article/rating/assets/rateit.css"/>
-<div class="rateit average_socre" data-rateit-value="0" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+<?php defined('IN_TS') or die('Access Denied.'); ?><div class="rateit average_socre" data-rateit-value="0" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
 <span id="rateit_score"></span> (<span id="rateit_count"></span>人评分)
 <script>
   // set tooltip value       

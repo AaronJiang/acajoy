@@ -60,7 +60,7 @@
 <div class="commlist">
 
 <ul>
-{loop $arrArticle $key $item}
+{loop $arrRecommend $key $item}
 <li><a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{php echo htmlspecialchars($item['title'])}</a> {$item['addtime']}</li>
 {/loop}
 </ul>
