@@ -383,7 +383,7 @@ button, input, select, textarea {
 /*home列表*/
 .homelist{}
 .homelist ul{}
-.homelist ul li{display: inline; list-style-type: none; padding: 7px; margin:8px; height: 230px; width: 182px; border:1px solid #E9E9E9;}
+.homelist ul li{float:left; display: inline; list-style-type: none; padding: 7px; margin:8px; height: 230px; width: 182px; border:1px solid #E9E9E9;}
 .homelist_bottom {float: left; margin: 5px; line-height: 1.7}
 .homelist_bottom_title {font-size: 13px;}
 .homelist img{border-radius:2px;}

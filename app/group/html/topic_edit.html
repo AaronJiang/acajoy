@@ -35,7 +35,14 @@
 <tr><td>标签:</td><td><input style="width:250px;" type="text" name="tag" value="{$strTopic['tag']}" /> (多个标签请用,号分割)</td></tr>
 	
 	<tr><td height="50">评论：</td><td><input type="radio" {if $strTopic[iscomment]=='0'}checked="select"{/if}   name="iscomment" value="0" />允许 <input type="radio" {if $strTopic[iscomment]=='1'}checked="select"{/if}  name="iscomment" value="1" />不允许</td></tr>
+	<tr><th>封面图片：</th><td>
+
+	{if $strTopic['photo']}
+	<img src="{SITE_URL}{php echo tsXimg($strTopic['photo'],'group]',180,'140',$strTopic['path'],1)}?v={php echo rand();}" />
+	<br />
+	{/if}
 	
+	<input  type="file" name="picfile" /> (仅支持jpg,gif,png)</td></tr>
     <tr><td></td><td>
 	
 	<input type="hidden" name="topicid" value="{$strTopic[topicid]}" />

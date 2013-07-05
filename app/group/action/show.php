@@ -92,6 +92,7 @@ if($strGroup['isaudit']=='1'){
 		foreach($arrTopics as $key=>$item){
 			$arrTopic[] = $item;
 			$arrTopic[$key]['title'] = htmlspecialchars($item['title']);
+			$arrTopic[$key]['content'] = cututf8(t($item['content']), 0, 100);
 			$arrTopic[$key]['typename'] = $arrTopicType[$item['typeid']]['typename'];
 			$arrTopic[$key]['user'] = aac('user')->getOneUser($item['userid']);
 			$arrTopic[$key]['group'] = aac('group')->getOneGroup($item['groupid']);

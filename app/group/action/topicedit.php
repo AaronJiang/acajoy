@@ -108,6 +108,21 @@ switch($ts){
 				aac('tag') -> addTag('topic', 'topicid', $topicid, $tag); 
 			}
 			
+			// 上传帖子图片开始
+			$arrUpload = tsUpload($_FILES['picfile'], $topicid, 'group', array('jpg', 'gif', 'png','jpeg'));
+			if ($arrUpload) {
+				$new['group'] -> update('group_topics', array(
+						'topicid' => $topicid,
+				), array(
+						'path' => $arrUpload['path'],
+						'photo' => $arrUpload['url'],
+				));
+					
+				tsDimg($arrUpload['url'],'group','180','140',$arrUpload['path']);
+					
+			}
+			// 上传帖子图片结束
+			
 			header("Location: ".tsUrl('group','topic',array('id'=>$topicid)));
 			
 		}else{

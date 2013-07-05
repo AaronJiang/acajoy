@@ -198,6 +198,19 @@ switch ($ts) {
 			));
 			
 		} 
+		
+		// 上传帖子图片开始
+		$arrUpload = tsUpload($_FILES['picfile'], $topicid, 'group', array('jpg', 'gif', 'png','jpeg'));
+		if ($arrUpload) {
+			$new['group'] -> update('group_topics', array(
+					'topicid' => $topicid,
+			), array(
+					'path' => $arrUpload['path'],
+					'photo' => $arrUpload['url'],
+			));
+		}
+		// 上传帖子图片结束
+		
 		// 处理标签
 		aac('tag') -> addTag('topic', 'topicid', $topicid, $tag); 
 		// 统计小组下帖子数并更新

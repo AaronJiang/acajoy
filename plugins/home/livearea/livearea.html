@@ -11,7 +11,7 @@
 			<div class="homelist">
 				<ul>
 				{loop $article_school $key $item}
-				<li style="float:left">
+				<li>
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
 				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
 				</a>
