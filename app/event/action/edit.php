@@ -1,40 +1,69 @@
 <?php
 	defined('IN_TS') or die('Access Denied.');
-	$eventid = intval($_GET['eventid']);
 	
-	$userid = $TS_USER['user']['userid'];
+	$userid = aac('user')->isLogin();
 	
-	//活动信息
-	$strEvent = $new['event']->getSimpleEvent($eventid);
 	
 	switch($ts){
 		//基本信息
 		case "base":
-			//活动类型
-			$arrType = $db->fetch_all_assoc("select * from ".dbprefix."app_event_type");
-
-			//获取常驻地
-			$strUser = $db->once_fetch_assoc("select * from ".dbprefix."app_user_info where userid='$userid'");
+			$eventid = intval($_GET['eventid']);
+			$strEvent = $new['event']->find('event',array(
 			
-			$strUser['province'] = $db->once_fetch_assoc("select * from ".dbprefix."app_location_province where provinceid = '".$strUser['provinceid']."'");
-			$strUser['city'] = $db->once_fetch_assoc("select * from ".dbprefix."app_location_city where cityid = '".$strUser['cityid']."'");
-
-			$arrArea = $db->fetch_all_assoc("select * from ".dbprefix."app_location_area where cityid='".$strUser['cityid']."'");
+				'eventid'=>$eventid,
+			
+			));
 			
 			$title = '编辑活动信息';
 			include template("edit_base");
 			break;
 		
-		//活动封面 
-		case "poster":
-			$title = '编辑活动封面';
-			include template("edit_poster");
+		case "basedo":
+		
+			//发布
+			$eventid = intval($_POST['eventid']);
+			$title = trim($_POST['title']);
+			$typeid = intval($_POST['typeid']);
+			$starttime = trim($_POST['starttime']);
+			$endtime = trim($_POST['endtime']);
+			$address = trim($_POST['address']);
+			$content = trim($_POST['content']);
 			
+			if($TS_USER['user']['isadmin']==0){
+				//过滤内容开始
+				textfilter($title);
+				textfilter($content);
+				//过滤内容结束
+			}
 			
-			break;
+			//更新数据
+			$new['event']->update('event',array(
+				'eventid'=>$eventid,
+			),array(
+				'typeid' => $typeid,
+				'title'	=> $title,
+				'starttime'	=> $starttime,
+				'endtime'	=> $endtime,
+				'address'	=> $address,
+				'content'	=> $content,
+			));
 			
-		//活动组织者 
-	}
-	
+			//上传
+			$arrUpload = tsUpload($_FILES['photo'],$eventid,'event',array('jpg','gif','png'));
+			
+			if($arrUpload){
 
-	
+				$new['event']->update('event',array(
+					'eventid'=>$eventid,
+				),array(
+					'path'=>$arrUpload['path'],
+					'photo'=>$arrUpload['url'],
+				));
+
+			}
+			
+			header("Location: ".tsUrl('event','show',array('id'=>$eventid)));
+		
+			break;
+
+	}

@@ -1,24 +1,20 @@
 {template header}
-<script language="javascript" type="text/javascript" src="data/js/date/WdatePicker.js?4.72"></script>
-<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/editor.css" />
+{php doAction('xheditor')}
 
 <div class="midder">
-
-<h1 style="margin-top:30px;">编辑活动：{$strEvent[title]}</h1>
-
-<div class="tabMenu">
+<div class="mc">
+<h1>编辑活动：{$strEvent[title]}</h1>
+<div class="tabnav">
 <ul>
-<li class="select"><a href="index.php?app=event&ac=edit&ts=base&eventid={$strEvent[eventid]}">修改信息</a></li>
-<li><a href="index.php?app=event&ac=edit&ts=poster&eventid={$strEvent[eventid]}">活动封面</a></li>
+<li class="select"><a href="{SITE_URL}index.php?app=event&ac=edit&ts=base&eventid={$strEvent[eventid]}">修改信息</a></li>
 </ul>
 </div>
 
-<div class="qi_c_c">
-<div class="qi_c_cleft">
-<form method="POST" action="index.php?app=event&ac=do&ts=edit">
+<div class="cleft">
+<form method="POST" action="{SITE_URL}index.php?app=event&ac=edit&ts=basedo" enctype="multipart/form-data">
 <table width="800">
-<tbody><tr><td width="100">标题: </td>
-<td><input style="padding:3px 0;width:400px;" type="text" value="{$strEvent[title]}" maxlength="100" size="50" name="title" gtbfieldid="2"></td></tr>
+<tr><td width="100">标题: </td>
+<td><input style="padding:3px 0;width:400px;" type="text" value="{$strEvent[title]}" maxlength="100" size="50" name="title" /></td></tr>
 <tr>
 <td>类型:</td>
 <td>
@@ -33,50 +29,45 @@
 <tr>
 <td valign="top">开始时间：</td>
 <td>
-<input name="time_start" value="{$strEvent[time_start]}" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'{php echo date('Y-m-d')} 00:00',maxDate:'{php echo date('Y-m-d',time()+604800)} 00:00'})" />
+<input name="starttime" value="{$strEvent[starttime]}" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'{php echo date('Y-m-d')} 00:00',maxDate:'{php echo date('Y-m-d',time()+604800)} 00:00'})" />
 </td>
 </tr>
 
 <tr>
 <td>结束时间：</td>
-<td><input name="time_end" value="{$strEvent[time_end]}" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'{php echo date('Y-m-d')} 00:00',maxDate:'{php echo date('Y-m-d',time()+2502000)} 00:00'})"  /></td>
+<td><input name="endtime" value="{$strEvent[endtime]}" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'{php echo date('Y-m-d')} 00:00',maxDate:'{php echo date('Y-m-d',time()+2502000)} 00:00'})"  /></td>
 </tr>
 
 <tr><td>地点：</td><td>
 
-{$strUser[province][provincename]} - {$strUser[city][cityname]}
-<input type="hidden" name="provinceid" value="{$strUser[province][provinceid]}" />
-<input type="hidden" name="cityid" value="{$strUser[city][cityid]}" />
-<select name="areaid">
-{loop $arrArea $key $item}
-<option <!--{if $item[areaid]==$strEvent[areaid]}-->selected="select"<!--{/if}--> value="{$item[areaid]}">{$item[areaname]}</option>
-{/loop}
-</select>
-<input name="address" value="{$strEvent[address]}" />
+<input style="width:300px;padding:3px;" name="address" value="{$strEvent[address]}" />
 </td>
-</tr>
-<tr><td></td><td>
-<!--ThinkSAAS迷你编辑器-->
-{php include template("editor/editor_mini");}
-</td>
-
 </tr>
 <tr>
 <td valign="top">
 内容：
-</td><td><textarea style="width:100%;" id="editor_content" cols="55" rows="20" name="content">{$strEvent[content]}</textarea></td></tr>
+</td><td><textarea style="width:100%;height:300px;" id="bbcode" cols="55" rows="20" name="content">{$strEvent[content]}</textarea></td></tr>
+
+<tr><td>活动海报：</td><td>
+
+{if $strEvent['photo']}
+<img src="{php echo tsXimg($strEvent['photo'],'event','100','',$strEvent['path'])}" />
+<br />
+{/if}
+
+<input type="file" name="photo" /> (不修改请留空)</td></tr>
 
 <tr><td></td><td>
 
 <input type="hidden" name="eventid" value="{$strEvent[eventid]}" />
-<input type="submit" value="好了，提交修改"> 
-<a href="index.php?app=event&ac=show&eventid={$strEvent[eventid]}">返回</a>
-</td></tr></tbody></table>
+<input class="submit" type="submit" value="好了，提交修改"> 
+<a href="{tsUrl('event','show',array('id'=>$strEvent[eventid]))}">返回</a>
+</td></tr>
+</table>
 </form>
 </div>
 
 
 </div>
 </div>
-
 {template footer}

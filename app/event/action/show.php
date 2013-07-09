@@ -1,65 +1,71 @@
 <?php
 defined('IN_TS') or die('Access Denied.');
-$eventid = intval($_GET['eventid']);
+
+$eventid = intval($_GET['id']);
 
 //活动信息
-$strEvent = $new['event']->getEventByEventid($eventid);
+$strEvent = $new['event']->find('event',array(
+	'eventid'=>$eventid,
+));
 
-$strEvent['user'] = simpleUser($strEvent['userid']);
+$strEvent['title'] = htmlspecialchars($strEvent['title']);
+$strEvent['address'] = htmlspecialchars($strEvent['address']);
+$strEvent['content'] = trim($strEvent['content']);
+$strEvent['coordinate'] = htmlspecialchars($strEvent['coordinate']);
 
-$strEvent['content'] = hview($strEvent['content']);
+$strEvent['user'] = aac('user')->getOneUser($strEvent['userid']);
 
-//匹配本地图片
-preg_match_all('/\[(photo)=(\d+)\]/is', $strEvent['content'], $photos);
-foreach ($photos[2] as $item) {
-	$strEvent['content'] = str_replace("[photo={$item}]",'<img src="'.getPhotoById($item).'" title="'.$strEvent['title'].$item.'" />', $strEvent['content']);
-}
+$strEvent['type'] = $new['event']->find('event_type',array(
+	
+	'typeid'=>$strEvent['typeid'],
 
-//匹配表情
-preg_match_all('/\[(360):(\d+)\]/is', $strEvent['content'], $expression_topic);
-foreach ($expression_topic[2] as $item) {
-	$strEvent['content'] = str_replace("[360:{$item}]",'<img src="data/expression/'.$item.'.gif" />', $strEvent['content']);
-}
-
-$strEvent['content'] = ubb($strEvent['content']);
+));
 
 //wishdo
-if($TS_USER['user']['userid'] != ''){
-	$isEventUser = $db->once_num_rows("select * from ".dbprefix."app_event_users where eventid='".$strEvent['eventid']."' and userid='".$TS_USER['user']['userid']."'");
-	$strEventUser = $db->once_fetch_assoc("select * from ".dbprefix."app_event_users where eventid='".$strEvent['eventid']."' and userid='".$TS_USER['user']['userid']."'");
+$isEventUser = 0;
+if($TS_USER['user']['userid']){
+	
+	$userid = $TS_USER['user']['userid'];
+	
+	$isEventUser = $new['event']->findCount('event_users',array(
+	
+		'eventid'=>$strEvent['eventid'],
+		'userid'=>$userid,
+	
+	));
+	
 }
 
 
 //组织者
-$arrOrganizers= $db->fetch_all_assoc("select userid from ".dbprefix."app_event_users where eventid='".$strEvent['eventid']."' and isorganizer='1'");
-if(is_array($arrOrganizers)){
-	foreach($arrOrganizers as $item){
-		$arrOrganizer[] = simpleUser($item['userid']);
-	}
+$arrOrganizers = $new['event']->findAll('event_users',array(
+	'eventid'=>$strEvent['eventid'],
+	'isorganizer'=>1,
+));
+foreach($arrOrganizers as $item){
+	$arrOrganizer[] = aac('user')->getOneUser($item['userid']);
 }
+
 
 //参加这个活动的成员
-$arrDoUsers = $db->fetch_all_assoc("select userid from ".dbprefix."app_event_users where eventid='".$strEvent['eventid']."' and status='0' order by addtime limit 24");
-if(is_array($arrDoUsers)){
-	foreach($arrDoUsers as $item){
-		$arrDoUser[] = aac('user',$db)->getOneUserByUserid($item['userid']);
-	}
+$arrDoUsers = $new['event']->findAll('event_users',array(
+	'eventid'=>$strEvent['eventid'],
+	'status'=>0,
+),'addtime desc');
+
+foreach($arrDoUsers as $item){
+	$arrDoUser[] = aac('user')->getOneUser($item['userid']);
 }
+
 
 //对这个活动感兴趣的人
-$arrWishUsers = $db->fetch_all_assoc("select userid from ".dbprefix."app_event_users where eventid='".$strEvent['eventid']."' and status='1' order by addtime limit 12");
-if(is_array($arrWishUsers)){
-	foreach($arrWishUsers as $item){
-		$arrWishUser[] = aac('user',$db)->getOneUserByUserid($item['userid']);
-	}
-}
+$arrWishUsers = $new['event']->findAll('event_users',array(
+	'eventid'=>$strEvent['eventid'],
+	'status'=>1,
+),'addtime desc');
 
-//哪些小组正在分享这个活动
-$arrGroups = $db->fetch_all_assoc("select groupid from ".dbprefix."app_event_group_index where eventid='$eventid'");
-if(is_array($arrGroups)){
-	foreach($arrGroups as $item){
-		$arrGroup[] = aac('group',$db)->getOneGroup($item['groupid']);
-	}
+foreach($arrWishUsers as $item){
+	$arrWishUser[] = aac('user')->getOneUser($item['userid']);
 }
 
 
@@ -67,54 +73,24 @@ if(is_array($arrGroups)){
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-//URL
-//if($TS_APP['options']['isrewrite']=='0'){
-	//$url = $TS_URL['show'].$eventid.'&page=';
-	$url = "index.php?app=event&ac=show&eventid=".$strEvent['eventid']."&page=";
-//}else{
-	//$url = $TS_URL['show'].$eventid.'-';
-//}
+$url = tsUrl('event','show',array('id'=>$eventid,'page'=>''));
 
-$arrContentComment = $new['event']->getEventComment($page,5,$eventid);
+$lstart = $page*10-10;
 
-if(is_array($arrContentComment)){
-	foreach($arrContentComment as $key=>$item){
-		$arrEventComment[] = $item;
-		
-		//$arrEventComment[$key]['content'] = hview(preg_replace($pattern, '<a rel="nofollow" target="_blank" href="\1\2">\1\2</a>', $item['content']));
-		
-		//匹配图片
-		preg_match_all('/\[(photo)=(\d+)\]/is', $arrEventComment[$key]['content'], $photos);
-		foreach ($photos[2] as $pitem) {
-			$arrEventComment[$key]['content'] = str_replace("[photo={$pitem}]",'<img src="'.getPhotoById($pitem).'" />', $arrEventComment[$key]['content']);
-		}
+$arrComments = $new['event']->findAll('event_comment',array(
+	'eventid'=>$strEvent['eventid'],
+),'addtime desc',null,$lstart.',10');
 
-		//匹配表情
-		preg_match_all('/\[(360):(\d+)\]/is', $arrEventComment[$key]['content'], $expression_comment);
-		foreach ($expression_comment[2] as $sitem) {
-			$arrEventComment[$key]['content'] = str_replace("[360:{$sitem}]",'<img src="data/expression/'.$sitem.'.gif" />', $arrEventComment[$key]['content']);
-		}
-		
-		$arrEventComment[$key]['content'] = ubb($arrEventComment[$key]['content']);
-
-	}
+foreach($arrComments as $key=>$item){
+	$arrComment[] = $item;
+	$arrComment[$key]['user'] = aac('user')->getOneUser($item['userid']);
 }
 
-$eventCommentNum = $new['event']->getEventCommentNum('eventid',$eventid);
+$commentNum = $new['event']->findCount('event_comment',array(
+	'eventid'=>$strEvent['eventid'],
+));
 
-$pageUrl = pagination($eventCommentNum, 5, $page, $url,$TS_URL['suffix']);
+$pageUrl = pagination($commentNum, 10, $page, $url);
 
 $title = $strEvent['title'];
 include template("show");
-
-function simpleUser($userid){
-	global $db;
-	$userData = $db->once_fetch_assoc("select userid,username from ".dbprefix."app_user_info where userid='$userid'");
-	return $userData;
-}
-function getPhotoById($photoid){
-	global $db;
-	$strPhoto = $db->once_fetch_assoc("select * from ".dbprefix."app_photo where photoid='$photoid'");
-	
-	return $strPhoto['photourl'];
-}

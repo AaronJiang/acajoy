@@ -7,7 +7,7 @@
  */
  
 /*基本*/ 
-body{ font-family:Verdana, sans-serif, 宋体;font-size:12px;margin:0 auto;color:#434343;background:url('bg-body.jpg')}
+body{ font-family:Verdana, sans-serif, 宋体;font-size:12px;margin:0 auto;color:#434343;}
 table {border-collapse:collapse;}
 th,caption {font-weight:normal;font-style:normal;text-align:left;}
 caption {font-weight:bold;}
@@ -16,7 +16,7 @@ a img {border:none}
 
 form input[type='radio'] {vertical-align:text-bottom;}
 
-h1 {color: #494949;font-size: 16px;font-weight: bold;margin: 0;padding:10px 0;}
+h1 {color: #494949;font-size: 16px;font-weight: bold;margin: 0;padding:10px;}
 h1 a{color:#555555;}
 
 h2 {color: #555555;font-size: 14px;}
@@ -57,7 +57,6 @@ a {color:#336699;text-decoration:none;}
 
 input, textarea, select, .uneditable-input {
     border: 1px solid #CCCCCC;
-    border-radius: 3px 3px 3px 3px;
     color: #555555;
     display: inline-block;
     font-size: 13px;
@@ -103,7 +102,6 @@ select, input[type="file"] {
     background-repeat: repeat-x;
     border-color: #CCCCCC #CCCCCC #B3B3B3;
     border-image: none;
-    border-radius: 4px 4px 4px 4px;
     border-style: solid;
     border-width: 1px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -178,7 +176,7 @@ button, input, select, textarea {
 /*结构*/
  
 /*头部*/
-.header{background:#49a5de;width:100%;overflow:hidden;}
+.header{background:#49A5DE;width:100%;overflow:hidden;}
 .header .hc{width:960px;height:40px;margin:0 auto;overflow:hidden;}
 .header .hc .left{float:left;color:#FFFFFF;width:190px;height:40px;}
 .header .hc .left .logo{float:left;background:url('logo.gif') no-repeat;width:190px;height:40px;}
@@ -211,10 +209,7 @@ button, input, select, textarea {
 .appnav ul{width:960px;margin:0 auto;padding:10px 0px;overflow:hidden;}
 .appnav ul li{float:left;font-size:14px;margin:0 5px 0 0;padding:5px 10px;position:relative;}
 
-.appnav .new{width:20px;height:12px;background:url('../../public/images/new.png') no-repeat;display:block;position:absolute;top:-3px;right:-3px}
-.appnav .hot{width:20px;height:12px;background:url('../../public/images/hot.png') no-repeat;display:block;position:absolute;top:-3px;right:-3px}
-
-.appnav .select{background:#333a40;border-radius:5px 5px 5px 5px;}
+.appnav .select{background:#333a40;}
 .appnav .select a{color:#FFFFFF;}
 
 
@@ -232,15 +227,26 @@ button, input, select, textarea {
 
 /*tab切换导航*/
 .tabnav {height:50px;padding:0px;}
-.tabnav ul {height:30px;margin:0;overflow:hidden;padding:0;background: url("bg-line.gif") repeat-x scroll 0 bottom transparent;}
-.tabnav ul li {height:30px;float:left;font-weight: bold;=height: 30px;line-height: 22px;margin-right: 20px;padding-right: 20px;}
+.tabnav ul {  background: #F5F5F5;
+    border-bottom: 1px solid #E9E9E9;
+    display: block;
+    font-size: 12px;
+    height: 26px;
+    padding: 5px 0 0 0px;
+    width: 100%;}
+.tabnav ul li {float: left;
+    line-height: 26px;
+    margin-bottom: -1px;
+    margin-left: 10px;
+    padding: 0 10px;}
 
-.tabnav ul li a{color:#333333}
-.tabnav .select {background:url("bg-lined.gif") repeat-x scroll 0 bottom transparent;}
-.tabnav .select a {font-weight:bold;color:#336699;}
+.tabnav .select { background:#FFFFFF;
+	border:solid 1px #DDDDDD;
+	border-bottom:none;
+	position: relative;}
 
 /*page分页*/
-.page {margin:0;text-align: left;padding:5px;}
+.page {margin:0;text-align: center;padding:5px;}
 .page a {border:#DDDDDD 1px solid; padding:2px 5px;margin: 2px; color: #336699;text-decoration: none}
 .page a:hover {border: #3266A0 1px solid;}
 .page a:active {border: #3266A0 1px solid; }
@@ -249,8 +255,8 @@ button, input, select, textarea {
 
 /*tag标签*/
 .tags {}
-.tags a {float:left;background:#EEEEEE;color:#000000;border-radius: 2px 2px 2px 2px;margin: 6px 6px 0 0;padding: 2px 8px;white-space: nowrap;display:block;}
-.tags a:hover{background:#336699;color:#FFFFFF;border-radius: 2px 2px 2px 2px;}
+.tags a {float:left;background:#EEEEEE;color:#000000;margin: 6px 6px 0 0;padding: 2px 8px;white-space: nowrap;display:block;}
+.tags a:hover{background:#336699;color:#FFFFFF;}
 
 /*comment评论列表*/
 .comment{width: 100%;overflow:hidden;}
@@ -258,7 +264,7 @@ button, input, select, textarea {
 .comment li .user-face {float: left;height: 48px;overflow: hidden;width: 48px;}
 .comment li .reply-doc {margin-left:60px;overflow: hidden;}
 .comment li .reply-doc p img{}
-.comment li .reply-doc h4 {font-weight:normal;font-size:12px;padding:5px;margin: 0 0 15px 0px;background: #F0F0F0;color: #666666;display: block;overflow: hidden;position:relative;}
+.comment li .reply-doc h4 {font-weight:normal;font-size:12px;padding:5px;margin: 0 0 15px 0px;background: #F5F5F5;color: #999999;display: block;overflow: hidden;position:relative;border-bottom:solid 1px #EEEEEE;}
 .comment li .reply-doc h4 i{position:absolute;top:5px;right:5px;}
 .comment li .reply-doc p {margin:0;overflow: hidden;word-wrap: break-word;line-height:23px;}
 .comment li .reply-doc .recomment {background: #F8F8F8;border: 1px dashed #DDDDDD;color: #666666;font-size: 12px;padding: 10px;}
@@ -331,9 +337,42 @@ button, input, select, textarea {
 .br{border-right:solid 1px #EEEEEE;}
 
 /*box*/
-.bbox{border:solid 1px #DDDDDD;border-radius:5px 5px 5px 5px;margin-bottom:10px;overflow:hidden; background:#FFFFFF;}
-.bbox .btitle{font-weight:bold;font-size:14px;border-bottom:solid 1px #EEEEEE;margin-bottom: 10px;padding-bottom: 5px;position:relative;}
-.bbox .btitle .right{font-size:12px;position:absolute;right:0px;top:0px;font-weight:normal;}
+.bbox{border:solid 1px #DDDDDD;margin-bottom:10px;overflow:hidden; background:#FFFFFF;}
+.bbox .bd{font-size:12px;padding:10px;border-bottom: 1px solid #EEEEEE;}
+.bbox h1{}
+.bbox h2{font-weight:bold;font-size:12px;border-bottom:solid 1px #EEEEEE;background:#F5F5F5;padding:8px 5px;margin:0px}
+.bbox h2 .right{float:right;font-size:12px;font-weight:normal;}
+.bbox .bc{padding:10px;overflow:hidden;}
+
+/*rbox*/
+.rbox{float:right;width:250px;border-left:solid 1px #DDDDDD;}
+.rbox h2{font-weight:bold;font-size:12px;border-bottom:solid 1px #EEEEEE;background:#F5F5F5;padding:8px 5px;margin:0px}
+
+/*leftmenu*/
+.leftmenu{float:left;width:200px;}
+.leftmenu h1{color: #4BA733;
+    font-size: 24px;
+    margin: 35px 0 15px 40px;}
+.leftmenu ul{margin-left:15px;}
+.leftmenu ul .current{background-color: #FFFFFF;
+    border-color: #ECEBEB #FFFFFF #ECEBEB #ECEBEB;
+    border-image: none;
+
+    border-style: solid;
+    border-width: 1px;
+    left: -1px;
+    width: 133px;}
+.leftmenu ul li{color: #4BA733;
+    font-size: 16px;
+    padding: 15px 25px;
+    position: relative;}
+
+.leftbg{background:#F0F0F0;}
+
+.leftbox{margin-left:200px;background:#FFFFFF;min-height:800px;overflow:hidden;}
+
+
+
 
 /*padding*/
 .pd5{padding:5px;}
@@ -423,8 +462,7 @@ button, input, select, textarea {
 
 /*commtable*/
 .commtable{}
-.commtable th{width:200px;text-align:right;font-size:14px;}
-.commtable td{}
+.commtable th{width:200px;text-align:right;vertical-align:top;padding:8px 5px;}
 
 
 /**

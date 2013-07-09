@@ -1,106 +1,60 @@
 {template header}
-<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/index.css" />
+<link type="text/css" rel="stylesheet" href="{SITE_URL}app/{$app}/skins/{$skin}/index.css" />
 <div class="midder">
-<h1 style="margin-top:20px;">活动</h1>
 
-<div class="qi_c_c">
+<div class="mc">
+<div class="bbox leftbg">
 
-<div class="nav">
-<div class="block_menu">
-<em class="ft"></em><b class="ft"></b>
+
+<div class="leftmenu">
+<h1><a href="{tsUrl('event')}">活动</a></h1>
 <ul>
-<li class="clearfix" id="event_home"><a href="index.php?app=event"><span>活动首页</span></a></li>
-<div class="line"></div>
-<li class="clearfix"><a href="" id="ta_today">
-<span>今日</span></a></li>
-<li class="clearfix"><a href="" id="ta_weekend">
-<span>周末</span></a></li>
-<li class="clearfix"><a href="" id="ta_week">
-<span>最近一周</span></a></li>
-<li class="clearfix"><a href="" id="ta_future">
-<span>全部时间</span></a></li>
-<li class="clearfix"><a href="javascript:void(0)" id="ta_day" class="link calendarSelectDate">
-<span>选择日期</span></a></li>
-
-<div class="line"></div>
-
-<li class="clearfix"><a href=""><span>所有类型({$arrEventType[count][allevent]})</span></a></li>
-<!--{loop $arrEventType[list] $key $item}-->
-<li class="clearfix"><a href="index.php?app=event&ac=type&typeid={$item[typeid]}"><span>{$item[typename]}({$item[count_event]})</span></a></li>
-<!--{/loop}-->
+<li class="current"><a href="{tsUrl('event')}">全部</a></li>
+{loop $arrType $key $item}
+<li><a href="{tsUrl('event','type',array(id=>$item[typeid]))}">{$item[typename]}</a></li>
+{/loop}
 </ul>
-<em class="fb"></em><b class="fb"></b>
-</div>
-<div id="calendarDiv"></div>
-
-<form method="get" action="">
-<div class="block_search">
-<input type="text" value="活动名称、地点、介绍" title="活动名称、地点、介绍" name="search_text" class="text j a_search_text greyinput">
-<input type="submit" value="搜索" class="submit">
-<input type="hidden" value="beijing" name="loc"><br>
-</div>
-</form>
 </div>
 
+<div class="leftbox">
 
-<div class="article">
-<h2 class="green_tab clearfix" id="week_tab">
-<div class="ll">一周热门 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
+<div class="tar pd10"><a class="btn btn-success" href="{tsUrl('event','add')}">发布活动</a></div>
+
+<div class="eventlist">
+<ul>
+{loop $arrEvent $key $item}
+<li>
+
+<div class="photo">
+<a href="{tsUrl('event','show',array('id'=>$item[eventid]))}"><img class="actimgs" src="{if $item[photo]}{php echo tsXimg($item[photo],'event',220,150,$item[path],1)}{else}{SITE_URL}app/event/skins/default/event.jpg{/if}" width="220" height="150" />
+</a>
 </div>
-<a onclick="return switch_tab('t_0')" id="t_0" class="on" href="">
-<span>所有类型</span></a>
-<div id="more_event_tab"><a id="tongcheng_tab" href=""><span>更多</span></a><div id="tongcheng_tab_block"></div>
-</div></h2>
-<div id="wt_0">
 
-<div class="block_headerline"><div class="nof clearfix"><div class="evtlstimg">
-<a href="index.php?app=event&ac=show&eventid={$arrEvent[0][eventid]}" class="phs_link">
-<img src="{$arrEvent[0][poster]}"></a>
-</div><h2><a  href="index.php?app=event&ac=show&eventid={$arrEvent[0][eventid]}">{$arrEvent[0][title]}</a> <span class="pl2">[{$arrEvent[0][type][typename]}]</span></h2>
-<div class="pl intro">
-时间：{$arrEvent[0][time_start]} - {$arrEvent[0][time_end]}<br>
-地点：{$arrEvent[0][city][cityname]} {$arrEvent[0][area][areaname]} {$arrEvent[0][address]}<br>
-发起人：<a href="">{$arrEvent[0][user][username]}</a> <br>
-
-{$arrEvent[0][count_userdo]}人参加 &nbsp; {$arrEvent[0][count_userwish]}人感兴趣<br><br>
-</div></div></div>
-
-
-<div style="margin-bottom:0;overflow: hidden;" class="block1"><div class="content">
-<ul class="clearbox">
-
-<!--{loop $arrEvent $key $item}-->
-<!--{if $key > 0}-->
-<li class="block clearfix">
 <div class="title">
-<a href="index.php?app=event&ac=show&eventid={$item[eventid]}">{$item[title]}</a>
-</div><a href="index.php?app=event&ac=show&eventid={$item[eventid]}">
-<img class="actimgs" src="{$item[poster_75]}" width="48"></a>
-<div class="evtdesc">
-{$item[time_start]} - {$item[time_end]}<br>{$item[user][username]}<br>{$item[count_userdo]}人参加 &nbsp; {$item[count_userwish]}人感兴趣<br>
-</div></li>
-<!--{/if}-->
-<!--{/loop}-->
+<a href="{tsUrl('event','show',array('id'=>$item[eventid]))}">{php echo cututf8($item[title],0,10,false)}</a>
+</div>
 
-<li class="clear"></li></ul></div></div>
+<div class="info">
+开始时间：{php echo date('Y-m-d H:i',strtotime($item[starttime]))} <br />
+结束时间：{php echo date('Y-m-d H:i',strtotime($item[endtime]))}<br>
+{$item[count_userdo]}人参加   {$item[count_userwish]}人感兴趣
+</div>
 
-<span class="pl rr">&gt; <a href="">更多活动</a></span>
+</li>
+{/loop}
+</ul>
+</div>
+
+<div class="clear"></div>
+<div class="page">{$pageUrl}</div>
+
 </div>
 
 
-</div>
 
-<div class="aside">
-<h2>主办支持小组 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
-</h2>
-<!--{loop $arrGroup $key $item}-->
-<dl class="obu"><dt><a class="nbg" href="index.php?app=group&ac=group&groupid={$item[groupid]}"><img alt="{$item[groupname]}" class="m_sub_img" src="{$item[groupicon]}"></a></dt>
-<dd><a href="index.php?app=group&ac=group&groupid={$item[groupid]}">{$item[groupname]}</a></dd></dl>
-<!--{/loop}-->
-<br clear="all">
-<br>
-</div>
 
+
+</div>
 </div>
 </div>
 {template footer}

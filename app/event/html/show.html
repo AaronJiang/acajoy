@@ -1,186 +1,207 @@
 {template header}
-<script src="data/js/media.js" type="text/javascript"></script>
-<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/editor.css" />
-
+{php doAction('tseditor')}
 <div class="midder">
+<div class="mc">
 
-<h1 style="margin-top:40px;">{$strEvent[title]}</h1>
 
-<div class="qi_c_c">
+<div class="cleft">
 
-<div class="qi_c_cleft">
+<div class="bbox">
+<h1>{$strEvent[title]}</h1>
 
-<link type="text/css" rel="stylesheet" href="{$TS_APP[tpl][skin]}{$skin}/topic_event.css" id="skin" />
-<script src="{$TS_APP[tpl][js]}event.js" type="text/javascript"></script>
 
-<!--活动-->
-<div class="subjectwrap">
-<div id="actchoice">
+<div class="bc event">
 
-<!--{if $TS_USER[user][userid] == '' || $isEventUser==''}-->
-<a href="javascript:void('0');" onclick="userDoWish('{$strEvent[eventid]}','1');" class="redbutt  "><span>我感兴趣</span></a><br class="clear"><a href="javascript:void('0');" onclick="userDoWish('{$strEvent[eventid]}','0');" class="redbutt  "><span>我要参加</span></a><br class="clear"><br><br>
-<!--{else}-->
+<div class="photo">
+<a href="">
+<img title="点击看大图" src="{if $strEvent[photo]}{php echo tsXimg($strEvent[photo],'event',500,'',$strEvent[path])}{else}{SITE_URL}app/event/skins/default/event.jpg{/if}" />
+</a>
+</div>
 
-<!--{if $strEventUser[status]=='1'}-->
+<div class="info">
+开始时间: {php echo date('Y-m-d H:i',strtotime($strEvent[starttime]))}<br>
+结束时间: {php echo date('Y-m-d H:i',strtotime($strEvent[endtime]))}<br>
+地点: {$strEvent[address]}<br>
+发起人: <a href="{tsUrl('user','space',array('id'=>$strEvent[user][userid]))}">{$strEvent[user][username]}</a> <br>
+{if $arrOrganizer}
+组织者: 
+{loop $arrOrganizer $key $item}
+<a href="#">{$item[username]}</a> &nbsp;
+{/loop}
+<br>
+{/if}
+类型: <a href="{tsUrl('event','type',array('id'=>$strEvent['type']['typeid']))}">{$strEvent[type][typename]}</a><br>
+{$strEvent[count_userwish]}人感兴趣    {$strEvent[count_userdo]}人参加
+</div>
+
+
+<div class="tar">
+{if $isEventUser=='0'}
+<a class="btn" href="javascript:void('0');" onclick="userDoWish('{$strEvent[eventid]}','1');">我感兴趣</a>   <a class="btn btn-success" href="javascript:void('0');" onclick="userDoWish('{$strEvent[eventid]}','0');">我要参加</a>
+{else}
+
+{if $strEventUser[status]=='1'}
 <div class="m">我对这个活动感兴趣</div>
 <span class="gact">&gt; <a href="javascript:void('0');" onclick="doEvent('{$strEvent[eventid]}','{$TS_USER[user][userid]}');">我要参加</a></span>
-<!--{elseif $strEventUser[status]=='0'}-->
+{elseif $strEventUser[status]=='0'}
 <div class="m">我会参加这个活动</div>
-<!--{/if}-->
+{/if}
 <span class="gact">&gt;
-<a class="j a_confirm_link" href="javascript:void('0');" onclick="cancelEvent('{$strEvent[eventid]}','{$TS_USER[user][userid]}');">
+<a class="j a_confirm_link" href="javascript:void('0');" onclick="cancelEvent('{$strEvent[eventid]}');">
 我不去了</a></span>
-
-<!--{/if}-->
+{/if}
+</div>
+</div>
 
 </div>
 
-<div class="fil">
-<a href="">
-<img title="点击看大图" src="{$strEvent[poster]}">
-</a>
-<br></div><div style="width:239px;" id="info"><span class="pl">开始时间: </span>{$strEvent[time_start]}<br><span class="pl">结束时间: </span>{$strEvent[time_end]}<br><div class="obmo"><span class="pl">地点: </span>{$strEvent[city][cityname]} {$strEvent[area][areaname]} {$strEvent[address]}
-<br>
-<span class="pl">发起人: </span> <a href="#">{$strEvent[user][username]}</a> 
-<br>
-<!--{if $arrOrganizer}-->
-<span class="pl">组织者: </span>
-<!--{loop $arrOrganizer $key $item}-->
-<a href="#">{$item[username]}</a> &nbsp;
-<!--{/loop}-->
-<br>
-<!--{/if}-->
-<span class="pl">类型: </span>{$strEvent[type][typename]}<br>
-<span>{$strEvent[count_userwish]}人感兴趣 &nbsp;  {$strEvent[count_userdo]}人参加</span><br>
-</div><br clear="all"></div></div>
-
-<div class="rec-sec">
-<span class="rec">
-<a class="lnk-douban-sharing"  href="javascript:void(0);">推荐</a>
-</span>
-</div>
-
-<div class="topic-content clearfix">
+<div class="bbox">
 <h2>活动介绍</h2>
-<div class="topic-doc">
+<div class="bc">
+
 <p>{$strEvent[content]}</p>
 
-<!--签名-->
-<!--{if $strEvent[user][signed] != ''}-->
-<div class="signed">{$strEvent[user][signed]}</div>
-<!--{/if}-->
-
-<!--{if $TS_USER[user][userid] == $strEvent[userid]}-->
 <div style="text-align:right;">
-&gt;&nbsp; <a href="index.php?app=event&ac=edit&ts=base&eventid={$strEvent[eventid]}">修改</a> 
+{if $TS_USER[user][userid] == $strEvent[userid] || $TS_USER[user][isadmin]=='1'}
+<a href="{tsUrl('event','edit',array('ts'=>'base','eventid'=>$strEvent['eventid']))}">修改</a> 
+{/if}
 </div>
-<!--{/if}-->
+
 </div>
 </div>
 
-<h2>参加这个活动的成员 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
+<div class="bbox">
+
+<h2>参加这个活动的成员
 <span class="pl">( <a href="">全部{$strEvent[count_userdo]}人</a> )</span></h2>
-		
-<div class="obss name">
+<div class="bc">
 
-<!--{loop $arrDoUser $key $item}-->
-<dl class="obu"><dt><a class="nbg" href="index.php?app=user&ac=space&userid={$item[userid]}"><img alt="Angbill" class="m_sub_img" src="{$item[face]}"></a></dt>
-<dd><a href="">{$item[username]}</a></dd></dl>
-<!--{/loop}-->
+{loop $arrDoUser $key $item}
+<a class="nbg" href="{tsUrl('user','space',array('id'=>$item[userid]))}"><img  class="m_sub_img" src="{$item[face]}" alt="{$item[username]}" width="48" height="48" /></a>
+{/loop}
 
-<br clear="all">
 </div>
-<div class="clear"></div>
+</div>
 
-<ul class="topic-reply">
 
-<!--{loop $arrEventComment $key $item}-->
+<div class="bbox">
+<h2>你的回应</h2>
+
+<div class="bc">
+
+<ul class="comment">
+
+{loop $arrComment $key $item}
 <li class="clearfix">
     <div class="user-face">
-        <a href="index.php?app=user&ac=space&userid={$item[user][userid]}"><img title="{$item[user][username]}" alt="{$item[user][username]}" src="{$item[user][face]}" class="pil"></a>
+        <a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}"><img title="{$item[user][username]}" alt="{$item[user][username]}" src="{$item[user][face]}" class="pil" width="48" height="48" /></a>
     </div>
     <div class="reply-doc">
-        <div class="bg-img-green">
             <h4>{php echo date('Y-m-d H:i:s',$item[addtime])}
-                <a href="index.php?app=user&ac=space&userid={$item[userid]}">{$item[username]}</a> ({$item[user][city][cityname]})
+                <a href="{tsUrl('user','space',array('id'=>$item[userid]))}">{$item[user][username]}</a>
             </h4>
-        </div>
         <p>{$item[content]}</p>
-		
-		<!--签名-->
-		<!--{if $item[user][signed] != ''}-->
-		<div class="signed">{$item[user][signed]}</div>
-		<!--{/if}-->
 	
-	   <!--{if $TS_USER[user][userid] == $strEvent[userid]}-->
+	   {if $TS_USER[user][userid] == $strEvent[userid]}
         <div class="group_banned">
 		<span><a href="">回复</a></span>
             <span><a class="j a_confirm_link" href="javascript:void('0');" onclick="comment_del('{$item[topicid]}','{$item[commentid]}');" rel="nofollow">删除</a>
             </span>
         </div>
-	<!--{/if}-->
-	<!--回复评论-->
-	<div></div>
+	{/if}
 	
     </div>
 </li>
-<!--{/loop}-->
+{/loop}
 </ul>
 
-<div class="manu">{$pageUrl}</div>
+<div class="page">{$pageUrl}</div>
 
-<h2>你的回应&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·</h2>
-
-<!--{if $TS_USER[user][userid] == ''}-->
+{if $TS_USER[user][userid] == ''}
 <div style="font-size:14px;padding:40px 0;text-align:center;">请登录后回应本活动^_^</div>
-<!--{else}-->
-<div class="txd">
-<tr><td></td><td>
-
-<!--ThinkSAAS迷你编辑器-->
-{php include template("editor/editor_mini");}
-
-</td></tr>
-<form method="POST" action="index.php?app=event&ac=do&ts=comment">
-<textarea id="editor_content" cols="54" rows="8" name="content"></textarea><br>
+{else}
+<div>
+<form method="POST" action="{tsUrl('event','comment')}">
+<textarea id="tseditor-mini" style="width:100%;" name="content"></textarea><br>
 <input type="hidden" name="eventid" value="{$strEvent[eventid]}" />
-<input type="submit" value="加上去">
+<input class="btn btn-success" type="submit" value="加上去">
 </form>
 </div>
 {/if}
 
 </div>
 
-<div class="qi_c_cright">
-
-<div class="more_event"><a href="#">更多音乐/演出的活动</a></div>
-
-<p class="pl">&gt; <a href="#">去北京同城
-            </a></p>
-
-<h2>对这个活动感兴趣的成员 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
-        <span class="pl">( <a href="">全部{$strEvent[count_userwish]}人</a> )</span></h2>
-<div class="obss name">
-<!--{loop $arrWishUser $key $item}-->
-<dl class="obu"><dt><a class="nbg" href="index.php?app=user&ac=space&userid={$item[userid]}"><img alt="{$item[username]}" class="m_sub_img" src="{$item[face]}"></a></dt>
-<dd><a href="">{$item[username]}</a></dd></dl>
-<!--{/loop}-->
-<br clear="all">
-</div>
-<div class="clear"></div>
-
-<h2>活动支持小组</h2>
-
-<!--{loop $arrGroup $key $item}-->
-<dl class="obu"><dt><a class="nbg" href="index.php?app=group&ac=group&groupid={$item[groupid]}"><img alt="{$item[groupname]}" class="m_sub_img" src="{$item[groupicon]}"></a></dt>
-<dd><a href="index.php?app=group&ac=group&groupid={$item[groupid]}">{$item[groupname]}</a></dd></dl>
-<!--{/loop}-->
-
-<div class="clear"></div>
-
 </div>
 
 
 </div>
+
+
+<div class="cright">
+
+<div class="bbox">
+<div class="bc">
+<a href="{tsUrl('event','type',array(id=>$strEvent[type][typeid]))}">更多{$strEvent[type][typename]}活动</a>
+</div>
+</div>
+
+<div class="bbox">
+
+<h2>对这个活动感兴趣的成员<span class="pl">( <a href="">全部{$strEvent[count_userwish]}人</a> )</span></h2>
+<div class="bc">
+{loop $arrWishUser $key $item}
+<a class="nbg" href="{tsUrl('user','space',array('id'=>$item[userid]))}"><img alt="{$item[username]}" class="m_sub_img" src="{$item[face]}" alt="{$item[username]}" width="48" height="48" /></a>
+{/loop}
+</div>
+</div>
+
+
+{if $strEvent['coordinate']}
+<script language="javascript" src="http://api.ditu.aliyun.com/map.js" ></script>
+<div class="bbox" id="mapDiv" style="width:300px;height:300px"></div>
+<script language="javascript">
+ 
+	 map=new AliMap("mapDiv"); //使用id为mapDiv的层创建一个地图对象
+	 
+	//在下面的数组之中选择需要显示的等级
+	var levels=[10,11,12,14,16,17],zooms=[];
+	for(var i=0;i<levels.length;i++)
+	{
+		zooms.push({name:levels[i],scale:360/256/Math.pow(2,levels[i])});
+	}
+	map.setZoomScales(zooms);
+	//将地图定位到杭州西湖
+	map.centerAndZoom(new AliLatLng({$strEvent['coordinate']}),13);
+	map.addControl(new AliMapLargeControl());
+
+	//EC_S
+
+	//定义一个经纬度，这是西湖上小瀛洲(三潭印月)岛的经纬度
+
+	var latlng=new AliLatLng({$strEvent['coordinate']});
+
+	//在该坐标处创建一个标记
+
+	marker=new AliMarker(latlng);
+
+	//将该标记添加到地图
+
+	map.addOverlay(marker);
+
+	//EC_E
+
+           
+</script>
+{/if}
+
+
+</div>
+
+
+</div>
+
+
+
+
 </div>
 {template footer}

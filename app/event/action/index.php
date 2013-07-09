@@ -1,22 +1,18 @@
 <?php 
 defined('IN_TS') or die('Access Denied.');
-//调出活动类型 
-// $arrEventType = AppCacheRead('event','types.php');
 
-//一周热门
-$arrEvents = $db->fetch_all_assoc("select eventid from ".dbprefix."app_event order by count_userdo desc limit 7");
-foreach($arrEvents as $item){
-	$arrEvent[] = $new['event']->getEventByEventid($item['eventid']);
-}
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-//活动小组
-$arrEventGroup = $db->fetch_all_assoc("select groupid from ".dbprefix."app_event_group_index group by groupid");
+$lstart = $page*12-12;
 
-if(is_array($arrEventGroup)){
-	foreach($arrEventGroup as $item){
-		$arrGroup[] = aac('group',$db)->getOneGroup($item['groupid']);
-	}
-}
+$url = tsUrl('event','index',array('page'=>''));
 
-$title = '首页';
+//全部活动
+$arrEvent = $new['event']->findAll('event',null,'isrecommend desc,addtime desc',null,$lstart.',12');
+
+$eventNum = $new['event']->findCount('event');
+
+$pageUrl = pagination($eventNum, 12, $page, $url);
+
+$title = '活动';
 include template("index");

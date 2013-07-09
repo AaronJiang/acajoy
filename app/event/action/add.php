@@ -1,26 +1,78 @@
 <?php
 defined('IN_TS') or die('Access Denied.');
 
-$userid = intval($TS_USER['user']['userid']);
+$userid = aac('user')->isLogin();
 
-if($userid =='0') header("Location: index.php");
+switch($ts){
 
-$groupid = isset($_GET['groupid']) ? $_GET['groupid'] : '0';
+	case "":
 
-//活动类型
-$arrType = $db->fetch_all_assoc("select * from ".dbprefix."app_event_type");
-
-//获取常驻地
-$strUser = $db->once_fetch_assoc("select * from ".dbprefix."app_user_info where userid='$userid'");
-if($strUser['provinceid'] != '0' || $strUser['cityid'] != '0' || $strUser['areaid'] != '0'){
-	$strUser['province'] = $db->once_fetch_assoc("select * from ".dbprefix."app_location_province where provinceid = '".$strUser['provinceid']."'");
-	$strUser['city'] = $db->once_fetch_assoc("select * from ".dbprefix."app_location_city where cityid = '".$strUser['cityid']."'");
+		$title = '发布活动';
+		include template("add");
 	
-	$arrArea = $db->fetch_all_assoc("select * from ".dbprefix."app_location_area where cityid='".$strUser['cityid']."'");
+		break;
+	
+	case "do":
+	
+		$title = trim($_POST['title']);
+		$typeid = intval($_POST['typeid']);
+		$starttime = trim($_POST['starttime']);
+		$endtime = trim($_POST['endtime']);
+		$address = trim($_POST['address']);
+		$coordinate = trim($_POST['coordinate']);  //坐标
+		$content = trim($_POST['content']);
+		
+		if($TS_USER['user']['isadmin']==0){
+			//过滤内容开始
+			textfilter($title);
+			textfilter($content);
+			//过滤内容结束
+		}
+		
+		if($title == '' || $content == ''){
+			tsNotice('标题和内容不能为空');
+		}
+		
+		$eventid = $new['event']->create('event',array(
+			
+			'userid'	=> $userid,
+			'title'	=> $title,
+			'typeid' => $typeid,
+			'starttime'	=> $starttime,
+			'endtime'	=> $endtime,
+			'address'	=> $address,
+			'coordinate'	=> $coordinate,
+			'content' => $content,
+			'isaudit'=>1,
+			'addtime'	=> time(),
+			
+		));
+		
+		//上传
+		$arrUpload = tsUpload($_FILES['photo'],$eventid,'event',array('jpg','gif','png'));
+		
+		if($arrUpload){
 
-}else{
-	qiMsg("你还没有填写常居地，不能发布活动！");
+			$new['event']->update('event',array(
+				'eventid'=>$eventid,
+			),array(
+				'path'=>$arrUpload['path'],
+				'photo'=>$arrUpload['url'],
+			));
+
+		}
+		
+		header("Location: ".tsUrl('event','show',array('id'=>$eventid)));
+	
+		break;
+		
+	//地图 
+	case "map":
+	
+		$dd = isset($_GET['dd']) ? $_GET['dd'] : '中国北京';
+
+		include template('add_map');
+	
+		break;
+
 }
-
-$title = '发布活动';
-include template("add");
