@@ -32,8 +32,8 @@
 <div class="clear"></div>
 
 <div class="fmore">
-
-<a href="<?php echo tsurl('user','verify')?>">
+<b>我的状态:</b> <?php echo $strUser['weibo'];?>
+<!-- <a href="<?php echo tsurl('user','verify')?>">
 <?php if($strUser['isverify']==1) { ?>
 <img src="<?php echo SITE_URL;?>public/images/rz1.gif" alt="认证用户" title="认证用户" align="absmiddle" />
 <?php } else { ?>
@@ -41,9 +41,10 @@
 <?php } ?>
 </a>
 <br />
-角色：<a href="<?php echo tsurl('user','role')?>"><?php echo $strUser['rolename'];?></a>
+角色：<a href="<?php echo tsurl('user','role')?>"><?php echo $strUser['rolename'];?></a> -->
 
-</div>
+</div> 
+
 </div>
 </div>
 

@@ -7,6 +7,7 @@ function login(){
 	if($TS_USER['user']['userid']){
 		$strUser = aac('user')->getOneUser($TS_USER['user']['userid']);
 		$strUser['rolename'] = aac('user')->getRole($strUser['count_score']);
+		$strUser['weibo'] = aac('weibo')->getUserLatestWeibo($TS_USER['user']['userid']);
 	}
 	
 	include template('login','login');

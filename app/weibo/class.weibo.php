@@ -34,4 +34,10 @@ class weibo extends tsApp{
 		
 	}
 	
+	//获取用户最一条微博 
+	public function getUserLatestWeibo($userid) {
+	    $weibo = $this->find('weibo', array('userid'=>$userid), 'content', 'uptime desc');
+	    return $weibo['content'];
+	}
+	
 }

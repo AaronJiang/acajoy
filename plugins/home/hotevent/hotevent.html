@@ -7,7 +7,7 @@
 <a href="{tsUrl('event','show',array('id'=>$item[eventid]))}">
 		<img style="float:left;" src="{php echo tsXimg($item['photo'],'event',140,110,$item['path'],'1')}" />
 		</a>
-		<div style="float:left; padding:7px; font-size:13px; line-height:1.7">
+		<div style="float:left; padding-left:5px;padding-top:7px; font-size:13px; line-height:1.7">
 		<a href="{tsUrl('event','show',array('id'=>$item[eventid]))}">{$item[title]}</a><br> 
 		来自: <a href="{tsUrl('user','space',array('id'=>$item[userid]))}">{$item[username]}</a><br>
 		({$item['count']}人参与)

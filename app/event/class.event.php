@@ -96,13 +96,14 @@ class event extends tsApp{
 	}
 	
 	//get the hote event
-	//$count, how many hot events to return
+	//$count, how many hot events(non-expire) to return
 	function getHotEvents($count=1) {
 	    $hotEvent = $this->db->fetch_all_assoc("
 	            SELECT c.eventid, count(c.status) AS count, e.*, u.username 
 	            FROM ".dbprefix."event_users AS c, ".dbprefix."event AS e, ".dbprefix."user_info AS u
 	            WHERE c.eventid = e.eventid
 	            AND u.userid = e.userid
+	            AND NOW() < e.endtime
 	            GROUP BY c.eventid ORDER BY count(c.status) DESC
 	            LIMIT ".$count." 
 	            ");
