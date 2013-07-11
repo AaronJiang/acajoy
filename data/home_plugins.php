@@ -11,4 +11,5 @@ return array (
   9 => 'activityarea',
   10 => 'relaxarea',
   11 => 'jobarea',
+  12 => 'hotevent',
 );

@@ -83,4 +83,31 @@ class event extends tsApp{
 		}
 		return $strGroup;
 	}
+	
+	//获取推荐活动
+	function getRecommendArticleEvent(){
+	    $arrEvent = $this->findAll('event',array('isrecommend'=>1),'addtime desc', null,3);
+	    foreach($arrEvent as $key=>$item){
+	    	$arrEvent[$key]['title'] = htmlspecialchars($item['title']);
+	    	$arrArticle[$key]['content'] = cututf8(t($item['content']), 0, 30);
+	    }
+	    
+	    return $arrEvent;
+	}
+	
+	//get the hote event
+	//$count, how many hot events to return
+	function getHotEvents($count=1) {
+	    $hotEvent = $this->db->fetch_all_assoc("
+	            SELECT c.eventid, count(c.status) AS count, e.*, u.username 
+	            FROM ".dbprefix."event_users AS c, ".dbprefix."event AS e, ".dbprefix."user_info AS u
+	            WHERE c.eventid = e.eventid
+	            AND u.userid = e.userid
+	            GROUP BY c.eventid ORDER BY count(c.status) DESC
+	            LIMIT ".$count." 
+	            ");
+	    
+	    return $hotEvent;
+	}
+	
 }

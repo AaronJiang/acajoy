@@ -49,7 +49,7 @@
  */
 //标注在最前页
 defined('IN_TS') or die('Access Denied.');
-require 'systemsafecode/ValidationCode.class.php';
+require 'system/safecode/ValidationCode.class.php';
 $vsafecode = new validationSafeCode ( );
 
 switch ($ts) {

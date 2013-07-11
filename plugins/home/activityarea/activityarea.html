@@ -1,0 +1,22 @@
+<div class="bbox">
+<h2><a href="/group">活动篇</a></h2>
+	<div class="homelist">
+		<ul>
+		{loop $arrEvents $key $item}
+		<li>
+		<a href="{tsUrl('event','show',array('id'=>$item[eventid]))}">
+		<img style="float:left;" src="{php echo tsXimg($item['photo'],'event',180,140,$item['path'],'1')}" />
+		</a>
+		<div class="homelist_bottom">
+			<div class="homelist_bottom_title" style="line-height:1.2;font-size:11px]"> 
+			<a href="{tsUrl('event','show',array('id'=>$item[eventid]))}">$item[title]</a>
+			</div>
+			来自: <a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a><br>
+			{$item[count_userwish]}人感兴趣    {$item[count_userdo]}人参加
+		</div>
+		</li>
+		{/loop}
+		</ul>
+	</div>
+
+</div>

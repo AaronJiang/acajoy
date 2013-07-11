@@ -29,7 +29,7 @@ function upgradeClick(upapp,upversion){
 function isupdate(upapp,version){
 	$.getJSON("http://www.acajoy.cn/index.php?app=upcenter&ac=update&upapp="+upapp+"&version="+version+"&callback=?", function(response){
 		if(response != ''){
-			$('#upgrade').html('发现新版本：'+response.upversion+' <a  href="javascript:void(0);" onclick="upgradeClick(\''+upapp+'\',\''+response.upversion+'\')"><font color="red">[升级]</font></a> <a target="_blank" href="http://www.acajoy.cn/index.php?app=upcenter&ac=log&upapp='+upapp+'&version='+version+'">[日志]</a>');
+			$('#upgrade').html('发现新版本：'+response.upversion+' <a  href="javascript:void(0);" onclick="upgradeClick(\''+upapp+'\',\''+response.upversion+'\')"><font color="red">[自动升级]</font></a> <a target="_blank" href="http://www.acajoy.cn/index.php?app=upcenter&ac=log&upapp='+upapp+'&version='+version+'">[手动升级]</a> <a target="_blank" href="http://www.acajoy.cn/index.php?app=upcenter&ac=log&upapp='+upapp+'&version='+version+'">[日志]</a>');
 		}
 		
 	});   
@@ -79,7 +79,7 @@ isupdate('acajoy','<?php echo $TS_CF['info'][version];?>');
 </div>
 
 <div class="fbox" id="admindex_msg">
-<h2>AcaJoy官方消息</h2>
+<h2>ThinkSAAS官方消息</h2>
 <table>
 
 </table>
