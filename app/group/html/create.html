@@ -1,5 +1,4 @@
 {template header}
-{php doAction('tseditor')}
 <script>
 $(document).ready(function() {
 
@@ -53,24 +52,23 @@ $('#cateid').change(function(){
 
 <div class="midder">
 <div class="mc">
-<div class="bbox pd20">
+<div class="bbox">
 <h1>申请创建小组</h1>
 <form method="POST" action="{SITE_URL}index.php?app=group&ac=create&ts=do"  enctype="multipart/form-data">
-<table width="100%">
-<tbody>
-<tr><td valign="top">名称*</td>
+<table width="100%" class="commtable">
+<tr><th>名称*</th>
 <td><input type="text" style="width:500px;" name="groupname"><br><br></td></tr>
 
-<tr><td valign="top">介绍*</td>
-<td><textarea style="width:510px;" id="tseditor-mt" name="groupdesc"></textarea><br><br></td></tr>
+<tr><th>介绍*</th>
+<td><textarea style="width:500px;height:200px;" name="groupdesc"></textarea><br><br></td></tr>
 
 <tr>
-<td>图标：</td>
+<th>图标：</th>
 <td><input type="file" name="picfile"> 仅支持jpg，gif，png格式图片</td>
 </tr>
 
 <tr>
-<td>分类：</td>
+<th>分类：</th>
 <td>
 
 <select id="cateid" name="cateid">
@@ -87,16 +85,16 @@ $('#cateid').change(function(){
 </td>
 </tr>
 
-<tr><td></td><td>
+<tr><th></th><td>
 <br><br>
 <input type="checkbox" name="grp_agreement" value="1" checked />我已认真阅读并同意<a href="">《社区指导原则》</a>和<a href="">《免责声明》</a>
 <br><br>
 </td>
 </tr>
 
-<tr><td></td><td>
+<tr><th></th><td>
 <button class="btn btn-success" type="submit">创建小组</button>
-</td></tr></tbody>
+</td></tr>
 </table>
 </form>
 </div>

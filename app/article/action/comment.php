@@ -30,6 +30,17 @@ switch($ts){
 		
 		));
 		
+		//统计
+		$count_comment = $new['article']->findCount('article_comment',array(
+			'articleid'=>$articleid,
+		));
+		
+		$new['article']->update('article',array(
+			'articleid'=>$articleid,
+		),array(
+			'count_comment'=>$count_comment,
+		));
+		
 		header("Location: ".tsUrl('article','show',array('id'=>$articleid)));
 		
 		break;

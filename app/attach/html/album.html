@@ -2,11 +2,13 @@
 <div class="midder">
 <div class="mc">
 
-<div class="bbox pd10 mh400">
+<div class="bbox mh400">
 {template menu}
 
-<div>
 <h1>{$strAlbum['title']}</h1>
+
+<div class="bc">
+<div>
 <p>{$strAlbum['content']}</p>
 <p>{$strAlbum['user']['username']} 创建于 {$strAlbum['addtime']}</p>
 {if $TS_USER['user']['userid']==$strAlbum['userid'] || $TS_USER['user']['isadmin']==1}
@@ -23,7 +25,7 @@
 {/loop}
 </table>
 </div>
-
+</div>
 
 </div>
 </div>

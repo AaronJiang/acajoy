@@ -117,7 +117,7 @@ switch ($ts) {
 		//if($strPreTopic && $IntervalTime<3600){
 		if($strPreTopic){
 			similar_text($strPreTopic['title'], $title, $percent);
-			if($percent>=40){
+			if($percent>=90){
 				$new['group']->update('group_topics',array(
 					'topicid'=>$strPreTopic['topicid'],
 				),array(

@@ -4,13 +4,24 @@
 <div class="mc">
 
 <div class="cleft">
-<div class="bbox pd010">
+<div class="bbox">
+
+<div class="bd"><a href="{tsUrl('group')}" title="小组">小组</a> → <a href="{tsUrl('group','show',array('id'=>$strGroup['groupid']))}">{$strGroup['groupname']}</a> → {$strTopic[title]}</div>
+
 <h1>{if $strTopic[typeid] !='0'}<a href="{tsUrl('group','show',array('id'=>$strTopic[groupid],typeid=>$strTopic[typeid]))}">[{$strTopic[type][typename]}]</a>{/if}{$strTopic[title]} {if $strTopic['postby']==1}<a href="{tsUrl('home','phone')}"><img align="absmiddle" alt="通过Iphone手机端发布" title="通过Iphone手机端发布" src="{SITE_URL}public/images/ios.jpg" /></a>{/if}</h1>
 
+<div class="bc">
 {if $page == '1'}
-
 <div class="topic-content">
+<div class="user-face">
+<a href="{tsUrl('user','space',array('id'=>$strTopic[user][userid]))}"><img title="{$strTopic[user][username]}" alt="{$strTopic[user][username]}" src="{$strTopic[user][face]}" width="48" height="48"></a>
+</div>
+
 <div class="topic-doc">
+
+<h3>来自: <a href="{tsUrl('user','space',array('id'=>$strTopic[userid]))}">{$strTopic[user][username]}</a>
+ {php echo date('Y-m-d H:i:s',$strTopic[addtime])} </h3>
+
 <div class="topic-view">
 
 {if $strTopic['after']}
@@ -72,11 +83,6 @@
 </div>
 <div class="clear"></div>
 
-<div class="tar c9 pd100">
-{php echo date('Y-m-d H:i:s',$strTopic[addtime])} 
-来自：<a href="{tsUrl('user','space',array('id'=>$strTopic[userid]))}">{$strTopic[user][username]}</a>
-</div>
-
 <div class="tar">
 <a class="btn" href="javascript:void('0');" onclick="taoalbum('{$strTopic['topicid']}')">淘贴</a> 
 <a id="topiclove" class="btn" href="javascript:void('0');" onclick="loveTopic('{$strTopic['topicid']}')">{$strTopic['count_love']}喜欢</a>
@@ -92,31 +98,13 @@
 {/loop}
 
 </div>
-<div class="clear"></div>
-
-<div class="pd100">
-{if $upTopic}上一帖子：<a href="{tsUrl('group','topic',array('id'=>$upTopic['topicid']))}">{$upTopic['title']}</a>{/if}
-
-{if $downTopic}<br />下一帖子：<a href="{tsUrl('group','topic',array('id'=>$downTopic['topicid']))}">{$downTopic['title']}</a>{/if}
-</div>
-{/if}
-
-<div class="clear"></div>
-{php doAction('group_topic_footer')}
-
-<div class="btitle pd100">用户评论({$strTopic['count_comment']})</div>
-
-{if $page == '1'}
-<div style="text-align:right;">
-{if $sc=='asc'}
-<a href="{tsUrl('group','topic',array('id'=>$topicid,'sc'=>'desc'))}" rel="nofollow">倒序阅读</a>
-{else}
-<a rel="nofollow" href="{tsUrl('group','topic',array('id'=>$topicid))}">正序阅读</a>
 {/if}
 </div>
+</div>
 
-{/if}
-
+<div class="bbox">
+<h2>用户评论({$strTopic['count_comment']})</h2>
+<div class="bc">
 <ul class="comment">
 {if is_array($arrTopicComment)}
 {loop $arrTopicComment $key $item}
@@ -138,7 +126,7 @@
 {$item[content]}
 </p>
 
-<p class="btool">
+<div class="tar">
 {if $isGroupUser != '0'}
 <span><a href="javascript:void(0)"  onclick="commentOpen({$item[commentid]},{$item[topicid]})">回复</a></span>
 {/if}
@@ -147,7 +135,7 @@
 <span><a class="j a_confirm_link" href="{SITE_URL}index.php?app=group&ac=comment&ts=delete&commentid={$item[commentid]}&token={$_SESSION['token']}" rel="nofollow" onClick="return confirm('确定删除吗?')">删除</a>
 </span>
 {/if}
-</p>
+</div>
 
 
 <div id="rcomment_{$item[commentid]}" style="display:none">
@@ -161,13 +149,10 @@
 {/loop}
 {/if}
 </ul>
-
 <div class="page">{$pageUrl}</div>
 
-<div class="btitle">添加评论</div>
+
 <div>
-
-
 {if intval($TS_USER[user][userid])==0}
 <div class="tac pd20">
 <a href="{tsUrl('user','login')}">登陆</a> | <a href="{tsUrl('user','register')}">注册</a>
@@ -193,33 +178,25 @@
 <button class="btn btn-success" type="submit">提交评论</button></p>
 </form>
 {/if}
+</div>
 
 </div>
 </div>
+
+
 </div>
 
 <div class="cright">
 
-<div class="bbox pd10">
+<div class="bbox">
+
+<div class="bc">><a href="{tsUrl('group','show',array('id'=>$strGroup['groupid']))}">返回{$strGroup['groupname']}</a></div>
 	
-	<div class="fs14">><a href="{tsUrl('group','show',array('id'=>$strGroup['groupid']))}">返回{$strGroup['groupname']}</a></div>
-	
 </div>
 
-<div class="facebox bbox pd10">
-<div class="face">
-<a href="{tsUrl('user','space',array('id'=>$strTopic[user][userid]))}"><img title="{$strTopic[user][username]}" alt="{$strTopic[user][username]}" src="{$strTopic[user][face]}" width="48"></a>
-</div>
-
-<div class="info">
-<h3><a href="{tsUrl('user','space',array('id'=>$strTopic[user][userid]))}">{$strTopic[user][username]}</a></h3>
-<div><a class="btn btn-mini" href="javascript:void('0')" onclick="follow('{$strTopic['user']['userid']}');">关注</a></div>
-</div>
-</div>
-
-<div class="bbox pd10">
-<div class="btitle">最新帖子</div>
-<div class="commlist">
+<div class="bbox">
+<h2>最新帖子</h2>
+<div class="bc commlist">
 <ul>
 {loop $newTopic $key $item}
 <li>
@@ -236,10 +213,9 @@
 </div>
 </div>
 
-<div class="bbox pd10">
-<div class="btitle">热门帖子</div>
+<div class="bbox"><h2>热门帖子</h2>
 
-<div class="commlist">
+<div class="bc commlist">
 <ul>
 {loop $arrHotTopic $key $item}
 <li><a href="{tsUrl('group','topic',array('id'=>$item['topicid']))}">{$item['title']}</a></li>
@@ -250,10 +226,9 @@
 </div>
 
 
-<div class="bbox pd10">
-<div class="btitle">喜欢这个帖子的用户</div>
+<div class="bbox"><h2>喜欢这个帖子的用户</h2>
 <script>topic_collect_user('{$strTopic[topicid]}')</script>
-<div id="collects">
+<div class="bc" id="collects">
 <div style="padding:10px;text-align:center;"><img src="{SITE_URL}public/images/loading.gif" />加载中......</div>
 </div>
 </div>

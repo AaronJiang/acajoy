@@ -4,12 +4,13 @@
 
 <div class="mc">
 
-<div class="bbox pd20">
+<div class="bbox">
 <h1>编辑帖子</h1>
+<div class="bc">
 <form method="POST" action="{SITE_URL}index.php?app=group&ac=topicedit&ts=do" enctype="multipart/form-data">
 <table width="100%">
 <tbody>
-<tr><td width="50">标题：</td>
+<tr><td width="100">标题：</td>
     <td><input style="padding:3px 0;width:600px;" type="text" value="{$strTopic[title]}" maxlength="100" size="50" name="title" gtbfieldid="2"></td></tr>
 
 {if $arrGroupType}
@@ -56,6 +57,7 @@
 	
 	</tbody></table>
 </form>
+</div>
 </div>
 
 </div>

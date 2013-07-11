@@ -1,6 +1,6 @@
-<?php defined('IN_TS') or die('Access Denied.'); ?><div class="bbox pd10 weibo">
-<div class="btitle">唠唠叨叨</div>
-
+<?php defined('IN_TS') or die('Access Denied.'); ?><div class="bbox weibo">
+<h2>唠唠叨叨</h2>
+<div class="bc">
 <div class="weiform">
 <form>
 <textarea id="weibocontent" name="content"></textarea>
@@ -22,5 +22,5 @@
 </li>
 <?php }?>
 </ul>
-
+</div>
 </div>

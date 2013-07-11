@@ -4,8 +4,8 @@ defined('IN_TS') or die('Access Denied.');
 function activityarea_html(){
 	
 	
-	echo '<div class="bbox pd10">';
-	echo '<div class="btitle">活动篇</div>';
+	echo '<div class="bbox">';
+	echo '<h2><a href="/event">活动篇</a></h2>';
 	echo '</div>';
 	
 }

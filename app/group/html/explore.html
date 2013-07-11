@@ -3,9 +3,9 @@
 <div class="mc">
 
 <div class="cleft">
-<div class=" bbox pd10">
-<div class="btitle">最新活跃会员</div>
-<div class="indent obssin">
+<div class=" bbox">
+<h2>最新活跃会员</h2>
+<div class="bc indent obssin">
 {loop $arrHotUser $key $item}
 <dl class="ob">
 <dt><a href="{tsUrl('user','space',array('id'=>$item[userid]))}"><img alt="{$item[username]}" class="m_sub_img" src="{$item[face]}" width="48" /></a></dt>
@@ -16,23 +16,16 @@
 </div>
 
 
-
-<div class="clear"></div>
-
-
-<div class="btitle">社区标签</div>
-<div class="tags">
+<h2>社区标签</h2>
+<div class="bc tags">
 {loop $arrTag $key $item}
 <a rel="tag" href="{tsUrl('group','tag',array('id'=>urlencode($item[tagname])))}">{$item[tagname]}</a>
 {/loop}
 </div>
 
 
-<div class="clear"></div>
-
-
-<div class="btitle">推荐小组</div>
-<div class="indent obssin">
+<h2>推荐小组</h2>
+<div class="bc indent obssin">
 {if $arrRecommendGroup}
 {loop $arrRecommendGroup $key $item}
 <dl class="ob">
@@ -49,10 +42,8 @@
 
 </div>
 
-<div class="clear"></div>
-
-<div class="btitle">最新回应帖子</div>
-<div class="topic_list">
+<h2>最新回应帖子</h2>
+<div class="bc topic_list">
 <ul>
 {if $arrTopic}
 {loop $arrTopic $key $item}
@@ -99,9 +90,9 @@
 
 
 <div class="cright">
-<div class="bbox pd10">
-<div class="btitle">最新加入会员</div>
-<div class="indent obssin">
+<div class="bbox">
+<h2>最新加入会员</h2>
+<div class="bc indent obssin">
 {loop $arrNewUser $key $item}
 <dl class="ob">
 <dt><a href="{tsUrl('user','space',array('id'=>$item[userid]))}"><img alt="{$item[username]}" class="m_sub_img" src="{$item[face]}" width="48" /></a></dt>
@@ -112,11 +103,9 @@
 </div>
 </div>
 
-<div class="clear"></div>
-
-<div class="bbox pd10">
-<div class="btitle">最新成立小组</div>
-<div class="line23">
+<div class="bbox">
+<h2>最新成立小组</h2>
+<div class="bc line23">
 {if $arrNewGroup}
 {loop $arrNewGroup $key $item}
 <a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">{$item[groupname]}</a> ({$item[count_user]}{if $item[uptime]>strtotime(date('Y-m-d 00:00:00'))}/<font color="orange">{$item[count_topic_today]}</font>{else}{/if})<br>
@@ -125,11 +114,9 @@
 </div>
 </div>
 
-<div class="clear"></div>
-
-<div class="bbox pd10">
-<div class="btitle">社区精华帖</div>
-<div class="line23">
+<div class="bbox">
+<h2>社区精华帖</h2>
+<div class="bc line23">
 <ul>
 {loop $arrPosts $key $item}
 <li><a href="{tsUrl('group','topic',array('id'=>$item[topicid]))}">{$item[title]}</a></li>
@@ -138,7 +125,6 @@
 </div>
 </div>
 
-<div class="clear"></div>
 <!--广告位-->
 {php doAction('gobad','300')}
 </div>

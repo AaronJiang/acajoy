@@ -15,7 +15,7 @@
 <div class="pic">
 <a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">
 {if $item['groupicon']}
-<img src="{SITE_URL}{php echo tsXimg($item['groupicon'],'group','48','48',$item['path'],'1')}" alt="{$item[groupname]}" width="48" height="48" />
+<img src="{php echo tsXimg($item['groupicon'],'group','48','48',$item['path'],'1')}" alt="{$item[groupname]}" width="48" height="48" />
 {else}
 <img src="{SITE_URL}public/images/group.jpg" alt="{$item[groupname]}" width="48" height="48" />
 {/if}

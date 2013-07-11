@@ -73,7 +73,7 @@ switch($ts){
 	case "code":
 		$authcode = strtoupper(trim($_GET["param"]));
 		
-		if($authcode == $_SESSION['authcode']){
+		if($authcode == $_SESSION['SafeCodereg']){
 			echo '{"info":"通过！","status":"y"}';
 		}else{
 			echo '{"info":"验证码输入有误","status":"n"}';

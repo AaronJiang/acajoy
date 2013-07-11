@@ -3,9 +3,9 @@
 <div class="midder">
 <div class="mc">
 
-<div class="bbox pd10">
+<div class="bbox">
 <h1>修改文章</h1>
-
+<div class="bc">
 <form method="POST" action="{SITE_URL}index.php?app=article&ac=edit&ts=do"  enctype="multipart/form-data">
 <table>
 
@@ -25,7 +25,7 @@
 <tr><th>封面图片：</th><td>
 
 {if $strArticle['photo']}
-<img src="{SITE_URL}{php echo tsXimg($strArticle['photo'],'article',180,'140',$strArticle['path'],1)}?v={php echo rand();}" />
+<img src="{php echo tsXimg($strArticle['photo'],'article',180,'140',$strArticle['path'],1)}?v={php echo rand();}" />
 <br />
 {/if}
 
@@ -39,6 +39,8 @@
 </td></tr>
 </table>
 </form>
+
+</div>
 </div>
 </div>
 </div>

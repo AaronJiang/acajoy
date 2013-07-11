@@ -4,11 +4,11 @@
 
 <div class="mc">
 
-<div class="bbox pd10 mh400">
+<div class="bbox mh400">
 {template menu}
 
 <h1>{$title}</h1>
-
+<div class="bc">
 <div class="pl photitle">
 {if $strAlbum[userid] == $TS_USER[user][userid] || $TS_USER[user][isadmin]==1}    &nbsp;&gt;&nbsp;<a href="{SITE_URL}index.php?app=photo&ac=album&ts=edit&albumid={$strAlbum[albumid]}">修改相册属性</a>
     &nbsp;&gt;&nbsp;<a href="{SITE_URL}index.php?app=photo&ac=upload&albumid={$strAlbum[albumid]}">添加照片</a>
@@ -21,7 +21,7 @@
 {loop $arrPhoto $key $item}
     <div class="box photo_wrap">
         <a title="{$item[photodesc]}" class="photolst_photo" href="{tsUrl('photo','show',array(photoid=>$item[photoid]))}">
-        <img src="{SITE_URL}{php echo tsXimg($item[photourl],'photo',170,'170',$item[path],1)}"  width="170" alt="{$item['albumname']}" />
+        <img src="{php echo tsXimg($item[photourl],'photo',170,'170',$item[path],1)}"  width="170" alt="{$item['albumname']}" />
         </a><br>
         <div class="pl">{$item[photodesc]}</div>
         <div style="color:#999">
@@ -63,6 +63,8 @@
 <div>
 
 </div>
+</div>
+
 </div>
 
 </div>

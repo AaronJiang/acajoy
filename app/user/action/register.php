@@ -77,7 +77,7 @@ switch($ts){
 			tsNotice('姓名长度必须在4和20之间!');
 		}elseif($isUserName > 0){
 			tsNotice("用户名已经存在，请换个用户名！");
-		}elseif($authcode != $_SESSION['authcode']){
+		}elseif($authcode != $_SESSION['SafeCodereg']){
 			tsNotice("验证码输入有误，请重新输入！");
 		}else{
 		
@@ -138,7 +138,7 @@ switch($ts){
 			//用户信息
 			$userData = $new['user']->find('user_info',array(
 				'userid'=>$userid,
-			),'userid,username,areaid,path,face,count_score,isadmin,uptime');
+			),'userid,username,path,face,isadmin,uptime');
 			
 			//用户session信息
 			$_SESSION['tsuser']	= $userData;
@@ -172,4 +172,12 @@ switch($ts){
 			
 		}
 		break;
+		
+		//Email验证注册
+		case "email":
+		
+			
+		
+			break;
+		
 }

@@ -1,6 +1,7 @@
 <?php defined('IN_TS') or die('Access Denied.'); ?><?php if($TS_USER['user']['userid']) { ?>
 
-<div class="facebox bbox pd10">
+<div class="facebox bbox">
+<div class="bc">
 <div class="face">
 <a href="<?php echo tsurl('user','space',array('id'=>$strUser['userid']))?>"><img title="<?php echo $strUser['username'];?>" alt="<?php echo $strUser['username'];?>" src="<?php echo $strUser['face'];?>" width="48"></a>
 </div>
@@ -43,7 +44,7 @@
 角色：<a href="<?php echo tsurl('user','role')?>"><?php echo $strUser['rolename'];?></a>
 
 </div>
-
+</div>
 </div>
 
 
@@ -68,7 +69,6 @@
 <input type="hidden" name="token" value="<?php echo $_SESSION['token'];?>" />
 <button type="submit" class="btn btn-success">登录</button> 
 <a href="<?php echo SITE_URL;?>index.php?app=pubs&ac=plugin&plugin=qq&in=login"><img align="absmiddle" src="<?php echo SITE_URL;?>plugins/pubs/qq/images/Connect_logo_6.png" alt="QQ登陆" /></a>
-
 <a href="<?php echo SITE_URL;?>index.php?app=pubs&ac=plugin&plugin=weibo&in=login"><img align="absmiddle" src="<?php echo SITE_URL;?>plugins/pubs/weibo/images/16x16.png" alt="微博登陆" /></a>
  <a href="<?php echo tsurl('user','forgetpwd')?>">忘记密码</a>
 </div>

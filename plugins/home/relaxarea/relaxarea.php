@@ -4,8 +4,8 @@ defined('IN_TS') or die('Access Denied.');
 function relaxarea_html(){
 	
 	
-	echo '<div class="bbox pd10">';
-	echo '<div class="btitle">休闲篇</div>';
+	echo '<div class="bbox">';
+	echo '<h2>休闲篇</h2>';
 	echo '</div>';
 	
 }

@@ -79,7 +79,7 @@ class feed extends tsApp{
 		$strPhoto = $this->find('photo',array(
 			'photoid'=>$item,
 		));
-		$content = str_replace("[photo={$item}]",'<p><a href="'.SITE_URL.'uploadfile/photo/'.$strPhoto['photourl'].'" target="_blank"><img class="thumbnail" src="'.SITE_URL.tsXimg($strPhoto['photourl'],'photo','200','',$strPhoto['path']).'" /></a></p>', $content);
+		$content = str_replace("[photo={$item}]",'<p><a href="'.SITE_URL.'uploadfile/photo/'.$strPhoto['photourl'].'" target="_blank"><img class="thumbnail" src="'.tsXimg($strPhoto['photourl'],'photo','200','',$strPhoto['path']).'" /></a></p>', $content);
 	}
 		
 		return $content;

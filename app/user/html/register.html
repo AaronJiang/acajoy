@@ -19,7 +19,7 @@ function newgdcode(obj,url) {
 <div class="midder">
 <div class="mc">
 
-<div class="bbox pd20 mh400">
+<div class="bbox mh400">
 
 <h1>用户注册</h1>
 
@@ -60,7 +60,7 @@ function newgdcode(obj,url) {
 </tr>
 
 <tr><th>验证码：</th><td><input name="authcode" datatype="*" ajaxurl="{SITE_URL}index.php?app=user&ac=check&ts=code" />
- <img src="{tsUrl('user','checkcode')}" onclick="javascript:newgdcode(this,this.src);" alt="点击刷新验证码" style="cursor:pointer;"/></td>
+ <img align="absmiddle" src="{tsUrl('user','code',array('ts'=>'reg'))}" onclick="javascript:newgdcode(this,this.src);" title="点击刷新验证码" alt="点击刷新验证码" style="cursor:pointer;"/></td>
 </tr>
 
 <tr>

@@ -4,9 +4,9 @@ function hottopic(){
 	
 	$arrHotTopics = aac('group')->hotTopics(1);
 	
-	echo '<div class="bbox pd10">';
-	echo '<div class="btitle">热门话题</div>';
-	echo '<div class="commlist">';
+	echo '<div class="bbox">';
+	echo '<h2>热门话题</h2>';
+	echo '<div class="bc commlist">';
 	echo '<ul>';
 	foreach($arrHotTopics as $key=>$item){
 		echo '<li><a href="'.tsUrl('group','topic',array('id'=>$item['topicid'])).'">'.cututf8(htmlspecialchars($item['title']),0,20,false).'</a> ('.$item['count_view'].')</li>';

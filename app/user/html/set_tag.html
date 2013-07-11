@@ -3,10 +3,10 @@
 <div class="midder">
 <div class="mc">
 
-<div class="bbox pd20 mh400">
+<div class="bbox mh400">
 
 {template set_menu}
-
+<div class="bc">
 <div class="tags">
 {loop $arrTag $key $item}
 <a>{$item[tagname]}</a>
@@ -19,6 +19,7 @@
 
 <div id="tagFrom" style="display:none">
 <input style="width:250px;padding:3px 2px;" type="text" name="tags" id="tags" /> <button type="submit" class="btn" onClick="savaTag({$userid})">添加</button> <a href="javascript:void(0);" onClick="showTagFrom()">取消</a>
+</div>
 </div>
 </div>
 

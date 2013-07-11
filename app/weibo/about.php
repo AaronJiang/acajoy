@@ -2,7 +2,7 @@
 defined('IN_TS') or die('Access Denied.');
 return array (
   'name' => '微博',
-  'version' => '1.1',
+  'version' => '1.2',
   'desc' => '微博',
   'url' => 'http://www.acajoy.cn',
   'email' => 'acajoy@qq.com',

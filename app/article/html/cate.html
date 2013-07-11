@@ -3,18 +3,19 @@
 <div class="midder">
 <div class="mc">
 
+<div class="bbox mh400">
+{template menu}
+<div class="bc">
 <div class="cleft">
-
-<div class="bbox pd10 mh400">
 <div class="clist">
 <ul>
-<!--{loop $arrArticle $key $item}-->
+{loop $arrArticle $key $item}
 <li>
 {if $item['photo']}<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
-<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+<img style="float:left;" src="{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
 </a>
 {/if}
-<h2><a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">{php echo htmlspecialchars($item[title])}</a></h2>
+<div><a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">{php echo htmlspecialchars($item[title])}</a></div>
 <span><a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}">{$item[user][username]}</a> 发表于 {$item[addtime]}</span>
 <p>{$item[content]} (<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">查看全文</a>)</p>
 
@@ -25,36 +26,16 @@
 </div>
 <div class="clear"></div>
 </li>
-<!--{/loop}-->
-</ul>
-</div>
-
-<div class="page">{$pageUrl}</div>
-
-</div>
-</div>
-
-<div class="cright">
-
-<div class="bbox pd10">
-<a class="btn" href="{tsUrl('article','add',array('cateid'=>$strCate['cateid']))}">写文章</a>
-</div>
-
-<div class="bbox pd10">
-<div class="btitle">生活篇</div>
-
-<div class="catelist">
-<ul>
-{loop $arrCate $key $item}
-<li><a {if $strCate['cateid']==$item['cateid']}class="on"{/if} href="{tsUrl('article','cate',array('id'=>$item['cateid']))}">{$item['catename']}</a></li>
 {/loop}
 </ul>
 </div>
 
+<div class="page">{$pageUrl}</div>
 </div>
 
-<div class="bbox pd10">
-<div class="btitle">推荐阅读</div>
+
+<div class="rbox">
+<h2>推荐阅读</h2>
 
 <div class="commlist">
 <ul>
@@ -64,11 +45,8 @@
 </ul>
 </div>
 
-</div>
 
-<div class="bbox pd10">
-<div class="btitle">一周热门</div>
-
+<h2>一周热门</h2>
 <div class="commlist">
 <ul>
 {loop $arrHot7 $key $item}
@@ -76,11 +54,7 @@
 {/loop}
 </ul>
 </div>
-
-</div>
-
-<div class="bbox pd10">
-<div class="btitle">一月热门</div>
+<h2>一月热门</h2>
 
 <div class="commlist">
 <ul>
@@ -90,13 +64,17 @@
 </ul>
 </div>
 
-</div>
-
-<div class="clear"></div>
-<!--广告位-->
-{php doAction('gobad','300')}
 
 </div>
+
+
+
+</div>
+</div>
+
+
+
+
 </div>
 </div>
 

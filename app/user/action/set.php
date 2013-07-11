@@ -32,7 +32,7 @@ switch($ts){
 			'userid'=>$userid,
 		));
 		
-		require_once 'system/tsImage.php';
+		require_once 'tsImage.php';
 		$resizeimage = new tsImage("uploadfile/user/".$strUser['face'], 190, 190, 2,"uploadfile/user/".$strUser['face']);
 		
 		tsDimg($strUser['face'],'user','120','120',$strUser['path']);
@@ -59,7 +59,7 @@ switch($ts){
 		if($_FILES['picfile']){
 			
 			//上传
-			$arrUpload = tsUpload($_FILES['picfile'],$userid,'user',array('jpg','gif','png','jpeg'));
+			$arrUpload = tsUpload($_FILES['picfile'],$userid,'user',array('jpg','gif','png'));
 			
 			if($arrUpload){
 

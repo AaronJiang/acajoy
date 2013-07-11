@@ -2,7 +2,7 @@
 defined('IN_TS') or die('Access Denied.');
 return array(
 	'name'	=> '搜索',
-	'version'	=> '1.1',
+	'version'	=> '1.2',
 	'desc'	=> '搜索APP',
 	'url' => 'http://www.acajoy.cn',
 	'email' => 'acajoy@qq.com',

@@ -29,7 +29,11 @@ switch($ts){
 	case "add_do":
 	
 		$catename = trim($_POST['catename']);
-		
+		$cateNum=$new['article']->findCount('article_cate');
+		if($cateNum>=10){
+		  qiMsg('文章分类数量不得超过10个！');
+		  exit;
+		}
 		$db->query("insert into ".dbprefix."article_cate (`catename`) values ('$catename')");
 		
 		header("Location: ".SITE_URL.'index.php?app=article&ac=admin&mg=cate&ts=list');
@@ -57,17 +61,25 @@ switch($ts){
 		
 	//删除
 	case "delete":
-		$cateid = $_GET['cateid'];
+		$cateid = intval($_GET['cateid']);
+		
+		//首先判断本分类下是否有文章
+
+		$isArticle = $new['article']->findCount('article',array(
+			'cateid'=>$cateid,
+		));
+		
+		if($isArticle>0){
+		
+			qiMsg('分类下有文章存在，不允许删除该分类！');
+		
+		}
 		
 		$new['article']->delete('article_cate',array(
 			'cateid'=>$cateid,
 		));
-		
-		$new['article']->update('article',array(
-			'cateid'=>$cateid,
-		),array(
-			'cateid'=>0,
-		));
+
+		qiMsg('删除分类成功！');
 		
 		break;
 	

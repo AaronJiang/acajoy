@@ -18,7 +18,7 @@
 <div class="title"><a href="{tsUrl('group','topic',array('id'=>$item['topicid']))}">{$item[title]}</a></div>
 <div class="content">
 {if $item['photo']}
-<img src="{SITE_URL}{php echo tsXimg($item[photo],'topic',500,'',$item[path])}" alt="{$item['title']}" title="{$item['title']}" />
+<img src="{php echo tsXimg($item[photo],'topic',500,'',$item[path])}" alt="{$item['title']}" title="{$item['title']}" />
 <br />
 {/if}
 {$item[content]}
@@ -43,8 +43,8 @@
 <div class="cright">
 
 
-<div class="bbox pd10">
-<div class="btitle">热门帖子</div>
+<div class="bbox">
+<h2>热门帖子</h2>
 <ul class="titles">
 {loop $arrHotTopic $key $item}
 <li>

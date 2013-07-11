@@ -28,7 +28,7 @@ switch($ts){
 		break;
 		
 	case "add":
-	
+		exit;
 		$userid = intval($TS_USER['user']['userid']);
 		
 		if($userid==0){

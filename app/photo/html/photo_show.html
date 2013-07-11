@@ -4,10 +4,10 @@
 
 <div class="mc">
 
-<div class="bbox pd10">
+<div class="bbox">
 {template menu}
 <h1>{$title}</h1>
-
+<div class="bc">
 <div style="padding:3px;border-bottom:1px solid #ddd;margin:5px 0 10px 0;text-align:center;overflow: hidden;" class="pl">
     <span class="rr">&gt; <a href="{tsUrl('photo','album',array(ts=>photo,albumid=>$strAlbum[albumid]))}">返回相册</a></span>
     <span class="ll">第{$nowPage}张 / 共{$conutPage}张</span>
@@ -29,7 +29,7 @@
     {if $nowPage < $conutPage}
 	<a title="点击查看下一张" href="{tsUrl('photo','show',array(photoid=>$next))}" class="mainphoto">
 {/if}
-        <img src="{SITE_URL}{php echo tsXimg($strPhoto[photourl],'photo',600,'',$strPhoto[path])}" width="600" alt="{$strPhoto['photoname']}" />
+        <img src="{php echo tsXimg($strPhoto[photourl],'photo',600,'',$strPhoto[path])}" width="600" alt="{$strPhoto['photoname']}" />
 	{if $nowPage < $conutPage}
    </a>
    {/if}
@@ -95,7 +95,7 @@
 </div>
 <br>
 </div>
-
+</div>
 </div>
 
 </div>

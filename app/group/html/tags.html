@@ -4,10 +4,11 @@
 
 <div class="mc">
 
-<div class="bbox pd20">
+<div class="bbox">
 
 <h1>标签</h1>
 
+<div class="bc">
 <div class="tags">
 {loop $arrTag $key $item}
 <a href="{tsUrl('group','tag',array('id'=>urlencode($item[tagname])))}">{$item[tagname]}</a>
@@ -17,6 +18,7 @@
 <div class="clear"></div>
 <div style="height:30px;"></div>
 <div class="page">{$pageUrl}</div>
+</div>
 </div>
 
 

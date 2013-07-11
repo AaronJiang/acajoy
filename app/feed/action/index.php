@@ -36,4 +36,10 @@ foreach($arrFeeds as $key=>$item){
 
 }
 
+//社区精华帖
+$arrPosts = $new['feed']->findAll('group_topics',array(
+	'isposts'=>1,
+),'uptime desc',null,15);
+
+$title = '社区动态';
 include template('index');

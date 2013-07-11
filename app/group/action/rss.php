@@ -9,7 +9,7 @@ foreach($arrTopics as $key=>$item){
 	$arrTopic[] = $item;
 	$arrTopic[$key]['content'] = '';
 	if($item['photo']){
-		$arrTopic[$key]['content'] .= '<img src="'.SITE_URL.tsXimg($item['photo'],'topic',500,'',$item['path']).'" /><br />';
+		$arrTopic[$key]['content'] .= '<img src="'.tsXimg($item['photo'],'topic',500,'',$item['path']).'" /><br />';
 	}
 	$arrTopic[$key]['content'] .=nl2br(htmlspecialchars($item['content']));
 }

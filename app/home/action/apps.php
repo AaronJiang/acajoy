@@ -4,7 +4,7 @@ defined('IN_TS') or die('Access Denied.');
 
 $applists = tsScanDir('app');
 foreach($applists as $key=>$item){
-	if($item!='system' && $item!='pubs' && $item!='upgrade' && $item!='message' && $item!='mail' && $item!='notice' && $item!='plugin'){
+	if($item!='system' && $item!='pubs' && $item!='upgrade' && $item!='message' && $item!='mail' && $item!='notice' && $item!='plugin' && $item!='location' && $item!='tag'){
 		if(is_file('app/'.$item.'/about.php')){
 			$arrApps[$key]['name'] = $item;
 			$arrApps[$key]['about'] = require_once 'app/'.$item.'/about.php';

@@ -2,8 +2,6 @@
 .weiform  form {
     background: none repeat scroll 0 0 #0099FF;
     border: 1px solid #0099FF;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
     margin: 0 0 10px;
     position: relative;
 	overflow:hidden;

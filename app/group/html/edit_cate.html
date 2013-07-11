@@ -54,10 +54,10 @@ $('#cateid').change(function(){
 <div class="midder">
 
 <div class="mc">
-<div class="bbox pd10 mh400">
+<div class="bbox mh400">
 {template edit_xbar}
-<h2>当前分类</h2>
 
+<div class="tac">
 {if $strCate}
 一级：{$strCate['catename']}
 <br />
@@ -70,8 +70,6 @@ $('#cateid').change(function(){
 三级：{$strCate3['catename']}
 <br />
 {/if}
-
-<h2>选择小组分类</h2>
 
 <form method="post" action="{SITE_URL}index.php?app=group&ac=cate&ts=do">
 <select  id="cateid" name="cateid">
@@ -88,6 +86,9 @@ $('#cateid').change(function(){
 
 <button class="btn btn-success" type="submit">修改</button>
 </form>
+
+</div>
+
 </div>
 </div>
 </div>

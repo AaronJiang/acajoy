@@ -82,7 +82,7 @@ outline:0 none;}
 /*theme*/
 .theme{overflow:hidden;}
 .theme ul{overflow:hidden;}
-.theme ul li{float:left;padding:5px;overflow:hidden;}
+.theme ul li{height:120px;float:left;padding:5px;overflow:hidden;}
 
 .btn {
     -moz-border-bottom-colors: none;

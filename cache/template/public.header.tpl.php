@@ -57,7 +57,7 @@ var siteUrl = '<?php echo SITE_URL;?>'; //网站网址
 <a href="<?php echo tsurl('user','login')?>">登陆</a> | <a href="<?php echo tsurl('user','register')?>">注册</a>
 <?php } else { ?>
 <a href="<?php echo tsurl('user','space',array('id'=>$TS_USER['user'][userid]))?>">
-<img class="fimg" src="<?php if($TS_USER['user'][face]=="") { ?><?php echo SITE_URL;?>public/images/user_normal.jpg<?php } else { ?><?php echo SITE_URL;?><?php echo tsXimg($TS_USER['user'][face],'user','24','24',$TS_USER['user'][path],'1')?><?php } ?>" width="24" align="absmiddle" alt="<?php echo $TS_USER['user']['username'];?>" /> 
+<img class="fimg" src="<?php if($TS_USER['user'][face]=="") { ?><?php echo SITE_URL;?>public/images/user_normal.jpg<?php } else { ?><?php echo tsXimg($TS_USER['user'][face],'user','24','24',$TS_USER['user'][path],'1')?><?php } ?>" width="24" align="absmiddle" alt="<?php echo $TS_USER['user']['username'];?>" /> 
 </a>
 <a href="<?php echo tsurl('user','space',array('id'=>$TS_USER['user'][userid]))?>"><?php echo $TS_USER['user'][username];?></a>   |  <a href="<?php echo tsurl('user','set',array(ts=>base))?>" >设置</a> | <span id="newmsg"></span> <a href="<?php echo tsurl('message','my')?>">消息</a>
 <br>

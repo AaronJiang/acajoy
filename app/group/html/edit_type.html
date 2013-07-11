@@ -38,24 +38,26 @@ function deltopictype(typeid){
 <div class="midder">
 
 <div class="mc">
-<div class="bbox pd10 mh400">
+<div class="bbox mh400">
 {template edit_xbar}
 <div>
 {if $arrGroupType}
-<table class="topictype" width="100%">
+<table align="center" border="1" cellpadding="0" cellspacing="0" bordercolor="#CCCCCC" width="50%">
+<tr bgcolor="#F0F0F0">
+<td>类型</td><td>操作</td>
+</tr>
 {loop $arrGroupType $key $item}
 <tr>
 <td class="editable_textarea" id="{$item[typeid]}">{$item[typename]}</td><td><a href="javascript:void('0');" onclick="deltopictype('{$item[typeid]}')">删除</a></td>
 </tr>
 {/loop}
-
 </table>
 {/if}
 </div>
 
-<div style="margin-top:30px;">
+<div class="tac" style="margin-top:30px;">
 <form method="POST" action="{SITE_URL}index.php?app=group&ac=do&ts=topic_type">
-添加帖子分类：<br />
+添加帖子分类：
 <input type="hidden" name="groupid" value="{$strGroup[groupid]}" />
 <input name="typename" /> <input class="btn" type="submit" value="提交" />
 </form>

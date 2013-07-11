@@ -4,10 +4,10 @@
 
 <div class="cleft">
 
-<div class="bbox pd10 mh500">
-<div class="btitle">全部小组</div>
+<div class="bbox mh500">
+<h2>全部小组</h2>
 
-<div>
+<div class="bc">
 <div id="group_content">
 
 {loop $arrRecommendGroup $key $item}
@@ -46,16 +46,18 @@
 
 
 {if $TS_APP[options][iscreate]==0 || $TS_USER[user][isadmin]==1}
-<div class="bbox pd10">
+<div class="bbox">
+<div class="bc">
 <a class="btn btn-success" href="{tsUrl('group','create')}">创建小组</a>
+</div>
 </div>
 {/if}
 
 
-<div class="bbox pd10">
+<div class="bbox">
 
-<div class="btitle">热门帖子</div>
-<ul class="titles">
+<h2>热门帖子</h2>
+<ul class="bc titles">
 {loop $arrTopic $key $item}
 <li>
 <h3><a href="{tsUrl('group','topic',array('id'=>$item['topicid']))}" target="_blank">{$item['title']}</a></h3>
@@ -71,8 +73,18 @@
 </div>
 
 
-<div class="clear"></div>
+<div class="bbox">
 
+<h2>最新创建小组</h2>
+
+<div class="bc line23">
+{if $arrNewGroup}
+{loop $arrNewGroup $key $item}
+<a href="{tsUrl('group','show',array('id'=>$item[groupid]))}">{$item[groupname]}</a> ({$item[count_user]})<br>
+{/loop}
+{/if}
+</div>
+</div>
 
 <!--广告位-->
 {php doAction('gobad','300')}

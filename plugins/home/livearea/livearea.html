@@ -1,5 +1,6 @@
-<div class="bbox pd10">
-<div class="btitle">生活篇</div>
+<div class="bbox">
+<h2><a href="/article">生活篇</a></h2>
+	<br>
    <ul class="nav nav-tabs">
    <li class="active"><a href="#livetab_school" data-toggle="tab">纷呈校园</a></li>
    <li><a href="#livetab_hometown" data-toggle="tab">远方的家</a></li>
@@ -13,7 +14,7 @@
 				{loop $article_school $key $item}
 				<li>
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
-				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+				<img style="float:left;" src="{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
 				</a>
 				<div class="homelist_bottom">
 					<div class="homelist_bottom_title"> 
@@ -38,7 +39,7 @@
 				{loop $article_hometown $key $item}
 				<li style="float:left">
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
-				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+				<img style="float:left;" src="{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
 				</a>
 				<div class="homelist_bottom">
 					<div class="homelist_bottom_title"> 
@@ -64,7 +65,7 @@
 				{loop $article_travel $key $item}
 				<li style="float:left">
 				<a href="{tsUrl('article','show',array('id'=>$item[articleid]))}">
-				<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
+				<img style="float:left;" src="{php echo tsXimg($item['photo'],'article',180,140,$item['path'],'1')}" />
 				</a>
 				<div class="homelist_bottom">
 					<div class="homelist_bottom_title"> 

@@ -6,23 +6,10 @@
  */
 defined('IN_TS') or die('Access Denied.');
 
-if(intval($TS_USER['user']['userid']) > 0){
-	if(aac('user')->isUser(intval($TS_USER['user']['userid']))==false){
-		unset($_SESSION['tsuser']);
-		unset($_SESSION['tsadmin']);
-		session_destroy();
-	}
-}
-
-//判断升级
-if(is_file('update/up.php')) $app = 'upgrade';
-
-if($app=='upgrade' && !is_file('update/up.php')) $app='group';
-
 //加载APP应用首页和配置文件
 if(is_file('app/'.$app.'/action/'.$ac.'.php')){
 
-	//加载系统缓存文件
+	//加载网站配置文件
 	$TS_SITE['base'] = fileRead('data/system_options.php');
 	//定义网站URL
 	define('SITE_URL', $TS_SITE['base']['site_url']);	

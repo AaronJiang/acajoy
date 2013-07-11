@@ -16,6 +16,11 @@ switch($ts){
 
 	//发送验证
 	case "post":
+	
+		if($_GET['token'] != $_SESSION['token']) {
+			tsNotice('非法操作！');
+		}
+	
 		$userid = aac('user')->isLogin();
 
 		$strUser = $new['user']->find('user_info',array(

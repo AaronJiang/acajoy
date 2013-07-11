@@ -231,6 +231,7 @@ a.a_rec_btn:link, a.a_rec_btn:visited, a.a_rec_btn:hover, a.a_rec_btn:active {
 .topic-content .topic-doc {
     margin-bottom: 30px;
 	overflow: hidden;
+	margin-left:60px;
 }
 .topic-content .topic-doc .author {
     height: auto;
@@ -240,6 +241,17 @@ a.a_rec_btn:link, a.a_rec_btn:visited, a.a_rec_btn:hover, a.a_rec_btn:active {
 	background:#f4f4ec;
 	padding:5px;
 	font-size:12px;
+}
+
+.topic-content .topic-doc h3 {
+ background: #F8F8F8;
+    border-top: 1px solid #EEEEEE;
+    color: #999999;
+    font-size: 12px;
+    height: auto;
+    margin: 0;
+    padding: 5px;
+	
 }
 
 .topic-content .topic-doc img{max-width:500px;}
@@ -508,10 +520,14 @@ a.mini-share:hover {
 .newtopic ul{}
 .newtopic ul li{border-top: 1px dashed #CCCCCC;padding: 5px 0;}
 
-.title2{float:right;border: 1px solid #DDDDDD;border-bottom:none;}
+.title2{float:right;border: 1px solid #DDDDDD;border-bottom:none;margin-top:10px;}
 .title2 li{width:150px;border-bottom: 1px solid #DDDDDD;font-size:12px;padding:5px;line-height: 15px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 
-.btool{font-size:12px;text-align:right;padding:2px 0;}
+.btool{background:#F5F5F5;
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 12px;
+    padding: 5px;
+    text-align: right;}
 .btool a{margin-left:10px;padding:0px;}
 
 .bltool{font-size:12px;text-align:left;padding:2px 0;}

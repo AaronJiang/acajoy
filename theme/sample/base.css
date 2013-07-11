@@ -26,14 +26,14 @@ h3,h4,h5,h6{font-weight:normal;font-size:14px;}
 
 /*代码pre*/
 pre{
-	background:#F8F8F8;
-	border:1px dashed #CCC; 
-	padding:5px;
-	white-space: pre-wrap;       /* css-3 */
-	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-	white-space: -pre-wrap;      /* Opera 4-6 */
-	white-space: -o-pre-wrap;    /* Opera 7 */
-	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background:#F8F8F8;
+    border:1px dashed #CCC; 
+    padding:5px;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 /*引用blockquote*/
@@ -45,7 +45,7 @@ blockquote{background:#F8F8F8;}
 table{}
 table td{ padding:5px;}
 input,select,textarea{
-	border: 1px solid #CCCCCC;
+    border: 1px solid #CCCCCC;
     line-height: 1.62;
     margin-top: 5px;
     padding: 3px;
@@ -241,9 +241,9 @@ button, input, select, textarea {
     padding: 0 10px;}
 
 .tabnav .select { background:#FFFFFF;
-	border:solid 1px #DDDDDD;
-	border-bottom:none;
-	position: relative;}
+    border:solid 1px #DDDDDD;
+    border-bottom:none;
+    position: relative;}
 
 /*page分页*/
 .page {margin:0;text-align: center;padding:5px;}
@@ -274,7 +274,7 @@ button, input, select, textarea {
 /*APP内部导航*/
 .top-wp {
     border-bottom: 1px solid #CEE1EE;
-	margin-bottom:10px;
+    margin-bottom:10px;
 }
 .top-wp:after {
     clear: both;
@@ -287,7 +287,7 @@ button, input, select, textarea {
     height: 33px;
     overflow: hidden;
     width: 100%;
-	clear: both;
+    clear: both;
     margin-bottom: -1px;
 }
 .tabs li {
@@ -305,11 +305,11 @@ button, input, select, textarea {
     margin-top: 5px;
     padding: 0 10px;
     text-align: center;
-	margin-right:10px;
+    margin-right:10px;
 }
 .tabs li .current {
-	background:#FFFFFF;
-	border-bottom:solid 1px #FFFFFF;
+    background:#FFFFFF;
+    border-bottom:solid 1px #FFFFFF;
 }
 .tabs li .current span {
 

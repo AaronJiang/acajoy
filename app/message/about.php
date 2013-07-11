@@ -2,7 +2,7 @@
 defined('IN_TS') or die('Access Denied.');
 return array (
   'name' => '消息盒子',
-  'version' => '1.1',
+  'version' => '1.2',
   'desc' => 'ImBox消息盒子',
   'url' => 'http://www.acajoy.cn',
   'email' => 'acajoy@qq.com',

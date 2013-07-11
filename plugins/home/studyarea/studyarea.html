@@ -1,11 +1,11 @@
-<div class="bbox pd10">
-<div class="btitle">学习篇</div>
+<div class="bbox">
+<h2><a href="/group">学习篇</a></h2>
 	<div class="homelist">
 		<ul>
 		{loop $arrHotTopics $key $item}
 		<li style="height:190px;width:130px">
 		<a href="{tsUrl('group','topic',array('id'=>$item[topicid]))}">
-		<img style="float:left;" src="{SITE_URL}{php echo tsXimg($item['photo'],'group',130,160,$item['path'],'1')}" />
+		<img style="float:left;" src="{php echo tsXimg($item['photo'],'group',130,160,$item['path'],'1')}" />
 		</a>
 		<div class="homelist_bottom">
 			<div class="homelist_bottom_title" style="line-height:1.1;font-size:11px]"> 

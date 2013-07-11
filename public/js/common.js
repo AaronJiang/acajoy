@@ -1,6 +1,3 @@
-//前端安全过滤
-$.get(siteUrl+'index.php?app=user&ac=anti',function(rs){})
-
 //Input提示
 $(function(){
 	$('[fs]').inputDefault();

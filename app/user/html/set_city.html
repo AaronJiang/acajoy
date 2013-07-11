@@ -15,25 +15,25 @@
 
 <div class="midder">
 <div class="mc">
-<div class="bbox pd20 mh400">
+<div class="bbox mh400">
 
 {template set_menu}
 
-<table>
+<table class="commtable" width="100%">
 <tr>
 <th>常居地：</th>
 <td>
 
 {if $strUser['province']}
-省份：{$strProvince['province']}<br />
+省份：{$strProvince['province']} 
 {/if}
 
 {if $strUser['city']}
-城市：{$strCity['city']}<br />
+城市：{$strCity['city']}  
 {/if}
 
 {if $strUser['area']}
-区域：{$strArea['area']}<br />
+区域：{$strArea['area']}  
 {/if}
 
 </td>

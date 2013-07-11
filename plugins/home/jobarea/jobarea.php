@@ -4,8 +4,8 @@ defined('IN_TS') or die('Access Denied.');
 function jobarea_html(){
 	
 	
-	echo '<div class="bbox pd10">';
-	echo '<div class="btitle">就业篇</div>';
+	echo '<div class="bbox">';
+	echo '<h2>就业篇</h2>';
 	echo '</div>';
 	
 }

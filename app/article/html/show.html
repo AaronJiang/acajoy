@@ -6,8 +6,12 @@
 
 <div class="cleft">
 
-<div class="bbox pd10">
+<div class="bbox">
+
+<div class="bd"><a href="{tsUrl('article')}" title="文章">文章</a> → <a href="{tsUrl('article','cate',array('id'=>$strArticle['cate']['cateid']))}">{$strArticle['cate']['catename']}</a> → {php echo htmlspecialchars($strArticle[title])}</div>
+
 <h1>{php echo htmlspecialchars($strArticle[title])}</h1>
+<div class="bc">
 {if $strArticle['tags']}
 <div class="tags">
 {loop $strArticle[tags] $key $item}
@@ -47,28 +51,19 @@
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1372661040626900" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 {if $TS_USER[user][isadmin]==1}
+<div class="tar pd100">
 <a href="{SITE_URL}index.php?app=article&ac=edit&articleid={$strArticle[articleid]}">修改</a> 
 <a href="{SITE_URL}index.php?app=article&ac=delete&articleid={$strArticle[articleid]}">删除</a>
+</div>
 {/if}
-</div>
-<br>
-
-<div class="clear"></div>
-
-<div class="btitle">推荐阅读</div>
-
-<div class="commlist">
-
-<ul>
-{loop $arrRecommend $key $item}
-<li><a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{php echo htmlspecialchars($item['title'])}</a> {$item['addtime']}</li>
-{/loop}
-</ul>
 
 </div>
+</div>
 
-<div class="btitle pd100">你的回应</div>
 
+<div class="bbox">
+<h2>你的回应</h2>
+<div class="bc">
 <ul class="comment">
 {loop $arrComment $key $item}
 <li class="clearfix">
@@ -94,7 +89,7 @@
 
 <div class="page">{$pageUrl}</div>
 
-<div class="btitle">你的回复</div>
+
 <div>
 {if intval($TS_USER[user][userid])==0}
 <div class="pd20 tac"><a href="{tsUrl('user','login')}">登录</a> | <a href="{tsUrl('user','register')}">注册</a></div>
@@ -112,39 +107,19 @@
 {/if}
 </div>
 
+
+</div>
+</div>
+
+
 </div>
 </div>
 
 <div class="cright">
 
-<div class="bbox pd10">
-<div class="btitle">生活篇</div>
-
-<div class="catelist">
-<ul>
-{loop $arrCate $key $item}
-<li><a {if $strCate['cateid']==$item['cateid']}class="on"{/if} href="{tsUrl('article','cate',array('id'=>$item['cateid']))}">{$item['catename']}</a></li>
-{/loop}
-</ul>
-</div>
-
-</div>
-
-<div class="facebox bbox pd10">
-<div class="face">
-<a href="{tsUrl('user','space',array('id'=>$strArticle[user][userid]))}" rel="face" uid="$strArticle[user][userid]"><img title="{$strArticle[user][username]}" alt="{$strArticle[user][username]}" src="{$strArticle[user][face]}" width="48"></a>
-</div>
-
-<div class="info">
-<h3><a href="{tsUrl('user','space',array('id'=>$strArticle[user][userid]))}">{$strArticle[user][username]}</a></h3>
-<div><a class="btn btn-mini" href="javascript:void('0')" onclick="follow('{$strArticle['user']['userid']}');">关注</a></div>
-</div>
-</div>
-
-<div class="bbox pd10">
-<div class="btitle">一周热门</div>
-
-<div class="commlist">
+<div class="bbox">
+<h2>一周热门</h2>
+<div class="bc commlist">
 <ul>
 {loop $arrHot7 $key $item}
 <li><a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{$item['title']}</a></li>
@@ -154,10 +129,10 @@
 
 </div>
 
-<div class="bbox pd10">
-<div class="btitle">一月热门</div>
+<div class="bbox">
+<h2>一月热门</h2>
 
-<div class="commlist">
+<div class="bc commlist">
 <ul>
 {loop $arrHot30 $key $item}
 <li><a href="{tsUrl('article','show',array('id'=>$item['articleid']))}">{$item['title']}</a></li>
@@ -167,10 +142,11 @@
 
 </div>
 
-<div class="clear"></div>
 <!--广告位-->
 {php doAction('gobad','300')}
-</div>
+
+
+
 
 </div>
 </div>

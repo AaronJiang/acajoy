@@ -9,42 +9,24 @@
 <!--main-->
 <div class="midder">
 <div class="mc">
-
-<div class="bbox pd20">
-
+<div class="bbox mh400">
 {template set_menu}
-
 {if $TS_SITE['base']['isface']=='1' && $strUser['face'] == SITE_URL.'public/images/user_normal.jpg'}
 <div class="alert">提示：你需要上传头像才可以正常使用网站！</div>
 {/if}
 
-<h2>当前头像</h2>
-<div>
-<img alt="{$TS_USER[uname]}" src="{$strUser[face]}?v={php echo rand();}" width="60" />
-{if $strUser['path']}<a href="{tsUrl('user','set',array('ts'=>'cut'))}">裁切头像</a>{/if}
-</div>
 
-<h2>选择本地头像</h2>
+<table width="100%" class="commtable">
+<tr><th>当前头像</th><td><img alt="{$TS_USER[uname]}" src="{$strUser[face]}?v={php echo rand();}" width="60" /></td></tr>
 
-<form method="post" action="{SITE_URL}index.php?app=user&ac=set&ts=facedo"  enctype="multipart/form-data">
+<tr><th>选择本地头像</th><td><form method="post" action="{SITE_URL}index.php?app=user&ac=set&ts=facedo"  enctype="multipart/form-data">
 <input type="file" name="picfile" /><input class="btn" type="submit" value="上传头像" />
-</form>
+</form></td></tr>
 
-<h2>选择系统预置头像</h2>
-<div>
-<form method="post" action="{SITE_URL}index.php?app=user&ac=do&ts=face">
-<ul class="dface">
-{loop $arrFace $key $item}
-<li>
-<img src="{SITE_URL}uploadfile/user/face/{$item}" width="60" />
-<br />
-<input type="radio" name="face" value="{php echo intval($item)}" />
-</li>
-{/loop}
-</ul>
-<button class="btn btn-success" type="submit">使用头像</button>
-</form>
-</div>
+</table>
+
+
+
 </div>
 
 

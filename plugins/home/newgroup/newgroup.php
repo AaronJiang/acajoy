@@ -13,9 +13,9 @@ function newgroup(){
 		),'userid,username');
 	}
 	
-	echo '<div class="bbox pd10">';
-	echo '<div class="btitle">最新创建小组</div>';
-	echo '<div class="commlist"><ul>';
+	echo '<div class="bbox">';
+	echo '<h2>最新创建小组</h2>';
+	echo '<div class="bc commlist"><ul>';
 	foreach($arrNewGroup as $key=>$item){
 	
 		echo '<li><a href="'.tsUrl('group','show',array('id'=>$item['groupid'])).'">'.htmlspecialchars($item['groupname']).'</a> By <a href="'.tsUrl('user','space',array('id'=>$item['user']['userid'])).'">'.$item['user']['username'].'</a></li>';

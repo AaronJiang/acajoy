@@ -3,10 +3,10 @@
 
 <div class="midder">
 <div class="mc">
-<div class="bbox pd20">
+<div class="bbox">
 
 <h1>[{$strGroup[groupname]}]发布帖子</h1>
-
+<div class="bc">
 {if $isGroupUser == '0'}
 <div style="font-size:14px;padding-top:50px;text-align:center;">不好意思，你不是本组成员不能发表帖子，请加入后再发帖</div>
 {else}
@@ -38,7 +38,7 @@
 </td></tr>
 
 <tr><td>标签:</td><td><input style="width:250px;" type="text" name="tag" /> (多个标签请用,号分割)</td></tr>
-<tr><th>封面图片：</th><td><input  type="file" name="picfile" /> (仅支持jpg,gif,png)</td></tr>
+
 <tr><td>评论:</td><td><input type="radio" checked="select" name="iscomment" value="0" />允许 <input type="radio" name="iscomment" value="1" />不允许</td>
 </tr>
 
@@ -55,6 +55,9 @@
 
 </form>
 {/if}
+
+</div>
+
 </div>
 
 

@@ -139,6 +139,11 @@ switch($ts){
 				'count_comment'=>$count_comment,
 			));
 			
+			// 扣除用户相应的积分，删除评论扣2分
+			aac('user')->delScore($strComment['userid'],'删除帖子评论',2);
+			
+			
+			
 		}
 		
 		//跳转回到帖子页

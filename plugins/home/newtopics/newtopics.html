@@ -1,12 +1,12 @@
-<div class="bbox pd10">
-<div class="btitle">最新话题</div>
+<div class="bbox">
+<h2>最新话题</h2>
 
-<div class="topic_list">
+<div class="bc topic_list">
 <ul>
 
 {loop $arrTopic $key $item}
 <li>
-<div class="userimg"><a href="{tsUrl('group','user',array('id'=>$item[user][userid]))}"><img src="{$item[user][face]}" width="32"></a></div>
+<div class="userimg"><a href="{tsUrl('user','space',array('id'=>$item[user][userid]))}"><img src="{$item[user][face]}" width="32" height="32" alt="{$item['user']['username']}" title="{$item['user']['username']}" /></a></div>
 
 <div class="topic_title">
 <div class="title">
@@ -36,6 +36,15 @@
 </div>
 
 </div>
+
+{if $item['topic']}
+<div class="other">
+{loop $item['topic'] $tkey $titem}
+<p><a href="{tsUrl('group','topic',array('id'=>$titem['topicid']))}">{$titem['title']}</a></p>
+{/loop}
+</div>
+{/if}
+
 </li>	
 {/loop}
 </ul>

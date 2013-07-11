@@ -15,7 +15,7 @@ switch($ts){
 	//执行登录
 	case "do":
 	
-		if($TS_USER['user'] != '') header("Location: ".SITE_URL);
+		if($TS_USER['user'] != '') header("Location: ".tsUrl('mobile','user'));
 		
 		if($_POST['token'] != $_SESSION['token']) {
 			tsNotice('非法操作！');
@@ -76,10 +76,8 @@ switch($ts){
 		$sessionData = array(
 			'userid' => $userData['userid'],
 			'username'	=> $userData['username'],
-			'areaid'	=> $userData['areaid'],
 			'path'	=> $userData['path'],
 			'face'	=> $userData['face'],
-			'count_score'	=> $userData['count_score'],
 			'isadmin'	=> $userData['isadmin'],
 			'uptime'	=> $userData['uptime'],
 		);

@@ -21,6 +21,13 @@ $weiboNum = $new['weibo']->findCount('weibo');
 
 $pageUrl = pagination($weiboNum, 20, $page, $url);
 
+
+//社区精华帖
+$arrPosts = $new['weibo']->findAll('group_topics',array(
+	'isposts'=>1,
+),'uptime desc',null,15);
+
+
 $title = '微博';
 
 include template('index');

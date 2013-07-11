@@ -4,11 +4,9 @@
 
 <div class="mc">
 <div class="cleft">
-<div class="bbox pd10 mh500">
+<div class="bbox mh500">
 {template menu}
-
-<div class="clear"></div>
-
+<div class="bc">
 {if intval($TS_USER['user']['userid']) >0 && intval($TS_USER['user']['userid']) != $strUser['userid']}
 <div class="guest">
 <img src="{SITE_URL}public/images/user_normal.jpg" />
@@ -16,7 +14,7 @@
 <textarea style="width:100%;height:50px;" name="content"></textarea>
 <br />
 <input type="hidden" name="touserid" value="{$strUser['userid']}" />
-
+<input type="hidden" name="token" value="{$_SESSION['token']}" />
 <button class="btn btn-success" type="submit">添加留言</button>
 </form>
 </div>
@@ -30,6 +28,7 @@
 <br />
 <input id="touserid" type="hidden" name="touserid" value="0" />
 <input id="reid" type="hidden" name="reid" value="0" />
+
 <button class="btn btn-success" type="submit">回复</button>
 </form>
 </div>
@@ -59,7 +58,7 @@
 <div class="clear"></div>
 <div class="page">{$pageUrl}</div>
 
-
+</div>
 </div>
 </div>
 
